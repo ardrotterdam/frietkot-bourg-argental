@@ -41,5 +41,14 @@ html {
 }
 
 .animate-fade-in {
+  opacity: 1;
   animation: fade-in 1s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
