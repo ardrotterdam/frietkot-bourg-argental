@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import CtaButton from "./components/cta-button";
 import FrietkotWarpSection from "./components/frietkot-warp-section";
-import HeroTransformation from "./components/hero-transformation";
+import HeroCraft from "./components/hero-craft";
 import NightTimelineClock from "./components/night-timeline-clock";
 import RevealImage from "./components/reveal-image";
 import SectionHeading from "./components/section-heading";
@@ -18,7 +18,7 @@ export default function HomePage() {
     <>
       <NightTimelineClock />
       <main className="text-white">
-        <HeroTransformation />
+        <HeroCraft />
 
         <div className="bg-[#050505]">
           <section

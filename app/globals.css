@@ -107,6 +107,16 @@ body {
   }
 }
 
+@keyframes hero-craft-scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
 .animate-fade-in {
   opacity: 1;
   animation: fade-in 1s ease-out forwards;
@@ -123,6 +133,38 @@ body {
   font-size: var(--font-label);
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.hero-craft-cta-ghost {
+  position: relative;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  padding-bottom: 2px;
+}
+
+.hero-craft-cta-ghost::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: rgba(245, 239, 227, 0.55);
+  transform: scaleX(0.4);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+}
+
+.hero-craft-cta-ghost:hover::after,
+.hero-craft-cta-ghost:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.hero-craft-scroll-hint__arrow {
+  display: inline-block;
+  animation: hero-craft-scroll-bounce 2s ease-in-out infinite;
+  animation-delay: 3.5s;
 }
 
 .premium-card {
@@ -148,6 +190,15 @@ body {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+
+  .hero-craft-scroll-hint__arrow {
+    animation: none;
+  }
+
+  .hero-craft-cta-ghost::after {
+    transform: scaleX(1);
+    transition: none;
   }
 
   * {
