@@ -17,10 +17,10 @@ export default function CtaButton({
 }: CtaButtonProps) {
   const ref = useRef<HTMLAnchorElement | null>(null);
   const base =
-    "inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4A853]";
+    "group/cta inline-flex items-center justify-center rounded-full border px-7 py-3 text-sm font-semibold uppercase tracking-wider transition-transform duration-300 will-change-transform hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4A853]";
   const styles =
     variant === "primary"
-      ? "border border-[#D4A853]/80 bg-[#D4A853] text-black hover:bg-[#F4B942]"
+      ? "border-[#D4A853]/80 bg-[#D4A853] text-black hover:border-[#F4B942] hover:bg-[#F4B942]"
       : "border border-white/45 bg-transparent text-[#f5efe3] hover:border-[#FFD700] hover:text-[#FFD700]";
 
   const onMouseMove = (event: MouseEvent<HTMLAnchorElement>) => {
@@ -29,13 +29,13 @@ export default function CtaButton({
     const rect = el.getBoundingClientRect();
     const x = event.clientX - rect.left - rect.width / 2;
     const y = event.clientY - rect.top - rect.height / 2;
-    el.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`;
+    el.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px) scale(1.03)`;
   };
 
   const onLeave = () => {
     const el = ref.current;
     if (!el) return;
-    el.style.transform = "translate(0px, 0px)";
+    el.style.transform = "";
   };
 
   const isPhone = href.startsWith("tel:");
@@ -44,12 +44,12 @@ export default function CtaButton({
       <a
         ref={ref}
         href={href}
-        className={`${base} ${styles}`}
+        className={`${base} ${styles} [&>span]:inline-block [&>span]:transition-transform [&>span]:duration-200 group-hover/cta:[&>span]:translate-x-0.5`}
         onMouseMove={onMouseMove}
         onMouseLeave={onLeave}
         data-cursor="cta"
       >
-        {children}
+        <span>{children}</span>
       </a>
     );
   }
@@ -58,12 +58,12 @@ export default function CtaButton({
     <Link
       ref={ref}
       href={href}
-      className={`${base} ${styles}`}
+      className={`${base} ${styles} [&>span]:inline-block [&>span]:transition-transform [&>span]:duration-200 group-hover/cta:[&>span]:translate-x-0.5`}
       onMouseMove={onMouseMove}
       onMouseLeave={onLeave}
       data-cursor="cta"
     >
-      {children}
+      <span>{children}</span>
     </Link>
   );
 }
