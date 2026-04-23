@@ -31,11 +31,11 @@ function playMiseEnBouteille() {
   g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.45);
   o.connect(g);
   g.connect(ctx.destination);
-  o.addEventListener("ended", () => {
-    void ctx.close();
-  });
   o.start();
   o.stop(ctx.currentTime + 0.48);
+  setTimeout(() => {
+    void ctx.close();
+  }, 500);
 }
 
 export default function SiteNavbar() {

@@ -33,8 +33,8 @@ export default function FrietkotWarpSection() {
           scrub: 0.5,
         },
         letterSpacing: "0.12em",
-        fontWeight: 650,
         yPercent: 6,
+        scaleX: 1.08,
         ease: "none",
         stagger: { each: 0.02 },
       });
