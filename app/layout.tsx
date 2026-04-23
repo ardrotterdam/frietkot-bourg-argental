@@ -56,7 +56,7 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Restaurant",
                 name: "Frietkot",
-                image: "/frietkot-bourg-argental-belgische-friet-logo.webp",
+                image: "/images/hero/frietkot-logo-belgian-fries.webp",
                 servesCuisine: "Belgian",
                 telephone: "+33784428106",
                 address: {

@@ -5,11 +5,31 @@ import Lenis from "lenis";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const DISHES = [
-  { title: "Les frites", sub: "Double cuisson, coupées le matin", src: "/belgian-fries-hero-frietkot-bourg-argental.webp" },
-  { title: "Carbonade flamande", sub: "Mijotée · plat du jour", src: "/belgian-fries-hero-frietkot-bourg-argental.webp" },
-  { title: "Vol-au-vent", sub: "Sauce, champignons, poulet", src: "/frietkot-bourg-argental-logo.webp" },
-  { title: "Sauces maison", sub: "Andalouse, samouraï, tartare", src: "/logo.png" },
-  { title: "Bières", sub: "Chimay, Paljas, Herberg, Duvel", src: "/frietkot-bourg-argental-logo.webp" },
+  {
+    title: "Les frites",
+    sub: "Double cuisson, coupées le matin",
+    src: "/images/food/frietkot-belgian-fries-golden.webp",
+  },
+  {
+    title: "Carbonade flamande",
+    sub: "Mijotée · plat du jour",
+    src: "/images/food/frietkot-carbonade-flamande-plated.webp",
+  },
+  {
+    title: "Vol-au-vent",
+    sub: "Sauce, champignons, poulet",
+    src: "/images/food/specialite-belge-plat-traditionnel.webp",
+  },
+  {
+    title: "Sauces maison",
+    sub: "Andalouse, samouraï, tartare",
+    src: "/images/restaurant/frietkot-sauces-maison.webp",
+  },
+  {
+    title: "Bières",
+    sub: "Chimay, Paljas, Herberg, Duvel",
+    src: "/images/beer/frietkot-selection-bieres-belges.webp",
+  },
 ] as const;
 
 function CardGrid() {

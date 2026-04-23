@@ -81,7 +81,7 @@ export default function HomePage() {
             <div className="mx-auto mt-8 grid w-full max-w-7xl gap-6 md:grid-cols-2">
               <div className="relative min-h-[320px]">
                 <RevealImage
-                  src="/frietkot-bourg-argental-belgische-friet-logo.webp"
+                  src="/images/restaurant/frietkot-friteuse-professionnelle.webp"
                   alt="Friture — frites belges"
                   className="relative min-h-[320px] w-full overflow-hidden rounded-3xl"
                   imageClassName="object-cover"
@@ -159,7 +159,7 @@ export default function HomePage() {
               <div className="relative min-h-[360px]">
                 <div data-cursor-beer>
                 <RevealImage
-                  src="/frietkot-bourg-argental-logo.webp"
+                  src="/images/beer/frietkot-selection-bieres-belges.webp"
                   alt="Sélection de bières belges"
                   className="h-full min-h-[360px] w-full"
                   imageClassName="object-cover"
@@ -194,7 +194,7 @@ export default function HomePage() {
               </article>
               <div className="relative min-h-[360px]" data-cursor-room>
                 <RevealImage
-                  src="/frietkot-bourg-argental-logo.webp"
+                  src="/images/rooms/chambre-duvel-auberge-frietkot.webp"
                   alt="Chambre d'hôtes Frietkot"
                   className="h-full min-h-[360px] w-full"
                   imageClassName="object-cover"

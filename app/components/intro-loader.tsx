@@ -45,7 +45,7 @@ export default function IntroLoader() {
       <div className="h-px w-full max-w-md origin-center scale-x-0 bg-gradient-to-r from-transparent via-[#D4A853] to-transparent [animation:loader-line_1.1s_cubic-bezier(0.7,0,0.3,1)_forwards]" />
       <div className="relative z-10 scale-100 opacity-0 [animation:loader-logo_0.5s_ease_0.35s_forwards]">
         <Image
-          src="/frietkot-bourg-argental-belgische-friet-logo.webp"
+          src="/images/hero/frietkot-logo-belgian-fries.webp"
           alt=""
           width={200}
           height={120}

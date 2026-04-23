@@ -161,7 +161,7 @@ export default function HeroTransformation() {
       <div className="relative min-h-screen overflow-hidden bg-[#0a0a0a]">
         <div className="absolute inset-0">
           <Image
-            src="/belgian-fries-hero-frietkot-bourg-argental.webp"
+            src="/images/hero/frietkot-belgian-fries-hero.webp"
             alt=""
             fill
             className="object-cover opacity-40"
@@ -206,7 +206,7 @@ export default function HeroTransformation() {
           style={{ opacity: showLogo ? 1 : 0 }}
         >
           <Image
-            src="/frietkot-bourg-argental-belgische-friet-logo.webp"
+            src="/images/hero/frietkot-logo-belgian-fries.webp"
             alt="Frietkot"
             width={200}
             height={120}

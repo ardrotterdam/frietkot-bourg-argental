@@ -71,7 +71,7 @@ export default function SiteNavbar() {
           aria-label="Frietkot, accueil (triple press pour un easter egg)"
         >
           <Image
-            src="/frietkot-bourg-argental-belgische-friet-logo.webp"
+            src="/images/hero/frietkot-logo-belgian-fries.webp"
             alt="Logo Frietkot Bourg-Argental"
             width={180}
             height={72}

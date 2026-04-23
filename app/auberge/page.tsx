@@ -10,10 +10,25 @@ export const metadata: Metadata = {
 };
 
 const rooms = [
-  { name: "Chambre Duvel", details: "double · 1 lit · [prix]/nuit" },
-  { name: "Chambre Paljas", details: "double · 1 lit · [prix]/nuit" },
-  { name: "Chambre Zeekant", details: "double · 1 lit · [prix]/nuit" },
-];
+  {
+    name: "Chambre Duvel",
+    details: "double · 1 lit · [prix]/nuit",
+    image: "/images/rooms/chambre-duvel-auberge-frietkot.webp",
+    alt: "Chambre Duvel, décoration belge",
+  },
+  {
+    name: "Chambre Paljas",
+    details: "double · 1 lit · [prix]/nuit",
+    image: "/images/rooms/chambre-delirium-auberge-frietkot.webp",
+    alt: "Chambre Paljas, atmosphère conviviale",
+  },
+  {
+    name: "Chambre Zeekant",
+    details: "double · 1 lit · [prix]/nuit",
+    image: "/images/rooms/chambre-queue-de-charrue-auberge.webp",
+    alt: "Chambre Zeekant, chambre d'hôtes Frietkot",
+  },
+] as const;
 
 export default function AubergePage() {
   return (
@@ -47,12 +62,12 @@ export default function AubergePage() {
         </article>
 
         <div className="premium-card relative min-h-[320px] overflow-hidden rounded-3xl">
-          {/* TODO: photo propriétaire chambre 1/2/3 */}
           <Image
-            src="/frietkot-bourg-argental-logo.webp"
+            src="/images/restaurant/sejour-bourg-argental.webp"
             alt="Aperçu de l'auberge Frietkot"
             fill
-            className="object-cover opacity-70"
+            className="object-cover"
+            sizes="(min-width: 1024px) 40vw, 100vw"
           />
         </div>
       </section>
@@ -61,13 +76,24 @@ export default function AubergePage() {
         {rooms.map((room) => (
           <article
             key={room.name}
-            className="premium-card rounded-3xl p-7"
+            className="premium-card overflow-hidden rounded-3xl p-0"
             data-cursor-room
           >
-            <h3 className="font-[var(--font-fraunces)] text-2xl text-[#f5efe3]">
-              {room.name}
-            </h3>
-            <p className="mt-3 text-[#c8c1b5]">{room.details}</p>
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                src={room.image}
+                alt={room.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 30vw, 100vw"
+              />
+            </div>
+            <div className="p-7">
+              <h3 className="font-[var(--font-fraunces)] text-2xl text-[#f5efe3]">
+                {room.name}
+              </h3>
+              <p className="mt-3 text-[#c8c1b5]">{room.details}</p>
+            </div>
           </article>
         ))}
       </section>
