@@ -20,7 +20,7 @@ export default function RevealImage({
   className = "",
   imageClassName = "",
   sizes = "(min-width: 1024px) 40vw, 100vw",
-  fill,
+  fill = false,
   width,
   height,
 }: RevealImageProps) {
