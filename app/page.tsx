@@ -91,32 +91,98 @@ export default function Home() {
 
         <section id="menu" className="px-6 py-24 md:px-10">
           <div className="mx-auto w-full max-w-7xl">
-            <h2 className="mb-12 text-3xl font-semibold md:text-5xl">
-              Menu Preview
-            </h2>
-            <div className="grid gap-6 md:grid-cols-3">
-              <article className="group rounded-3xl border border-white/10 bg-[linear-gradient(170deg,rgba(255,255,255,0.13),rgba(18,18,18,0.74)_55%,rgba(0,0,0,0.96))] p-7 shadow-[0_18px_48px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1.5 hover:border-yellow-300/45 hover:shadow-[0_24px_60px_rgba(250,204,21,0.15)]">
-                <div className="mb-5 h-1.5 w-16 rounded-full bg-yellow-300/80 transition-all duration-300 group-hover:w-24" />
-                <h3 className="text-2xl font-semibold text-yellow-100">
-                  Belgian Fries
+            <p className="mb-3 text-xs uppercase tracking-[0.32em] text-yellow-300/80">
+              Menu Selection
+            </p>
+            <h2 className="text-3xl font-semibold md:text-5xl">Our Menu</h2>
+            <p className="mt-4 max-w-2xl text-neutral-300 md:text-lg">
+              Authentic Belgian comfort food, prepared with care and served in a
+              refined, warm atmosphere.
+            </p>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              <article className="rounded-3xl border border-white/10 bg-[linear-gradient(170deg,rgba(255,255,255,0.12),rgba(16,16,16,0.75)_55%,rgba(0,0,0,0.95))] p-7 shadow-[0_18px_48px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-yellow-300/45 hover:shadow-[0_24px_60px_rgba(250,204,21,0.15)]">
+                <h3 className="mb-5 text-2xl font-semibold text-yellow-100">Plats</h3>
+                <ul className="space-y-3 text-neutral-200">
+                  <li className="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                    <span>Carbonade Flamande</span>
+                    <span className="font-medium text-yellow-200">15,90 €</span>
+                  </li>
+                  <li className="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                    <span>Travers de porc</span>
+                    <span className="font-medium text-yellow-200">14,50 €</span>
+                  </li>
+                  <li className="flex items-center justify-between gap-4 pb-1">
+                    <span>Boulettes maison</span>
+                    <span className="font-medium text-yellow-200">14,50 €</span>
+                  </li>
+                </ul>
+              </article>
+
+              <article className="rounded-3xl border border-white/10 bg-[linear-gradient(170deg,rgba(255,255,255,0.12),rgba(16,16,16,0.75)_55%,rgba(0,0,0,0.95))] p-7 shadow-[0_18px_48px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-yellow-300/45 hover:shadow-[0_24px_60px_rgba(250,204,21,0.15)]">
+                <h3 className="mb-5 text-2xl font-semibold text-yellow-100">
+                  Salades
                 </h3>
-                <p className="mt-4 text-neutral-300">
-                  Crisp outside, fluffy inside, and finished with signature sauces.
-                </p>
+                <ul className="space-y-3 text-neutral-200">
+                  <li className="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                    <span>Salade Thon</span>
+                    <span className="font-medium text-yellow-200">13,90 €</span>
+                  </li>
+                  <li className="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                    <span>Salade Saumon</span>
+                    <span className="font-medium text-yellow-200">15,00 €</span>
+                  </li>
+                  <li className="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                    <span>Salade Végétarien</span>
+                    <span className="font-medium text-yellow-200">13,90 €</span>
+                  </li>
+                  <li className="flex items-center justify-between gap-4 pb-1">
+                    <span>Salade Poulet</span>
+                    <span className="font-medium text-yellow-200">13,90 €</span>
+                  </li>
+                </ul>
               </article>
-              <article className="group rounded-3xl border border-white/10 bg-[linear-gradient(170deg,rgba(255,255,255,0.13),rgba(18,18,18,0.74)_55%,rgba(0,0,0,0.96))] p-7 shadow-[0_18px_48px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1.5 hover:border-yellow-300/45 hover:shadow-[0_24px_60px_rgba(250,204,21,0.15)]">
-                <div className="mb-5 h-1.5 w-16 rounded-full bg-yellow-300/80 transition-all duration-300 group-hover:w-24" />
-                <h3 className="text-2xl font-semibold text-yellow-100">Snacks</h3>
-                <p className="mt-4 text-neutral-300">
-                  Belgian street-food classics and savory bites to share.
-                </p>
+
+              <article className="rounded-3xl border border-white/10 bg-[linear-gradient(170deg,rgba(255,255,255,0.12),rgba(16,16,16,0.75)_55%,rgba(0,0,0,0.95))] p-7 shadow-[0_18px_48px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-yellow-300/45 hover:shadow-[0_24px_60px_rgba(250,204,21,0.15)]">
+                <h3 className="mb-5 text-2xl font-semibold text-yellow-100">Menus</h3>
+                <ul className="space-y-3 text-neutral-200">
+                  <li className="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                    <span>Menu Burger</span>
+                    <span className="font-medium text-yellow-200">13,90 €</span>
+                  </li>
+                  <li className="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                    <span>Menu Brochettes</span>
+                    <span className="font-medium text-yellow-200">15,90 €</span>
+                  </li>
+                  <li className="flex items-center justify-between gap-4 pb-1">
+                    <span>Menu Enfant</span>
+                    <span className="font-medium text-yellow-200">11,00 €</span>
+                  </li>
+                </ul>
               </article>
-              <article className="group rounded-3xl border border-white/10 bg-[linear-gradient(170deg,rgba(255,255,255,0.13),rgba(18,18,18,0.74)_55%,rgba(0,0,0,0.96))] p-7 shadow-[0_18px_48px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1.5 hover:border-yellow-300/45 hover:shadow-[0_24px_60px_rgba(250,204,21,0.15)]">
-                <div className="mb-5 h-1.5 w-16 rounded-full bg-yellow-300/80 transition-all duration-300 group-hover:w-24" />
-                <h3 className="text-2xl font-semibold text-yellow-100">Drinks</h3>
-                <p className="mt-4 text-neutral-300">
-                  Curated drinks to complete every premium fry experience.
-                </p>
+
+              <article className="rounded-3xl border border-white/10 bg-[linear-gradient(170deg,rgba(255,255,255,0.12),rgba(16,16,16,0.75)_55%,rgba(0,0,0,0.95))] p-7 shadow-[0_18px_48px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-yellow-300/45 hover:shadow-[0_24px_60px_rgba(250,204,21,0.15)]">
+                <h3 className="mb-5 text-2xl font-semibold text-yellow-100">
+                  Boissons
+                </h3>
+                <ul className="space-y-3 text-neutral-200">
+                  <li className="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                    <span>Bière Bouteille</span>
+                    <span className="font-medium text-yellow-200">5,00 €</span>
+                  </li>
+                  <li className="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                    <span>Bière Pression</span>
+                    <span className="font-medium text-yellow-200">3,00 €</span>
+                  </li>
+                  <li className="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                    <span>Café</span>
+                    <span className="font-medium text-yellow-200">3,00 €</span>
+                  </li>
+                  <li className="flex items-center justify-between gap-4 pb-1">
+                    <span>Thé</span>
+                    <span className="font-medium text-yellow-200">3,00 €</span>
+                  </li>
+                </ul>
               </article>
             </div>
           </div>
