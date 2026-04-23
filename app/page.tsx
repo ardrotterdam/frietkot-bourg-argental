@@ -12,26 +12,29 @@ export default function Home() {
       <div className="absolute inset-0 bg-black/60" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(250,204,21,0.2),transparent_45%)]" />
 
-      <nav className="fixed top-0 z-30 w-full border-b border-white/10 bg-black/45 backdrop-blur-2xl">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5 md:px-8">
-          <a href="#" className="flex items-center gap-3">
+      <nav className="sticky top-0 z-30 w-full border-b border-white/10 bg-black/55 backdrop-blur-xl">
+        <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 md:px-8">
+          <a href="#" className="flex items-center">
             <img
-              src="/logo.png"
+              src="/frietkot-bourg-argental-belgische-friet-logo.webp"
               alt="Frietkot logo"
-              className="h-12 w-auto object-contain md:h-14"
+              className="h-14 w-auto object-contain md:h-16"
             />
-            <span className="text-xl font-bold tracking-wide text-neutral-100 md:text-2xl">
-              Frietkot
-            </span>
           </a>
-          <div className="flex items-center gap-6 text-sm text-neutral-200 md:gap-8">
-            <a className="transition-colors hover:text-yellow-300" href="#">
+          <div className="flex items-center gap-7 text-sm text-white md:gap-10">
+            <a className="transition-colors duration-300 hover:text-[#FFD700]" href="#">
               Home
             </a>
-            <a className="transition-colors hover:text-yellow-300" href="#menu">
+            <a
+              className="transition-colors duration-300 hover:text-[#FFD700]"
+              href="#menu"
+            >
               Menu
             </a>
-            <a className="transition-colors hover:text-yellow-300" href="#contact">
+            <a
+              className="transition-colors duration-300 hover:text-[#FFD700]"
+              href="#contact"
+            >
               Contact
             </a>
           </div>
