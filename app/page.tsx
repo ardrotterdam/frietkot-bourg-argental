@@ -6,11 +6,12 @@ export default function Home() {
       <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/35 backdrop-blur-xl">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 md:px-10">
           <a href="#home" className="group flex items-center gap-3">
-            <img
-              src="/logo.png"
-              alt="Frietkot Bourg-Argental logo"
-              className="h-11 w-11 rounded-full border border-yellow-400/50 object-cover shadow-[0_0_30px_rgba(250,204,21,0.22)] transition-transform duration-300 group-hover:scale-105"
-            />
+            <div
+              aria-hidden="true"
+              className="grid h-11 w-11 place-items-center rounded-full border border-yellow-400/50 bg-gradient-to-b from-amber-200/20 via-amber-500/20 to-amber-900/30 text-2xl shadow-[0_0_30px_rgba(250,204,21,0.22)] transition-transform duration-300 group-hover:scale-105"
+            >
+              🍟
+            </div>
             <div className="leading-tight">
               <p className="text-[0.68rem] uppercase tracking-[0.26em] text-yellow-300/80">
                 Bourg-Argental
