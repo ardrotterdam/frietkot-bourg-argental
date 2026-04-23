@@ -59,7 +59,11 @@ export default function AubergePage() {
 
       <section className="mx-auto mt-10 grid w-full max-w-7xl gap-6 md:grid-cols-3">
         {rooms.map((room) => (
-          <article key={room.name} className="premium-card rounded-3xl p-7">
+          <article
+            key={room.name}
+            className="premium-card rounded-3xl p-7"
+            data-cursor-room
+          >
             <h3 className="font-[var(--font-fraunces)] text-2xl text-[#f5efe3]">
               {room.name}
             </h3>
