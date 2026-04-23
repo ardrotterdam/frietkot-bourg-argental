@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Lenis from "lenis";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const DISHES = [
   { title: "Les frites", sub: "Double cuisson, coupées le matin", src: "/belgian-fries-hero-frietkot-bourg-argental.webp" },
@@ -141,7 +141,7 @@ function Horizontal() {
 export default function LaCarteHorizontal() {
   const [grid, setGrid] = useState(true);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window.matchMedia("(max-width: 1023px)").matches) {
       setGrid(true);
     } else if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
