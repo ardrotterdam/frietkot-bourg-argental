@@ -46,7 +46,7 @@ export default function FrietkotWarpSection() {
     <div ref={wrap} className="relative flex min-h-[50vh] items-center justify-center py-20">
       <h2
         ref={textRef}
-        className="font-[var(--font-fraunces)] text-[clamp(7.5rem,20vw,15rem)] font-normal italic leading-none text-[#f5efe3]/[0.07] transition-none max-md:text-[clamp(3.5rem,14vw,8rem)]"
+        className="font-[var(--font-fraunces)] text-[clamp(7.5rem,20vw,15rem)] font-normal italic leading-none text-[#D4A853]/[0.16] transition-none max-md:text-[clamp(3.5rem,14vw,8rem)]"
         style={{ fontFeatureSettings: '"opsz" 72' }}
         aria-label="Frietkot"
       >

@@ -48,7 +48,7 @@ export default function ScrollProgressRing() {
       onClick={() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
-      className="group fixed right-4 top-24 z-40 max-lg:top-20"
+      className="group fixed right-4 top-44 z-40 max-lg:top-32"
       aria-label="Retour en haut de la page"
     >
       <svg

@@ -127,7 +127,7 @@ export default function GrainOverlay() {
     <div
       ref={ref}
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-[100] mix-blend-overlay opacity-[0.07]"
+      className="pointer-events-none fixed inset-0 z-30 mix-blend-overlay opacity-[0.07]"
     />
   );
 }

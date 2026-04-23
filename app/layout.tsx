@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
-import SiteNavbar from "./components/site-navbar";
 import SiteFooter from "./components/site-footer";
+import SiteNavbar from "./components/site-navbar";
+import SiteProviders from "./components/site-providers";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,12 +13,23 @@ const inter = Inter({
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://frietkot.fr"),
   title: "Frietkot · Friterie Belge à Bourg-Argental · Depuis 1990",
   description:
     "Frites belges authentiques, bières trappistes et plats du jour faits maison à Bourg-Argental, Loire. Auberge sur place.",
+  keywords: [
+    "friterie belge loire",
+    "frites belges bourg-argental",
+    "restaurant belge bourg-argental",
+    "chambres d'hôtes bourg-argental",
+    "bière trappiste loire",
+    "manger belge saint-étienne",
+  ],
 };
 
 export default function RootLayout({
@@ -31,9 +43,11 @@ export default function RootLayout({
       className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-black text-white antialiased">
-        <SiteNavbar />
-        <div className="flex-1">{children}</div>
-        <SiteFooter />
+        <SiteProviders>
+          <SiteNavbar />
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
+        </SiteProviders>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
