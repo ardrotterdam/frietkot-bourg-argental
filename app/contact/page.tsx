@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import CtaButton from "../components/cta-button";
 import SectionHeading from "../components/section-heading";
+
+const ContactMap = dynamic(
+  () => import("../components/contact-map-client"),
+  { ssr: false, loading: () => <div className="h-72 w-full rounded-2xl border border-white/10 bg-white/5 md:h-96" /> },
+);
+
+const GMAPS = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("7 place d'Armeville, 42220 Bourg-Argental, France")}`;
+const APPLE = `https://maps.apple.com/?q=${encodeURIComponent("7 place d'Armeville, Bourg-Argental")}`;
+const WAZE = `https://waze.com/ul?q=${encodeURIComponent("7 place d'Armeville, Bourg-Argental")}`;
 
 export const metadata: Metadata = {
   title: "Contact · Frietkot Bourg-Argental",
@@ -96,17 +106,35 @@ export default function ContactPage() {
             <h3 className="font-[var(--font-fraunces)] text-2xl text-[#f5efe3]">
               Plan d&apos;accès
             </h3>
-            <div className="mt-4 grid h-52 place-items-center rounded-2xl border border-dashed border-white/20 bg-white/5 text-sm text-[#c8c1b5]">
-              Carte Leaflet dark (Stadia) à intégrer
+            <div className="mt-4">
+              <ContactMap />
             </div>
             <div className="mt-4 flex flex-wrap gap-3 text-sm">
-              <a className="text-[#D4A853] hover:text-[#FFD700]" href="#">
+              <a
+                className="text-[#D4A853] transition-colors hover:text-[#FFD700] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4A853]"
+                href={GMAPS}
+                rel="noreferrer"
+                target="_blank"
+                data-cursor-cta
+              >
                 Google Maps
               </a>
-              <a className="text-[#D4A853] hover:text-[#FFD700]" href="#">
+              <a
+                className="text-[#D4A853] transition-colors hover:text-[#FFD700] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4A853]"
+                href={APPLE}
+                rel="noreferrer"
+                target="_blank"
+                data-cursor-cta
+              >
                 Apple Maps
               </a>
-              <a className="text-[#D4A853] hover:text-[#FFD700]" href="#">
+              <a
+                className="text-[#D4A853] transition-colors hover:text-[#FFD700] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4A853]"
+                href={WAZE}
+                rel="noreferrer"
+                target="_blank"
+                data-cursor-cta
+              >
                 Waze
               </a>
             </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CtaButton from "../components/cta-button";
+import LaCarteHorizontal from "../components/la-carte-horizontal";
 import SectionHeading from "../components/section-heading";
 
 export const metadata: Metadata = {
@@ -17,6 +18,12 @@ export default function LaCartePage() {
           title="Notre Carte"
           description="Découvrez notre sélection de spécialités belges, de menus gourmands et de boissons."
         />
+      </section>
+
+      <section className="mb-20 w-full overflow-x-clip" aria-label="Aperçu plats, défilement horizontal">
+        <div className="pl-0">
+          <LaCarteHorizontal />
+        </div>
       </section>
 
       <section className="mx-auto grid w-full max-w-7xl gap-6 md:grid-cols-2">
