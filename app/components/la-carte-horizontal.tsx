@@ -56,7 +56,7 @@ function Horizontal() {
       autoRaf: true,
     });
 
-    const onScroll = (e: { animatedScroll: number; limit: number }) => {
+    const onScroll = (e: Lenis) => {
       if (!progress.current) {
         return;
       }

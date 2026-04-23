@@ -29,12 +29,12 @@ export default function SectionHeading({
         {reveal ? (
           <RevealText
             as="h2"
-            className="font-[var(--font-fraunces)] text-[length:var(--font-h2)] font-normal italic leading-[1.05] text-[#f5efe3]"
+            className="font-[var(--font-fraunces)] text-[var(--font-h2)] font-normal italic leading-[1.05] text-[#f5efe3]"
           >
             {title}
           </RevealText>
         ) : (
-          <h2 className="font-[var(--font-fraunces)] text-[length:var(--font-h2)] font-normal italic leading-[1.05] text-[#f5efe3]">
+          <h2 className="font-[var(--font-fraunces)] text-[var(--font-h2)] font-normal italic leading-[1.05] text-[#f5efe3]">
             {title}
           </h2>
         )}
