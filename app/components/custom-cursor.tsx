@@ -40,22 +40,23 @@ const DOT_SVG = (
 type CursorMode = "default" | "menu" | "beer" | "room" | "cta";
 
 function getMode(target: EventTarget | null): CursorMode {
-  let el: Element | null = target as Element | null;
+  let el: Element | null = (target as Element | null)?.nodeType === Node.ELEMENT_NODE
+    ? (target as Element)
+    : (target as Node | null)?.parentElement ?? null;
   for (let i = 0; i < 10 && el; i++) {
-    if (!(el instanceof HTMLElement)) {
-      return "default";
-    }
-    if (el.dataset.cursor === "cta" || el.hasAttribute("data-cursor-cta")) {
-      return "cta";
-    }
-    if (el.dataset.cursor === "beer" || el.hasAttribute("data-cursor-beer")) {
-      return "beer";
-    }
-    if (el.dataset.cursor === "room" || el.hasAttribute("data-cursor-room")) {
-      return "room";
-    }
-    if (el.tagName === "A" && el.closest("nav")) {
-      return "menu";
+    if (el instanceof HTMLElement) {
+      if (el.dataset.cursor === "cta" || el.hasAttribute("data-cursor-cta")) {
+        return "cta";
+      }
+      if (el.dataset.cursor === "beer" || el.hasAttribute("data-cursor-beer")) {
+        return "beer";
+      }
+      if (el.dataset.cursor === "room" || el.hasAttribute("data-cursor-room")) {
+        return "room";
+      }
+      if (el.tagName === "A" && el.closest("nav")) {
+        return "menu";
+      }
     }
     el = el.parentElement;
   }
@@ -150,7 +151,6 @@ export default function CustomCursor() {
     <div
       ref={root}
       className="pointer-events-none fixed left-0 top-0 z-[200] -translate-x-1/2 -translate-y-1/2 text-[#D4A853] will-change-transform max-lg:hidden"
-      style={{ x: 0, y: 0 } as React.CSSProperties}
       aria-hidden
     >
       <div className="drop-shadow-md">{pickIcon(mode)}</div>
