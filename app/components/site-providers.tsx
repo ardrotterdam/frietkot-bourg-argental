@@ -11,12 +11,12 @@ import ScrollProgressRing from "./scroll-progress-ring";
 export default function SiteProviders({ children }: { children: ReactNode }) {
   return (
     <LenisProvider>
+      {children}
       <GrainOverlay />
       <IntroLoader />
       <RouteSweepOverlay />
       <CustomCursor />
       <ScrollProgressRing />
-      {children}
     </LenisProvider>
   );
 }
