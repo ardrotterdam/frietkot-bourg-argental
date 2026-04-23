@@ -8,7 +8,7 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 md:px-10">
           <a href="#home" className="group flex items-center gap-3">
             <img
-              src="/frietkot-bourg-argental-belgian-fries.webp"
+              src="/frietkot-bourg-argental-logo.webp"
               alt="Frietkot Bourg-Argental logo"
               className="h-10 w-10 rounded-full border border-yellow-300/40 object-cover shadow-[0_0_30px_rgba(250,204,21,0.22)] transition-transform duration-300 group-hover:scale-105"
             />
@@ -72,7 +72,7 @@ export default function Home() {
           <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-[radial-gradient(circle,rgba(250,204,21,0.35),rgba(0,0,0,0)_65%)] blur-2xl" />
           <div className="relative w-full max-w-md rounded-[2.2rem] border border-white/15 bg-gradient-to-b from-white/10 to-black/35 p-4 shadow-[0_34px_100px_rgba(0,0,0,0.65)] backdrop-blur-xl">
             <img
-              src="/frietkot-bourg-argental-belgian-fries.webp"
+              src="/frietkot-bourg-argental-logo.webp"
               alt="Frietkot Bourg-Argental premium logo artwork"
               className="w-full rounded-[1.8rem] border border-yellow-200/15 object-cover shadow-[0_20px_70px_rgba(250,204,21,0.18)] transition-transform duration-500 hover:scale-[1.02]"
             />
@@ -99,7 +99,7 @@ export default function Home() {
           <aside className="group relative overflow-hidden rounded-3xl border border-yellow-300/30 bg-[linear-gradient(150deg,rgba(250,204,21,0.2),rgba(22,22,22,0.85))] p-8 shadow-[0_24px_85px_rgba(250,204,21,0.18)] md:p-10">
             <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-yellow-300/20 blur-2xl transition duration-500 group-hover:scale-110" />
             <img
-              src="/frietkot-bourg-argental-belgian-fries.webp"
+              src="/frietkot-bourg-argental-logo.webp"
               alt="Frietkot highlight logo"
               className="relative z-10 mb-6 h-20 w-20 rounded-full border border-yellow-100/30 object-cover shadow-[0_0_35px_rgba(250,204,21,0.35)]"
             />
