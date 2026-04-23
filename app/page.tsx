@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import CtaButton from "./components/cta-button";
 import FrietkotWarpSection from "./components/frietkot-warp-section";
+import HeroTransformation from "./components/hero-transformation";
 import NightTimelineClock from "./components/night-timeline-clock";
 import RevealImage from "./components/reveal-image";
 import SectionHeading from "./components/section-heading";
 import StatCounters from "./components/stat-counters";
-
-const HeroTransformation = dynamic(() => import("./components/hero-transformation"), {
-  ssr: false,
-  loading: () => <div className="h-screen w-full bg-[#0a0a0a]" />,
-});
 
 export const metadata: Metadata = {
   title: "Accueil · Frietkot Bourg-Argental",

@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import CtaButton from "../components/cta-button";
+import ContactMapWrapper from "../components/contact-map-wrapper";
 import SectionHeading from "../components/section-heading";
-
-const ContactMap = dynamic(
-  () => import("../components/contact-map-client"),
-  { ssr: false, loading: () => <div className="h-72 w-full rounded-2xl border border-white/10 bg-white/5 md:h-96" /> },
-);
 
 const GMAPS = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("7 place d'Armeville, 42220 Bourg-Argental, France")}`;
 const APPLE = `https://maps.apple.com/?q=${encodeURIComponent("7 place d'Armeville, Bourg-Argental")}`;
@@ -107,7 +102,7 @@ export default function ContactPage() {
               Plan d&apos;accès
             </h3>
             <div className="mt-4">
-              <ContactMap />
+              <ContactMapWrapper />
             </div>
             <div className="mt-4 flex flex-wrap gap-3 text-sm">
               <a
