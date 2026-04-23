@@ -25,7 +25,7 @@ function formatVal(v: number, f: Stat["format"]): string {
 }
 
 function StatItem({ s }: { s: Stat }) {
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLLIElement | null>(null);
   const span = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
