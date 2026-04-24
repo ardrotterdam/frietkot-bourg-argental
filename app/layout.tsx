@@ -56,7 +56,15 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Restaurant",
                 name: "Frietkot",
-                image: "/images/hero/frietkot-logo-belgian-fries.webp",
+                image: [
+                  "/images/promotional/frietkot-pascal-proprietaire-bourg-argental.webp",
+                  "/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp",
+                  "/images/promotional/frietkot-carbonade-flamande-biere-brune-bourg-argental.webp",
+                  "/images/promotional/frietkot-vol-au-vent-bourg-argental.webp",
+                  "/images/promotional/frietkot-sauces-maison-bourg-argental.webp",
+                  "/images/promotional/frietkot-gaufres-bruxelles-bourg-argental.webp",
+                  "/images/promotional/frietkot-bieres-belges-chimay-duvel-paljas-bourg-argental.webp",
+                ],
                 servesCuisine: "Belgian",
                 telephone: "+33784428106",
                 address: {
@@ -71,6 +79,17 @@ export default function RootLayout({
                   ratingValue: "4.5",
                   reviewCount: "308",
                 },
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                name: "Pascal",
+                jobTitle: "Propriétaire",
+                worksFor: {
+                  "@type": "Restaurant",
+                  name: "Frietkot",
+                },
+                image: "/images/promotional/frietkot-pascal-proprietaire-bourg-argental.webp",
               },
               {
                 "@context": "https://schema.org",

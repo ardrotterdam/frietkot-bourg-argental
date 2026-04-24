@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SectionHeading from "../components/section-heading";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Notre histoire · Frietkot Bourg-Argental",
@@ -9,19 +9,42 @@ export const metadata: Metadata = {
 
 export default function NotreHistoirePage() {
   return (
-    <main className="min-h-screen bg-[#050505] px-6 pb-20 pt-14 text-white md:px-10">
-      <section className="mx-auto w-full max-w-5xl py-16">
-        <SectionHeading
-          eyebrow="NOTRE HISTOIRE"
-          title="1990."
-          description="Une friterie ouverte à Bruxelles. Trente-cinq ans plus tard, la même recette, à Bourg-Argental."
-        />
+    <main className="min-h-screen bg-[#050505] text-white">
+      <section
+        className="relative min-h-0 border-b border-[#D4A853]/10 bg-[#0A0A0A] text-[#F5EFE3]"
+        aria-label="Notre histoire"
+      >
+        <div className="grid min-h-0 grid-cols-1 lg:min-h-screen lg:grid-cols-2">
+          <div className="order-2 flex flex-col justify-center px-6 py-12 [padding-left:clamp(1.5rem,5vw,6rem)] [padding-right:clamp(1.5rem,5vw,6rem)] md:px-10 lg:order-1 lg:min-h-0 lg:py-0">
+            <p className="section-eyebrow">NOTRE HISTOIRE</p>
+            <h1
+              className="mt-3 max-w-xl font-[var(--font-fraunces)] text-[length:clamp(3rem,7vw,4.5rem)] font-normal leading-[1.05] text-[#F5EFE3] [font-style:italic]"
+              style={{ fontFeatureSettings: '"opsz" 72' }}
+            >
+              1990.
+            </h1>
+            <p className="mt-6 max-w-lg text-lg leading-[1.7] text-[#c8c1b5]">
+              Une friterie ouverte à Bruxelles. Trente-cinq ans plus tard, la même
+              recette, à Bourg-Argental.
+            </p>
+          </div>
+          <div className="relative order-1 h-[min(70vh,640px)] min-h-0 w-full border-[#D4A853]/10 lg:order-2 lg:h-auto lg:min-h-screen lg:border-l">
+            <Image
+              src="/images/promotional/frietkot-pascal-proprietaire-bourg-argental.webp"
+              alt="Pascal, propriétaire de Frietkot à Bourg-Argental, vous accueille dans sa friterie belge avec le sourire"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              priority
+            />
+          </div>
+        </div>
       </section>
 
-      <section className="mx-auto w-full max-w-5xl space-y-6 text-lg text-[#c8c1b5]">
+      <section className="mx-auto w-full max-w-5xl space-y-6 px-6 py-20 text-lg text-[#c8c1b5] md:px-10 md:py-24">
         <p>
-          Frietkot, c&apos;est d&apos;abord une histoire de patience. Celle qu&apos;il faut
-          pour éplucher les pommes de terre à la main chaque matin. Celle qu&apos;il
+          Frietkot, c&apos;est d&apos;abord une histoire de patience. Celle qu&apos;il
+          faut pour éplucher les pommes de terre à la main chaque matin. Celle qu&apos;il
           faut pour respecter la double cuisson. Celle qu&apos;il faut pour que chaque
           cornet parte du comptoir à la bonne température, le sel juste dosé, la
           sauce choisie avec soin.

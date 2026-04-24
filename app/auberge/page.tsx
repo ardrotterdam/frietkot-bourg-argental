@@ -63,8 +63,8 @@ export default function AubergePage() {
 
         <div className="premium-card relative min-h-[320px] overflow-hidden rounded-3xl">
           <Image
-            src="/images/restaurant/sejour-bourg-argental.webp"
-            alt="Aperçu de l'auberge Frietkot"
+            src="/images/rooms/chambre-duvel-auberge-frietkot.webp"
+            alt="Chambre d'hôtes Frietkot à Bourg-Argental — aperçu de l'auberge, esprit belge"
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 40vw, 100vw"

@@ -8,27 +8,32 @@ const DISHES = [
   {
     title: "Les frites",
     sub: "Double cuisson, coupées le matin",
-    src: "/images/food/frietkot-belgian-fries-golden.webp",
+    src: "/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp",
+    alt: "Aperçu gourmand des plats du jour et de l’offre friterie belge chez Frietkot à Bourg-Argental — frites, carbonade et spécialités sur le comptoir",
   },
   {
     title: "Carbonade flamande",
     sub: "Mijotée · plat du jour",
-    src: "/images/food/frietkot-carbonade-flamande-plated.webp",
+    src: "/images/promotional/frietkot-carbonade-flamande-biere-brune-bourg-argental.webp",
+    alt: "Carbonade flamande à la bière brune, mijotée lentement, servie chez Frietkot à Bourg-Argental avec frites belges croustillantes",
   },
   {
     title: "Vol-au-vent",
     sub: "Sauce, champignons, poulet",
-    src: "/images/food/specialite-belge-plat-traditionnel.webp",
+    src: "/images/promotional/frietkot-vol-au-vent-bourg-argental.webp",
+    alt: "Vol-au-vent maison servi chez Frietkot à Bourg-Argental — pâte feuilletée, sauce crème et champignons, présentation généreuse",
   },
   {
     title: "Sauces maison",
     sub: "Andalouse, samouraï, tartare",
-    src: "/images/restaurant/frietkot-sauces-maison.webp",
+    src: "/images/promotional/frietkot-sauces-maison-bourg-argental.webp",
+    alt: "Bar à sauces maison chez Frietkot à Bourg-Argental — bols colorés, textures crémeuses, présentation soignée sur le comptoir",
   },
   {
     title: "Bières",
     sub: "Chimay, Paljas, Herberg, Duvel",
-    src: "/images/beer/frietkot-selection-bieres-belges.webp",
+    src: "/images/promotional/frietkot-bieres-belges-chimay-duvel-paljas-bourg-argental.webp",
+    alt: "Sélection de bières belges chez Frietkot à Bourg-Argental — Chimay, Duvel, Paljas, Herberg et bouteilles artisanales au comptoir",
   },
 ] as const;
 
@@ -38,7 +43,7 @@ function CardGrid() {
       {DISHES.map((d) => (
         <article key={d.title} className="premium-card overflow-hidden rounded-3xl p-0">
           <div className="relative aspect-[4/5] w-full">
-            <Image src={d.src} alt="" fill className="object-cover" sizes="(min-width: 1024px) 40vw, 90vw" />
+            <Image src={d.src} alt={d.alt} fill className="object-cover" sizes="(min-width: 1024px) 40vw, 90vw" />
           </div>
           <div className="p-6">
             <h2 className="font-[var(--font-fraunces)] text-2xl text-[#f5efe3]">{d.title}</h2>
@@ -143,7 +148,7 @@ function Horizontal() {
             >
               <div className="premium-card h-full overflow-hidden rounded-3xl p-0">
                 <div className="relative aspect-[4/5] w-full">
-                  <Image src={d.src} alt={d.title} fill className="object-cover" sizes="400px" />
+                  <Image src={d.src} alt={d.alt} fill className="object-cover" sizes="400px" />
                 </div>
                 <div className="p-6">
                   <h2 className="font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">{d.title}</h2>

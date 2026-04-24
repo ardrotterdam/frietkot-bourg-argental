@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import CtaButton from "./components/cta-button";
 import FrietkotWarpSection from "./components/frietkot-warp-section";
 import HeroCraft from "./components/hero-craft";
@@ -19,6 +21,46 @@ export default function HomePage() {
       <NightTimelineClock />
       <main className="text-white">
         <HeroCraft />
+
+        <section
+          className="bg-[#0A0A0A] text-[#F5EFE3]"
+          aria-label="Pascal vous accueille"
+        >
+          <div className="grid min-h-0 grid-cols-1 lg:min-h-[min(100vh,900px)] lg:grid-cols-2">
+            <div className="relative min-h-[min(70vh,560px)] w-full lg:min-h-0">
+              <Image
+                src="/images/promotional/frietkot-pascal-proprietaire-bourg-argental.webp"
+                alt="Pascal, propriétaire de Frietkot à Bourg-Argental, vous accueille dans sa friterie belge avec le sourire"
+                width={1200}
+                height={1500}
+                className="h-full w-full object-cover"
+                sizes="(max-width: 1023px) 100vw, 50vw"
+                priority={false}
+              />
+            </div>
+            <div className="flex flex-col justify-center px-6 py-12 md:px-12 lg:px-20">
+              <p className="section-eyebrow">L&apos;HOMME DERRIÈRE LE COMPTOIR</p>
+              <h2
+                className="mt-4 max-w-lg font-[var(--font-fraunces)] text-[length:clamp(2rem,4vw,3.25rem)] font-normal leading-[1.1] text-[#D4A853] [font-style:italic]"
+                style={{ fontFeatureSettings: '"opsz" 72' }}
+              >
+                Rencontrez Pascal.
+              </h2>
+              <p className="mt-6 max-w-[460px] text-[17px] leading-[1.7] text-[#F5EFE3]">
+                Trente-cinq ans de métier, une seule philosophie : des frites
+                belges authentiques, une hospitalité simple, un accueil avec le
+                sourire. Pascal vous attend au 7 place d&apos;Armeville.
+              </p>
+              <Link
+                href="/notre-histoire"
+                className="mt-8 inline-flex w-max border-b border-[#D4A853]/50 pb-0.5 text-sm font-medium text-[#D4A853] transition-colors hover:border-[#D4A853] hover:text-[#E8C775]"
+                data-cursor="cta"
+              >
+                Notre histoire →
+              </Link>
+            </div>
+          </div>
+        </section>
 
         <div className="bg-[#050505]">
           <section
@@ -81,14 +123,13 @@ export default function HomePage() {
             <div className="mx-auto mt-8 grid w-full max-w-7xl gap-6 md:grid-cols-2">
               <div className="relative min-h-[320px]">
                 <RevealImage
-                  src="/images/restaurant/frietkot-friteuse-professionnelle.webp"
-                  alt="Friture — frites belges"
+                  src="/images/promotional/frietkot-sauces-maison-bourg-argental.webp"
+                  alt="Sauces artisanales et friterie belge chez Frietkot à Bourg-Argental — mises en scène généreuse des accompagnements faits chaque matin"
                   className="relative min-h-[320px] w-full overflow-hidden rounded-3xl"
                   imageClassName="object-cover"
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
                 />
-                {/* TODO: remplacer par photo friture propriétaire (haute résolution) */}
               </div>
             </div>
           </section>
@@ -159,15 +200,14 @@ export default function HomePage() {
               <div className="relative min-h-[360px]">
                 <div data-cursor-beer>
                 <RevealImage
-                  src="/images/beer/frietkot-selection-bieres-belges.webp"
-                  alt="Sélection de bières belges"
+                  src="/images/promotional/frietkot-bieres-belges-chimay-duvel-paljas-bourg-argental.webp"
+                  alt="Sélection de bières belges chez Frietkot à Bourg-Argental — Chimay, Duvel, Paljas, Herberg et bouteilles artisanales au comptoir"
                   className="h-full min-h-[360px] w-full"
-                  imageClassName="object-cover"
+                  imageClassName="object-contain object-center bg-[#0A0A0A]"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
                 </div>
-                {/* TODO: remplacer par photo frigo / Paljas haute résolution */}
               </div>
             </div>
           </section>

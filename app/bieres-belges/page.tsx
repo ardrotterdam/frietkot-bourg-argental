@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SectionHeading from "../components/section-heading";
 
 export const metadata: Metadata = {
@@ -53,7 +54,21 @@ const beers = [
 export default function BieresBelgesPage() {
   return (
     <main className="min-h-screen bg-[#050505] px-6 pb-20 pt-14 text-white md:px-10">
-      <section className="mx-auto w-full max-w-7xl py-16">
+      <div className="mx-auto w-full max-w-7xl">
+        <div className="w-full">
+          <Image
+            src="/images/promotional/frietkot-bieres-belges-chimay-duvel-paljas-bourg-argental.webp"
+            alt="Sélection de bières belges chez Frietkot à Bourg-Argental — Chimay Bleue, Chimay Rouge, Herberg Brune, Paljas Blonde, Duvel et sélection saisonnière"
+            width={2000}
+            height={1400}
+            className="h-auto w-full object-contain"
+            sizes="100vw"
+            priority
+          />
+        </div>
+      </div>
+
+      <section className="mx-auto w-full max-w-7xl py-12 md:py-16">
         <SectionHeading
           eyebrow="BIÈRES BELGES"
           title="Une bière belge ne se choisit pas au hasard."
