@@ -72,7 +72,7 @@ export default async function AubergePage({ params }: Props) {
       </section>
 
       <section className="border-y border-[#D4A853]/20 bg-[#08080A]">
-        <div className="mx-auto grid max-w-5xl grid-cols-3 gap-4 px-6 py-8 text-center md:py-16">
+        <div className="mx-auto grid max-w-5xl grid-cols-3 gap-4 px-6 pt-4 pb-8 text-center md:py-16">
           <div>
             <p className="font-[var(--font-fraunces)] text-3xl italic text-[#D4A853] md:text-4xl">
               3
@@ -120,7 +120,7 @@ export default async function AubergePage({ params }: Props) {
               }}
               aria-hidden
             />
-            <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-20">
+            <div className="relative mx-auto max-w-7xl px-6 py-6 md:py-20">
               <div
                 className={`grid items-center gap-6 md:gap-12 ${
                   reverse
