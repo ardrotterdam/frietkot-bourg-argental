@@ -45,19 +45,19 @@ export default async function AubergePage({ params }: Props) {
 
   return (
     <main className="bg-[#0A0A0A] text-[#F5EFE3]">
-      <section className="mx-auto max-w-4xl px-6 pb-12 pt-24 text-center md:pb-20 md:pt-32">
-        <p className="mb-8 text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
+      <section className="mx-auto max-w-4xl px-6 pt-20 pb-8 text-center md:pt-28 md:pb-16">
+        <p className="mb-4 text-[11px] uppercase tracking-[0.22em] text-[#D4A853] md:mb-8">
           {t("heroEyebrow")}
         </p>
         <h1
-          className="mb-10 font-[var(--font-fraunces)] text-5xl italic leading-[0.95] md:text-7xl lg:text-8xl"
+          className="mb-6 font-[var(--font-fraunces)] text-5xl italic leading-[0.95] md:mb-10 md:text-7xl lg:text-8xl"
         >
           {t("heroTitle1")}
           <br />
           <span className="text-[#D4A853]">{t("heroTitle2")}</span>
         </h1>
 
-        <div className="mb-10 flex items-center justify-center gap-4">
+        <div className="mb-6 flex items-center justify-center gap-4 md:mb-10">
           <div className="h-px w-16 bg-[#D4A853]/40" />
           <span className="text-sm text-[#D4A853]/60">✦</span>
           <div className="h-px w-16 bg-[#D4A853]/40" />
@@ -72,7 +72,7 @@ export default async function AubergePage({ params }: Props) {
       </section>
 
       <section className="border-y border-[#D4A853]/20 bg-[#08080A]">
-        <div className="mx-auto grid max-w-5xl grid-cols-3 gap-4 px-6 py-8 text-center md:py-10">
+        <div className="mx-auto grid max-w-5xl grid-cols-3 gap-4 px-6 py-8 text-center md:py-16">
           <div>
             <p className="font-[var(--font-fraunces)] text-3xl italic text-[#D4A853] md:text-4xl">
               3
@@ -120,9 +120,9 @@ export default async function AubergePage({ params }: Props) {
               }}
               aria-hidden
             />
-            <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
+            <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-20">
               <div
-                className={`grid items-center gap-10 md:gap-12 lg:gap-16 ${
+                className={`grid items-center gap-6 md:gap-12 ${
                   reverse
                     ? "lg:grid-cols-[1fr_1.1fr]"
                     : "lg:grid-cols-[1.1fr_1fr]"
@@ -142,7 +142,7 @@ export default async function AubergePage({ params }: Props) {
                 </div>
 
                 <div className={reverse ? "lg:order-1" : ""}>
-                  <div className="mb-8 flex items-center gap-6">
+                  <div className="mb-6 flex items-center gap-6 md:mb-8">
                     <span
                       className="font-[var(--font-fraunces)] text-6xl italic leading-none md:text-7xl"
                       style={{ color: room.palette.primary, opacity: 0.6 }}
@@ -174,13 +174,13 @@ export default async function AubergePage({ params }: Props) {
                   </h2>
 
                   <p
-                    className="mb-8 font-[var(--font-fraunces)] text-xl italic"
+                    className="mb-6 font-[var(--font-fraunces)] text-xl italic md:mb-8"
                     style={{ color: room.palette.primary }}
                   >
                     {roomText(tr, k, "tagline")}
                   </p>
 
-                  <div className="mb-8">
+                  <div className="mb-6 md:mb-8">
                     <p className="mb-3 text-[10px] uppercase tracking-[0.18em] text-[#F5EFE3]/50">
                       {t("beerStoryLabel")}
                     </p>
@@ -189,7 +189,7 @@ export default async function AubergePage({ params }: Props) {
                     </p>
                   </div>
 
-                  <div className="mb-8">
+                  <div className="mb-6 md:mb-8">
                     <p className="mb-3 text-[10px] uppercase tracking-[0.18em] text-[#F5EFE3]/50">
                       {t("roomStoryLabel")}
                     </p>
@@ -199,7 +199,7 @@ export default async function AubergePage({ params }: Props) {
                   </div>
 
                   <blockquote
-                    className="mb-8 border-l-2 py-2 pl-6 text-[15px] italic leading-[1.7]"
+                    className="mb-6 border-l-2 py-2 pl-6 text-[15px] italic leading-[1.7] md:mb-8"
                     style={{
                       borderColor: room.palette.primary,
                       color: "rgba(245, 239, 227, 0.75)",
@@ -230,7 +230,7 @@ export default async function AubergePage({ params }: Props) {
         );
       })}
 
-      <section className="bg-gradient-to-b from-[#0A0A0A] to-[#08080A] py-20 md:py-24">
+      <section className="bg-gradient-to-b from-[#0A0A0A] to-[#08080A] py-12 md:py-24">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
             {t("ctaEyebrow")}

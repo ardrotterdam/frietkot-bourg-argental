@@ -76,7 +76,7 @@ export function RoomImageFrame({
           alt={alt}
           width={800}
           height={1000}
-          className="h-auto w-full object-cover"
+          className="max-h-[200px] w-full object-cover md:max-h-none"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div
@@ -87,7 +87,7 @@ export function RoomImageFrame({
           aria-hidden
         />
       </div>
-      <div className="mt-6 flex items-center gap-3">
+      <div className="mt-3 flex items-center gap-3 md:mt-6">
         <span className="text-[10px] uppercase tracking-[0.15em] text-[#F5EFE3]/40">
           {paletteLabel}
         </span>
