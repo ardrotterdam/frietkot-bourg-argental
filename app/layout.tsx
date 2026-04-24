@@ -18,7 +18,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://frietkot.fr"),
+  metadataBase: new URL("https://frietkot-bourg-argental.vercel.app"),
   title: "Frietkot · Friterie Belge à Bourg-Argental · Depuis 1990",
   description:
     "Frites belges authentiques, bières trappistes et plats du jour faits maison à Bourg-Argental, Loire. Auberge sur place.",
@@ -30,6 +30,31 @@ export const metadata: Metadata = {
     "bière trappiste loire",
     "manger belge saint-étienne",
   ],
+  openGraph: {
+    title: "Frietkot — Friterie Belge à Bourg-Argental",
+    description:
+      "Frites belges authentiques, plats du jour faits maison, bières trappistes et auberge. Depuis 1990, au cœur de la Loire.",
+    url: "https://frietkot-bourg-argental.vercel.app",
+    siteName: "Frietkot",
+    images: [
+      {
+        url: "/frietkot-og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Frietkot — Friterie Belge à Bourg-Argental, Loire. Frites fraîches et faites maison depuis 1990.",
+        type: "image/jpeg",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Frietkot — Friterie Belge à Bourg-Argental",
+    description:
+      "Frites belges authentiques, plats du jour faits maison, bières trappistes et auberge. Depuis 1990, au cœur de la Loire.",
+    images: ["/frietkot-og-image.jpg"],
+  },
 };
 
 export default function RootLayout({

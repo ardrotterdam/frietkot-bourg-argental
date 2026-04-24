@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Notre histoire · Frietkot Bourg-Argental",
+  title: "Notre histoire — Frietkot Bourg-Argental",
   description:
-    "Depuis 1990, Frietkot transmet la tradition de la vraie frite belge à Bourg-Argental.",
+    "Depuis 1990, Pascal vous accueille à Frietkot. Une friterie belge authentique dans la Loire, où tout est fait maison chaque jour.",
+  openGraph: {
+    title: "Rencontrez Pascal — Frietkot",
+    description:
+      "Trente-cinq ans de métier. Pascal, propriétaire de Frietkot à Bourg-Argental.",
+    images: ["/images/promotional/frietkot-pascal-proprietaire-bourg-argental.webp"],
+  },
 };
 
 export default function NotreHistoirePage() {

@@ -4,9 +4,14 @@ import CtaButton from "../components/cta-button";
 import SectionHeading from "../components/section-heading";
 
 export const metadata: Metadata = {
-  title: "L'auberge · Frietkot Bourg-Argental",
+  title: "L'auberge — Frietkot Bourg-Argental",
   description:
-    "Découvrez les chambres d'hôtes Frietkot à Bourg-Argental pour prolonger votre soirée belge.",
+    "Nos chambres d'hôtes à Bourg-Argental : Chambre Delirium, Duvel et Queue de Charrue. Pour prolonger l'expérience Frietkot.",
+  openGraph: {
+    title: "L'auberge — Frietkot",
+    description:
+      "Trois chambres belges à deux pas de la friterie. Pour une escapade gourmande dans le Pilat.",
+  },
 };
 
 const rooms = [

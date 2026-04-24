@@ -4,9 +4,17 @@ import Image from "next/image";
 import CtaButton from "../components/cta-button";
 
 export const metadata: Metadata = {
-  title: "La carte · Frietkot Bourg-Argental",
+  title: "La carte — Frietkot Bourg-Argental",
   description:
-    "Découvrez la carte Frietkot : frites belges, plats du jour, salades, desserts et bières belges.",
+    "Découvrez notre carte : frites belges, plats du jour (carbonade flamande, vol-au-vent, boulets liégeois), sauces maison, gaufres et bières belges.",
+  openGraph: {
+    title: "La carte — Frietkot",
+    description:
+      "Frites belges, plats du jour faits maison, sauces, gaufres et bières belges à Bourg-Argental.",
+    images: [
+      "/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp",
+    ],
+  },
 };
 
 function EditorialBlock({

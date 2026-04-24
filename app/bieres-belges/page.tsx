@@ -3,9 +3,17 @@ import Image from "next/image";
 import SectionHeading from "../components/section-heading";
 
 export const metadata: Metadata = {
-  title: "Bières belges · Frietkot Bourg-Argental",
+  title: "Bières belges — Frietkot Bourg-Argental",
   description:
-    "Sélection de bières belges chez Frietkot : Chimay, Herberg, Paljas et Duvel.",
+    "Chimay Bleue, Chimay Rouge, Herberg Brune, Paljas Blonde, Duvel. Notre sélection de bières belges, pour accompagner frites et plats du jour.",
+  openGraph: {
+    title: "Bières belges — Frietkot",
+    description:
+      "Sélection de bières trappistes et d'abbaye belges à Bourg-Argental.",
+    images: [
+      "/images/promotional/frietkot-bieres-belges-chimay-duvel-paljas-bourg-argental.webp",
+    ],
+  },
 };
 
 const beers = [

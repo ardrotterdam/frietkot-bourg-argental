@@ -8,9 +8,13 @@ const APPLE = `https://maps.apple.com/?q=${encodeURIComponent("7 place d'Armevil
 const WAZE = `https://waze.com/ul?q=${encodeURIComponent("7 place d'Armeville, Bourg-Argental")}`;
 
 export const metadata: Metadata = {
-  title: "Contact · Frietkot Bourg-Argental",
+  title: "Contact — Frietkot Bourg-Argental",
   description:
-    "Contactez Frietkot à Bourg-Argental : téléphone, adresse, formulaire de contact et accès.",
+    "7 place d'Armeville, 42220 Bourg-Argental. Tel: 07 84 42 81 06. Frietkot, friterie belge authentique depuis 1990.",
+  openGraph: {
+    title: "Contact — Frietkot",
+    description: "Trouvez Frietkot au 7 place d'Armeville à Bourg-Argental.",
+  },
 };
 
 export default function ContactPage() {
