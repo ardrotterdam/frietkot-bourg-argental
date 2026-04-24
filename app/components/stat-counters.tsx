@@ -2,17 +2,12 @@
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type Stat = { key: string; end: number; label: string; format: "plain" | "plus" | "percent" };
-
-const STATS: Stat[] = [
-  { key: "a", end: 308, label: "avis Google · 4,5★", format: "plain" },
-  { key: "b", end: 35, label: "ans de métier", format: "plus" },
-  { key: "c", end: 100, label: "fait maison", format: "percent" },
-];
 
 function formatVal(v: number, f: Stat["format"]): string {
   if (f === "plus") {
@@ -67,9 +62,15 @@ function StatItem({ s }: { s: Stat }) {
 }
 
 export default function StatCounters() {
+  const t = useTranslations("stats");
+  const stats: Stat[] = [
+    { key: "a", end: 308, label: t("google"), format: "plain" },
+    { key: "b", end: 35, label: t("years"), format: "plus" },
+    { key: "c", end: 100, label: t("homemade"), format: "percent" },
+  ];
   return (
     <ul className="space-y-6">
-      {STATS.map((s) => (
+      {stats.map((s) => (
         <StatItem key={s.key} s={s} />
       ))}
     </ul>

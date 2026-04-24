@@ -1,17 +1,19 @@
 "use client";
 
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useRef } from "react";
 
-const links = [
-  { href: "/", label: "Accueil" },
-  { href: "/la-carte", label: "La carte" },
-  { href: "/auberge", label: "L'auberge" },
-  { href: "/bieres-belges", label: "Bières belges" },
-  { href: "/contact", label: "Contact" },
-];
+const HREFS = ["/", "/la-carte", "/auberge", "/bieres-belges", "/contact"] as const;
+const NAV_KEY = [
+  "accueil",
+  "laCarte",
+  "auberge",
+  "bieresBelges",
+  "contact",
+] as const;
 
 function playMiseEnBouteille() {
   const Ctx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
@@ -40,6 +42,8 @@ function playMiseEnBouteille() {
 
 export default function SiteNavbar() {
   const pathname = usePathname();
+  const tNav = useTranslations("nav");
+  const tBrand = useTranslations("branding");
   const taps = useRef(0);
   const reset = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -68,11 +72,11 @@ export default function SiteNavbar() {
           href="/"
           className="flex items-center"
           onClick={onLogo}
-          aria-label="Frietkot, accueil (triple press pour un easter egg)"
+          aria-label={tBrand("logoAria")}
         >
           <Image
             src="/images/hero/frietkot-logo-belgian-fries.webp"
-            alt="Logo Frietkot Bourg-Argental"
+            alt={tBrand("logoAlt")}
             width={180}
             height={72}
             className="h-14 w-auto object-contain md:h-16"
@@ -80,24 +84,27 @@ export default function SiteNavbar() {
           />
         </Link>
 
-        <div className="flex max-w-[55%] flex-wrap items-center justify-end gap-x-4 gap-y-1 text-sm text-white md:max-w-none md:gap-8">
-          {links.map((link) => {
+        <div className="flex max-w-[60%] flex-wrap items-center justify-end gap-x-4 gap-y-1 text-sm text-white md:max-w-none md:gap-6">
+          {HREFS.map((href, i) => {
             const isActive =
-              pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+              pathname === href ||
+              (href === "/" && (pathname === "" || pathname === "/")) ||
+              (href !== "/" && pathname.startsWith(href));
 
             return (
               <Link
-                key={link.href}
-                href={link.href}
+                key={href}
+                href={href}
                 className={`transition-colors duration-300 hover:text-[#FFD700] ${
                   isActive ? "text-[#FFD700]" : "text-[#f5efe3]"
                 }`}
                 data-cursor="menu"
               >
-                {link.label}
+                {tNav(NAV_KEY[i])}
               </Link>
             );
           })}
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>

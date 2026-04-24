@@ -1,21 +1,38 @@
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
-import CtaButton from "../components/cta-button";
+import CtaButton from "../../components/cta-button";
 
-export const metadata: Metadata = {
-  title: "La carte — Frietkot Bourg-Argental",
-  description:
-    "Découvrez notre carte : frites belges, plats du jour (carbonade flamande, vol-au-vent, boulets liégeois), sauces maison, gaufres et bières belges.",
-  openGraph: {
-    title: "La carte — Frietkot",
-    description:
-      "Frites belges, plats du jour faits maison, sauces, gaufres et bières belges à Bourg-Argental.",
-    images: [
-      "/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp",
-    ],
-  },
-};
+const BASE_URL = "https://frietkot-bourg-argental.vercel.app";
+
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "laCarte" });
+  return {
+    title: t("pageTitle"),
+    description: t("pageDescription"),
+    alternates: {
+      canonical: `/${locale}/la-carte`,
+      languages: {
+        fr: `${BASE_URL}/fr/la-carte`,
+        en: `${BASE_URL}/en/la-carte`,
+        "x-default": `${BASE_URL}/fr/la-carte`,
+      },
+    },
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDescription"),
+      images: [
+        "/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp",
+      ],
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+      alternateLocale: locale === "fr" ? "en_US" : "fr_FR",
+    },
+  };
+}
 
 function EditorialBlock({
   eyebrow,
@@ -43,7 +60,6 @@ function EditorialBlock({
   );
 }
 
-/** Promotional assets are full posters: always show full frame, no crop. */
 function SplitPosterImage({
   src,
   alt,
@@ -67,22 +83,26 @@ function SplitPosterImage({
   );
 }
 
-export default function LaCartePage() {
+export default async function LaCartePage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("laCarte");
+  const p = t("prixPlaceholder");
+
   return (
     <main className="min-h-screen bg-[#050505] pb-20 text-white">
-      {/* Hero — Plats du jour poster */}
       <section className="bg-[#0A0A0A] pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-8 text-center md:mb-12">
             <p className="text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
-              La carte · Frietkot Bourg-Argental
+              {t("eyebrow")}
             </p>
           </div>
 
           <div className="relative mx-auto w-full overflow-hidden rounded-sm shadow-2xl">
             <Image
               src="/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp"
-              alt="Plats du jour chez Frietkot à Bourg-Argental — carbonade flamande à la bière brune, vol-au-vent maison aux champignons, et boulets sauce liégeoise, tous faits maison chaque jour"
+              alt={t("heroImgAlt")}
               width={2000}
               height={1500}
               className="h-auto w-full object-contain"
@@ -93,8 +113,7 @@ export default function LaCartePage() {
 
           <div className="mx-auto mt-10 max-w-xl text-center md:mt-14">
             <p className="text-base leading-relaxed text-[#F5EFE3]/70 md:text-lg">
-              Trois classiques belges, préparés chaque matin selon ce que le marché
-              propose. Toujours accompagnés de frites fraîches, coupées sur place.
+              {t("intro")}
             </p>
           </div>
         </div>
@@ -108,17 +127,15 @@ export default function LaCartePage() {
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
             <SplitPosterImage
               src="/images/promotional/frietkot-carbonade-flamande-biere-brune-bourg-argental.webp"
-              alt="Carbonade flamande à la bière brune, mijotée lentement, servie chez Frietkot à Bourg-Argental avec frites belges croustillantes"
+              alt={t("carbonadeImgAlt")}
               sizes="(max-width: 1023px) 100vw, 50vw"
             />
             <EditorialBlock
-              eyebrow="PLAT DU JOUR · SPÉCIALITÉ BELGE"
-              headline="Un bœuf mijoté quatre heures."
-              price="[prix]"
+              eyebrow={t("carbonadeEyebrow")}
+              headline={t("carbonadeHeadline")}
+              price={p}
             >
-              Mijotage à la bière brune belge, oignons confits, pain d&apos;épices,
-              moutarde en filigrane. Cuisson lente, assiette généreuse, frites
-              maison en accompagnement.
+              {t("carbonadeBody")}
             </EditorialBlock>
           </div>
         </section>
@@ -130,19 +147,17 @@ export default function LaCartePage() {
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
               <EditorialBlock
-                eyebrow="PLAT DU JOUR · FAIT MAISON"
-                headline="Sauce crème, champignons, volaille tendre."
-                price="[prix]"
+                eyebrow={t("volEyebrow")}
+                headline={t("volHeadline")}
+                price={p}
               >
-                Pâte feuilletée dorée, crème serrée, champignons de saison et poulet
-                fermier. Un classique servi chaud — les frites belges complètent
-                l&apos;assiette.
+                {t("volBody")}
               </EditorialBlock>
             </div>
             <div className="order-1 lg:order-2">
               <SplitPosterImage
                 src="/images/promotional/frietkot-vol-au-vent-bourg-argental.webp"
-                alt="Vol-au-vent maison servi chez Frietkot à Bourg-Argental — pâte feuilletée, sauce crème et champignons, présentation généreuse"
+                alt={t("volImgAlt")}
                 sizes="(max-width: 1023px) 100vw, 50vw"
               />
             </div>
@@ -151,26 +166,20 @@ export default function LaCartePage() {
 
         <section
           className="border-t border-[#D4A853]/10 py-24 md:py-32"
-          aria-label="Boulets sauce liégeoise"
+          aria-label="Boulets"
         >
-          {/*
-            TODO: visuel dédié boulets — pour l’instant réemploi du poster plats du jour
-            (même règle : poster entier, pas de rognage).
-          */}
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
             <SplitPosterImage
               src="/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp"
-              alt="Assiette de boulets sauce liégeoise parmi les plats du jour chez Frietkot à Bourg-Argental — accompagnement de frites belges"
+              alt={t("bouletsImgAlt")}
               sizes="(max-width: 1023px) 100vw, 50vw"
             />
             <EditorialBlock
-              eyebrow="PLAT DU JOUR · RECETTE LIÉGEOISE"
-              headline="Généreux, sucré-salé, du nord au cornet."
-              price="[prix]"
+              eyebrow={t("bouletsEyebrow")}
+              headline={t("bouletsHeadline")}
+              price={p}
             >
-              Boulettes de bœuf façonnées sur place, sauce aux oignons longuement
-              fondue, rappel de sirop de Liège. Un plat de brasserie à partager
-              avec frites trappiste à portée.
+              {t("bouletsBody")}
             </EditorialBlock>
           </div>
         </section>
@@ -182,21 +191,19 @@ export default function LaCartePage() {
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
             <SplitPosterImage
               src="/images/promotional/frietkot-sauces-maison-bourg-argental.webp"
-              alt="Bar à sauces maison chez Frietkot à Bourg-Argental — bols colorés, textures crémeuses, présentation soignée sur le comptoir"
+              alt={t("saucesImgAlt")}
               sizes="(max-width: 1023px) 100vw, 55vw"
             />
             <div className="flex max-w-lg flex-col justify-center px-6 py-10 md:px-12 lg:px-20">
-              <p className="section-eyebrow">LES SAUCES</p>
+              <p className="section-eyebrow">{t("saucesEyebrow")}</p>
               <h2
                 className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
                 style={{ fontFeatureSettings: '"opsz" 72' }}
               >
-                Préparées le matin, servies à l&apos;instant.
+                {t("saucesTitle")}
               </h2>
               <p className="mt-5 max-w-lg text-base leading-[1.75] text-[#c8c1b5]">
-                Textures, équilibre, petites chaleurs — le détail compte quand on
-                trempe. Pas de raccourci : tout est prêt pour accompagner le cornet
-                du jour.
+                {t("saucesBody")}
               </p>
             </div>
           </div>
@@ -209,20 +216,19 @@ export default function LaCartePage() {
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
             <SplitPosterImage
               src="/images/promotional/frietkot-gaufres-bruxelles-bourg-argental.webp"
-              alt="Gaufres de Bruxelles caramélisées et douceurs belges proposées chez Frietkot à Bourg-Argental — sucre perlé, texture gourmande"
+              alt={t("dessertsImgAlt")}
               sizes="(max-width: 1023px) 100vw, 50vw"
             />
             <div className="flex max-w-lg flex-col justify-center px-6 py-12 md:px-12 lg:px-20">
-              <p className="section-eyebrow">LES DESSERTS</p>
+              <p className="section-eyebrow">{t("dessertsEyebrow")}</p>
               <h2
                 className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
                 style={{ fontFeatureSettings: '"opsz" 72' }}
               >
-                Après l&apos;assiette salée, le geste sucré.
+                {t("dessertsTitle")}
               </h2>
               <p className="mt-5 text-base leading-[1.75] text-[#c8c1b5]">
-                Caramel, froid artisanal, crèmes caramélisées — on termine le repas
-                comme on l&apos;a commencé : simplement, sans chichis.
+                {t("dessertsBody")}
               </p>
             </div>
           </div>
@@ -232,117 +238,125 @@ export default function LaCartePage() {
       <div className="px-6 md:px-10">
         <div className="mx-auto w-full max-w-7xl py-20 md:py-24">
           <h2 className="text-center font-[var(--font-fraunces)] text-2xl text-[#f5efe3] [font-style:italic]">
-            Carte & tarifs
+            {t("pricingTitle")}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-[#c8c1b5]">
-            Aperçu des prix — les plats du jour et suggestions sont affichés
-            chaque matin au comptoir.
+            {t("pricingSubtitle")}
           </p>
         </div>
 
         <div className="mx-auto grid w-full max-w-7xl gap-6 md:grid-cols-2">
           <article className="premium-card rounded-3xl p-7">
             <h3 className="font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">
-              Les frites
+              {t("fritesTitle")}
             </h3>
             <ul className="mt-5 space-y-3 text-[#f5efe3]">
               <li className="flex items-center justify-between border-b border-white/10 pb-2">
-                <span>Cornet classique</span>
-                <span className="text-[#D4A853]">4,50 €</span>
+                <span>{t("cornet")}</span>
+                <span className="text-[#D4A853]">
+                  4,50 {t("euro")}
+                </span>
               </li>
               <li className="flex items-center justify-between border-b border-white/10 pb-2">
-                <span>Grand cornet</span>
-                <span className="text-[#D4A853]">6,00 €</span>
+                <span>{t("grandCornet")}</span>
+                <span className="text-[#D4A853]">
+                  6,00 {t("euro")}
+                </span>
               </li>
               <li className="flex items-center justify-between pb-1">
-                <span>Supplément sauce</span>
-                <span className="text-[#D4A853]">0,80 €</span>
+                <span>{t("suppSauce")}</span>
+                <span className="text-[#D4A853]">
+                  0,80 {t("euro")}
+                </span>
               </li>
             </ul>
           </article>
 
           <article className="premium-card rounded-3xl p-7">
             <h3 className="font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">
-              Les sauces
+              {t("saucesListTitle")}
             </h3>
-            <p className="mt-5 text-[#c8c1b5]">
-              Mayonnaise maison, andalouse, samouraï, ail, moutarde, ketchup,
-              tartare.
-            </p>
+            <p className="mt-5 text-[#c8c1b5]">{t("saucesListBody")}</p>
           </article>
 
           <article className="premium-card rounded-3xl p-7">
             <h3 className="font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">
-              Les plats du jour
+              {t("platsTitle")}
             </h3>
             <ul className="mt-5 space-y-3 text-[#f5efe3]">
               <li className="flex items-center justify-between border-b border-white/10 pb-2">
-                <span>Carbonade flamande</span>
-                <span className="text-[#D4A853]">[prix]</span>
+                <span>{t("labelCarbonade")}</span>
+                <span className="text-[#D4A853]">{p}</span>
               </li>
               <li className="flex items-center justify-between border-b border-white/10 pb-2">
-                <span>Vol-au-vent maison</span>
-                <span className="text-[#D4A853]">[prix]</span>
+                <span>{t("labelVol")}</span>
+                <span className="text-[#D4A853]">{p}</span>
               </li>
               <li className="flex items-center justify-between pb-1">
-                <span>Boulets sauce liégeoise</span>
-                <span className="text-[#D4A853]">[prix]</span>
+                <span>{t("labelBoulets")}</span>
+                <span className="text-[#D4A853]">{p}</span>
               </li>
             </ul>
           </article>
 
           <article className="premium-card rounded-3xl p-7">
             <h3 className="font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">
-              Les salades
+              {t("saladesTitle")}
             </h3>
             <ul className="mt-5 space-y-3 text-[#f5efe3]">
               <li className="flex items-center justify-between border-b border-white/10 pb-2">
-                <span>Salade au poulet</span>
-                <span className="text-[#D4A853]">[prix]</span>
+                <span>{t("labelSalPoulet")}</span>
+                <span className="text-[#D4A853]">{p}</span>
               </li>
               <li className="flex items-center justify-between border-b border-white/10 pb-2">
-                <span>Salade au thon</span>
-                <span className="text-[#D4A853]">[prix]</span>
+                <span>{t("labelSalThon")}</span>
+                <span className="text-[#D4A853]">{p}</span>
               </li>
               <li className="flex items-center justify-between pb-1">
-                <span>Salade au saumon</span>
-                <span className="text-[#D4A853]">[prix]</span>
+                <span>{t("labelSalSaumon")}</span>
+                <span className="text-[#D4A853]">{p}</span>
               </li>
             </ul>
           </article>
 
           <article className="premium-card rounded-3xl p-7">
             <h3 className="font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">
-              Les desserts
-            </h3>
-            <ul className="mt-5 space-y-3 text-[#f5efe3]">
-              <li className="border-b border-white/10 pb-2">Gaufre de Liège</li>
-              <li className="border-b border-white/10 pb-2">Crème brûlée</li>
-              <li>Glaces artisanales</li>
-            </ul>
-          </article>
-
-          <article className="premium-card rounded-3xl p-7">
-            <h3 className="font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">
-              Les bières belges
+              {t("dessertsListTitle")}
             </h3>
             <ul className="mt-5 space-y-3 text-[#f5efe3]">
               <li className="border-b border-white/10 pb-2">
-                Chimay Bleue · Chimay Rouge
+                {t("dessertGaufre")}
               </li>
-              <li className="border-b border-white/10 pb-2">Herberg Brune</li>
-              <li className="border-b border-white/10 pb-2">Paljas Blonde</li>
-              <li>Duvel (+ sélection saisonnière)</li>
+              <li className="border-b border-white/10 pb-2">
+                {t("dessertCreme")}
+              </li>
+              <li>{t("dessertGlace")}</li>
+            </ul>
+          </article>
+
+          <article className="premium-card rounded-3xl p-7">
+            <h3 className="font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">
+              {t("biereListTitle")}
+            </h3>
+            <ul className="mt-5 space-y-3 text-[#f5efe3]">
+              <li className="border-b border-white/10 pb-2">
+                {t("labelChimay")}
+              </li>
+              <li className="border-b border-white/10 pb-2">
+                {t("labelHerberg")}
+              </li>
+              <li className="border-b border-white/10 pb-2">
+                {t("labelPaljas")}
+              </li>
+              <li>{t("biereSaison")}</li>
             </ul>
           </article>
         </div>
 
         <section className="mx-auto mt-14 w-full max-w-7xl rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-black/40 p-10 text-center shadow-[0_28px_75px_rgba(0,0,0,0.5)] backdrop-blur-xl">
-          <p className="text-[#c8c1b5]">
-            Une question sur un plat ? Appelez-nous directement.
-          </p>
+          <p className="text-[#c8c1b5]">{t("callout")}</p>
           <div className="mt-6">
-            <CtaButton href="tel:+33784428106">Nous appeler</CtaButton>
+            <CtaButton href="tel:+33784428106">{t("callCta")}</CtaButton>
           </div>
         </section>
       </div>

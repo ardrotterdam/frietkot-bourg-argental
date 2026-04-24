@@ -2,7 +2,8 @@
 
 import gsap from "gsap";
 import SplitType from "split-type";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { useEffect, useLayoutEffect, useRef, useSyncExternalStore } from "react";
 import type { MouseEvent } from "react";
 
@@ -24,6 +25,7 @@ function usePrefersReducedMotion() {
 const POSTER = "/images/hero/hero-hands-poster.webp";
 
 export default function HeroCraft() {
+  const t = useTranslations("hero");
   const reduced = usePrefersReducedMotion();
   const sectionRef = useRef<HTMLElement | null>(null);
   const posterRef = useRef<HTMLDivElement | null>(null);
@@ -215,7 +217,7 @@ export default function HeroCraft() {
     <section
       ref={sectionRef}
       className="relative min-h-screen bg-[#0A0A0A] text-[#F5EFE3]"
-      aria-label="Friterie"
+      aria-label={t("sectionAria")}
     >
       <div className="grid min-h-screen grid-cols-1 grid-rows-[auto_1fr] gap-0 lg:grid-cols-2 lg:grid-rows-1">
         <div className="order-2 flex min-h-0 flex-col justify-center px-[clamp(3rem,6vw,6rem)] py-12 lg:order-1 lg:min-h-screen lg:py-0">
@@ -223,7 +225,7 @@ export default function HeroCraft() {
             ref={eyebrowRef}
             className="font-[family-name:var(--font-inter)] text-[11px] font-medium uppercase leading-normal tracking-[0.18em] text-[#D4A853] opacity-0"
           >
-            Depuis 1990 · friterie belge · Bourg-Argental
+            {t("eyebrow")}
           </p>
           <div className="mt-1 overflow-hidden">
             <h1
@@ -231,32 +233,31 @@ export default function HeroCraft() {
               className="font-[var(--font-fraunces)] text-[length:clamp(3rem,6vw,5.5rem)] font-normal leading-[1] tracking-[-0.02em] text-[#F5EFE3] [font-style:italic] opacity-0"
               style={{ fontFeatureSettings: '"opsz" 72' }}
             >
-              Le geste,
+              {t("title1")}
               <br />
-              d&apos;abord.
+              {t("title2")}
             </h1>
           </div>
           <p
             ref={subtitleRef}
             className="mt-6 max-w-[460px] text-[17px] font-normal leading-[1.7] text-[rgba(245,239,227,0.8)] opacity-0"
           >
-            Pommes de terre épluchées à la main, coupées sur place, cuites deux
-            fois — comme il se doit. Depuis trente-cinq ans.
+            {t("subtitle")}
           </p>
           <div
             ref={statRef}
             className="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-2 text-[11px] font-medium uppercase tracking-[0.15em] text-[#D4A853] lg:gap-6"
-            aria-label="Reconnaissance"
+            aria-label={t("statsAria")}
           >
-            <span>35 ans</span>
+            <span>{t("statYears")}</span>
             <span className="text-[#D4A853]/50" aria-hidden>
               ·
             </span>
-            <span>308 avis</span>
+            <span>{t("statReviews")}</span>
             <span className="text-[#D4A853]/50" aria-hidden>
               ·
             </span>
-            <span>4,5★</span>
+            <span>{t("statRating")}</span>
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
@@ -267,7 +268,7 @@ export default function HeroCraft() {
               onMouseLeave={cta1MagLeave}
               data-cursor="cta"
             >
-              Découvrir la carte →
+              {t("ctaPrimary")}
             </Link>
             <Link
               ref={cta2Ref}
@@ -275,7 +276,7 @@ export default function HeroCraft() {
               className="hero-craft-cta-ghost text-[#F5EFE3] opacity-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4A853]"
               data-cursor="cta"
             >
-              Réserver une chambre
+              {t("ctaSecondary")}
             </Link>
           </div>
           <div
@@ -283,7 +284,7 @@ export default function HeroCraft() {
             className="mt-14 flex flex-col items-start gap-2 text-left text-[10px] uppercase tracking-[0.3em] text-[#D4A853]/80 max-lg:items-center max-lg:self-center opacity-0"
             aria-hidden
           >
-            <span>Défilez</span>
+            <span>{t("scroll")}</span>
             <span
               className={
                 reduced
@@ -312,7 +313,7 @@ export default function HeroCraft() {
               preload="metadata"
               poster={POSTER}
               autoPlay={!reduced}
-              aria-label="Artisanale bereiding van Belgische frites bij Frietkot"
+              aria-label={t("videoAria")}
             >
               <source src="/videos/hero-hands.webm" type="video/webm" />
               <source src="/videos/hero-hands.mp4" type="video/mp4" />
