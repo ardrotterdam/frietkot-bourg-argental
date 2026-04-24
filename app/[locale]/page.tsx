@@ -223,7 +223,7 @@ export default async function HomePage({ params }: Props) {
 
           <FrietkotWarpSection />
 
-          <section data-night-section className="px-6 py-14 md:px-10 md:py-16">
+          <section data-night-section className="px-6 py-8 md:px-10 md:py-12 lg:py-16">
             <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
               <article className="premium-card rounded-3xl p-8 md:p-12">
                 <SectionHeading
@@ -241,12 +241,12 @@ export default async function HomePage({ params }: Props) {
                 <StatCounters key={locale} />
               </aside>
             </div>
-            <div className="mx-auto mt-6 grid w-full max-w-7xl gap-6">
-              <div className="relative min-h-[220px] sm:min-h-[280px] md:min-h-[300px]">
+            <div className="mx-auto mt-6 hidden w-full max-w-7xl gap-6 md:grid">
+              <div className="relative md:min-h-[300px]">
                 <RevealImage
                   src="/images/promotional/frietkot-sauces-maison-bourg-argental.webp"
                   alt={t("saucesImgAlt")}
-                  className="relative min-h-[220px] w-full overflow-hidden rounded-3xl bg-[#0A0A0A] sm:min-h-[280px] md:min-h-[300px]"
+                  className="relative w-full overflow-hidden rounded-3xl bg-[#0A0A0A] md:min-h-[300px]"
                   imageClassName="object-contain object-center"
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
@@ -255,7 +255,7 @@ export default async function HomePage({ params }: Props) {
             </div>
           </section>
 
-          <section data-night-section className="px-6 py-14 md:px-10 md:py-16">
+          <section data-night-section className="px-6 pb-10 pt-6 md:px-10 md:py-12 lg:py-16">
             <div className="mx-auto w-full max-w-7xl">
               <SectionHeading
                 eyebrow={t("carrouselEyebrow")}
