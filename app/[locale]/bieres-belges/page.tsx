@@ -66,7 +66,7 @@ function BeerSection({
   t: BieresTranslate;
 }) {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
+    <section className="mx-auto max-w-6xl px-6 py-12 md:py-14">
       <h3 className="mb-10 text-center text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
         {title}
       </h3>
@@ -153,7 +153,7 @@ export default async function BieresBelgesPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
+      <section className="mx-auto max-w-3xl px-6 py-14 text-center md:py-20">
         <p className="mb-6 text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
           {t("eyebrow")}
         </p>

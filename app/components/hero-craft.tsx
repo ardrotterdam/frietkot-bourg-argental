@@ -216,11 +216,11 @@ export default function HeroCraft() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen bg-[#0A0A0A] text-[#F5EFE3]"
+      className="relative min-h-0 bg-[#0A0A0A] text-[#F5EFE3] lg:min-h-screen"
       aria-label={t("sectionAria")}
     >
-      <div className="grid min-h-screen grid-cols-1 grid-rows-[auto_1fr] gap-0 lg:grid-cols-2 lg:grid-rows-1">
-        <div className="order-2 flex min-h-0 flex-col justify-center px-[clamp(3rem,6vw,6rem)] py-12 lg:order-1 lg:min-h-screen lg:py-0">
+      <div className="grid min-h-0 grid-cols-1 grid-rows-[auto_auto] gap-0 lg:min-h-screen lg:grid-cols-2 lg:grid-rows-1">
+        <div className="order-2 flex min-h-0 flex-col justify-center px-[clamp(3rem,6vw,6rem)] py-10 max-lg:pb-12 lg:order-1 lg:min-h-screen lg:py-0">
           <p
             ref={eyebrowRef}
             className="font-[family-name:var(--font-inter)] text-[11px] font-medium uppercase leading-normal tracking-[0.18em] text-[#D4A853] opacity-0"

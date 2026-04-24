@@ -45,7 +45,7 @@ export default async function AubergePage({ params }: Props) {
 
   return (
     <main className="bg-[#0A0A0A] text-[#F5EFE3]">
-      <section className="mx-auto max-w-4xl px-6 pb-16 pt-28 text-center md:pb-24 md:pt-36">
+      <section className="mx-auto max-w-4xl px-6 pb-12 pt-24 text-center md:pb-20 md:pt-32">
         <p className="mb-8 text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
           {t("heroEyebrow")}
         </p>
@@ -72,7 +72,7 @@ export default async function AubergePage({ params }: Props) {
       </section>
 
       <section className="border-y border-[#D4A853]/20 bg-[#08080A]">
-        <div className="mx-auto grid max-w-5xl grid-cols-3 gap-4 px-6 py-10 text-center">
+        <div className="mx-auto grid max-w-5xl grid-cols-3 gap-4 px-6 py-8 text-center md:py-10">
           <div>
             <p className="font-[var(--font-fraunces)] text-3xl italic text-[#D4A853] md:text-4xl">
               3
@@ -120,9 +120,9 @@ export default async function AubergePage({ params }: Props) {
               }}
               aria-hidden
             />
-            <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-32">
+            <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
               <div
-                className={`grid items-center gap-12 lg:gap-20 ${
+                className={`grid items-center gap-10 md:gap-12 lg:gap-16 ${
                   reverse
                     ? "lg:grid-cols-[1fr_1.1fr]"
                     : "lg:grid-cols-[1.1fr_1fr]"
@@ -230,7 +230,7 @@ export default async function AubergePage({ params }: Props) {
         );
       })}
 
-      <section className="bg-gradient-to-b from-[#0A0A0A] to-[#08080A] py-24 md:py-32">
+      <section className="bg-gradient-to-b from-[#0A0A0A] to-[#08080A] py-20 md:py-24">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
             {t("ctaEyebrow")}

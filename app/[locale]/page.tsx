@@ -54,8 +54,8 @@ export default async function HomePage({ params }: Props) {
           className="bg-[#0A0A0A] text-[#F5EFE3]"
           aria-label={t("pascalSectionAria")}
         >
-          <div className="grid min-h-0 grid-cols-1 items-stretch lg:min-h-[min(100vh,900px)] lg:grid-cols-2">
-            <div className="flex min-h-[min(50vh,520px)] items-center justify-center p-6 md:p-10 lg:min-h-0">
+          <div className="grid min-h-0 grid-cols-1 items-stretch lg:grid-cols-2">
+            <div className="flex items-center justify-center p-6 md:p-10">
               <Image
                 src="/images/promotional/frietkot-pascal-proprietaire-bourg-argental.webp"
                 alt={t("pascalImgAlt")}
@@ -88,7 +88,7 @@ export default async function HomePage({ params }: Props) {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#0A0A0A] py-24 md:py-36">
+        <section className="relative overflow-hidden bg-[#0A0A0A] py-16 md:py-24">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.03]"
             style={{
@@ -98,7 +98,7 @@ export default async function HomePage({ params }: Props) {
             aria-hidden
           />
           <div className="relative mx-auto max-w-6xl px-6">
-            <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
+            <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
               <div>
                 <p className="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
                   {tg("teaserEyebrow")}
@@ -196,7 +196,7 @@ export default async function HomePage({ params }: Props) {
         <div className="bg-[#050505]">
           <section
             data-night-section
-            className="relative border-t border-[#D4A853]/15 px-6 py-20 md:px-10"
+            className="relative border-t border-[#D4A853]/15 px-6 py-14 md:px-10 md:py-16"
           >
             <div className="mx-auto w-full max-w-7xl">
               <p className="section-eyebrow">{t("belgiumEyebrow")}</p>
@@ -223,7 +223,7 @@ export default async function HomePage({ params }: Props) {
 
           <FrietkotWarpSection />
 
-          <section data-night-section className="px-6 py-20 md:px-10">
+          <section data-night-section className="px-6 py-14 md:px-10 md:py-16">
             <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
               <article className="premium-card rounded-3xl p-8 md:p-12">
                 <SectionHeading
@@ -241,12 +241,12 @@ export default async function HomePage({ params }: Props) {
                 <StatCounters key={locale} />
               </aside>
             </div>
-            <div className="mx-auto mt-8 grid w-full max-w-7xl gap-6 md:grid-cols-2">
-              <div className="relative min-h-[320px]">
+            <div className="mx-auto mt-6 grid w-full max-w-7xl gap-6">
+              <div className="relative min-h-[220px] sm:min-h-[280px] md:min-h-[300px]">
                 <RevealImage
                   src="/images/promotional/frietkot-sauces-maison-bourg-argental.webp"
                   alt={t("saucesImgAlt")}
-                  className="relative min-h-[320px] w-full overflow-hidden rounded-3xl bg-[#0A0A0A]"
+                  className="relative min-h-[220px] w-full overflow-hidden rounded-3xl bg-[#0A0A0A] sm:min-h-[280px] md:min-h-[300px]"
                   imageClassName="object-contain object-center"
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
@@ -255,14 +255,14 @@ export default async function HomePage({ params }: Props) {
             </div>
           </section>
 
-          <section data-night-section className="px-6 py-20 md:px-10">
+          <section data-night-section className="px-6 py-14 md:px-10 md:py-16">
             <div className="mx-auto w-full max-w-7xl">
               <SectionHeading
                 eyebrow={t("carrouselEyebrow")}
                 title={t("carrouselTitle")}
                 description={t("carrouselDesc")}
               />
-              <div className="mt-12 grid gap-6 lg:grid-cols-3">
+              <div className="mt-8 grid gap-6 md:mt-10 lg:grid-cols-3">
                 {[
                   { t: t("car1Title"), d: t("car1Body") },
                   { t: t("car2Title"), d: t("car2Body") },
@@ -286,7 +286,7 @@ export default async function HomePage({ params }: Props) {
             </div>
           </section>
 
-          <section data-night-section className="px-6 py-20 md:px-10">
+          <section data-night-section className="px-6 py-14 md:px-10 md:py-16">
             <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[1fr_1.1fr]">
               <article className="premium-card rounded-3xl p-8 md:p-12">
                 <SectionHeading
@@ -302,12 +302,12 @@ export default async function HomePage({ params }: Props) {
                   </CtaButton>
                 </div>
               </article>
-              <div className="relative min-h-[360px]">
+              <div className="relative min-h-[240px] sm:min-h-[300px] md:min-h-[340px]">
                 <div data-cursor-beer>
                   <RevealImage
                     src="/images/promotional/frietkot-bieres-belges-chimay-duvel-paljas-bourg-argental.webp"
                     alt={t("biereImgAlt")}
-                    className="h-full min-h-[360px] w-full"
+                    className="h-full min-h-[240px] w-full sm:min-h-[300px] md:min-h-[340px]"
                     imageClassName="object-contain object-center bg-[#0A0A0A]"
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
@@ -319,7 +319,7 @@ export default async function HomePage({ params }: Props) {
 
           <section
             data-night-section
-            className="px-6 py-20 md:px-10"
+            className="px-6 py-14 md:px-10 md:py-16"
             data-cursor-room
           >
             <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[1.05fr_0.95fr]">
@@ -334,11 +334,11 @@ export default async function HomePage({ params }: Props) {
                   <CtaButton href="/auberge">{t("innCta")}</CtaButton>
                 </div>
               </article>
-              <div className="relative min-h-[360px]" data-cursor-room>
+              <div className="relative min-h-[240px] sm:min-h-[300px] md:min-h-[340px]" data-cursor-room>
                 <RevealImage
                   src="/images/rooms/chambre-duvel-auberge-frietkot.webp"
                   alt={t("innImgAlt")}
-                  className="h-full min-h-[360px] w-full"
+                  className="h-full min-h-[240px] w-full sm:min-h-[300px] md:min-h-[340px]"
                   imageClassName="object-cover"
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
@@ -349,7 +349,7 @@ export default async function HomePage({ params }: Props) {
 
           <section
             data-night-section
-            className="px-6 pb-24 pt-6 md:px-10"
+            className="px-6 pb-16 pt-4 md:px-10 md:pb-20"
           >
             <div className="mx-auto w-full max-w-7xl rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-black/40 p-10 shadow-[0_28px_75px_rgba(0,0,0,0.5)] backdrop-blur-xl md:p-14">
               <SectionHeading

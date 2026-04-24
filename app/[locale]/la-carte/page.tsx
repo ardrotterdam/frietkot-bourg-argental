@@ -76,7 +76,7 @@ function SplitPosterImage({
   sizes: string;
 }) {
   return (
-    <div className="flex min-h-[min(50vh,480px)] items-center justify-center bg-[#0A0A0A] px-4 py-8 md:px-6 lg:min-h-[420px] lg:py-10">
+    <div className="flex min-h-[200px] items-center justify-center bg-[#0A0A0A] px-4 py-6 sm:min-h-[min(36vh,400px)] md:px-6 md:py-8 lg:min-h-[400px] lg:py-10">
       <Image
         src={src}
         alt={alt}
@@ -98,7 +98,7 @@ export default async function LaCartePage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-[#050505] pb-20 text-white">
-      <section className="bg-[#0A0A0A] pt-24 pb-16 md:pt-32 md:pb-24">
+      <section className="bg-[#0A0A0A] pb-12 pt-20 md:pb-20 md:pt-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-8 text-center md:mb-12">
             <p className="text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
@@ -128,7 +128,7 @@ export default async function LaCartePage({ params }: Props) {
 
       <div className="px-0">
         <section
-          className="border-t border-[#D4A853]/10 py-24 md:py-32"
+          className="border-t border-[#D4A853]/10 py-16 md:py-20 lg:py-24"
           aria-label="Carbonade"
         >
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
@@ -148,7 +148,7 @@ export default async function LaCartePage({ params }: Props) {
         </section>
 
         <section
-          className="border-t border-[#D4A853]/10 py-24 md:py-32"
+          className="border-t border-[#D4A853]/10 py-16 md:py-20 lg:py-24"
           aria-label="Vol-au-vent"
         >
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
@@ -172,7 +172,7 @@ export default async function LaCartePage({ params }: Props) {
         </section>
 
         <section
-          className="border-t border-[#D4A853]/10 py-24 md:py-32"
+          className="border-t border-[#D4A853]/10 py-16 md:py-20 lg:py-24"
           aria-label="Boulets"
         >
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
@@ -192,7 +192,7 @@ export default async function LaCartePage({ params }: Props) {
         </section>
 
         <section
-          className="border-t border-[#D4A853]/10 py-24 md:py-32"
+          className="border-t border-[#D4A853]/10 py-16 md:py-20 lg:py-24"
           aria-label="Sauces"
         >
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
@@ -217,7 +217,7 @@ export default async function LaCartePage({ params }: Props) {
         </section>
 
         <section
-          className="border-t border-[#D4A853]/10 py-24 md:py-32"
+          className="border-t border-[#D4A853]/10 py-16 md:py-20 lg:py-24"
           aria-label="Desserts"
         >
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
@@ -243,7 +243,7 @@ export default async function LaCartePage({ params }: Props) {
 
         <section
           id="glaces"
-          className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-24 md:py-32"
+          className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-16 md:py-20 lg:py-24"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.04]"
@@ -254,7 +254,7 @@ export default async function LaCartePage({ params }: Props) {
             aria-hidden
           />
           <div className="relative mx-auto max-w-6xl px-6">
-            <div className="mb-20 max-w-3xl md:mb-24">
+            <div className="mb-14 max-w-3xl md:mb-16 lg:mb-20">
               <p className="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
                 {g("sectionEyebrow")}
               </p>
@@ -275,7 +275,7 @@ export default async function LaCartePage({ params }: Props) {
                 {g("sectionBody2")}
               </p>
             </div>
-            <div className="mb-20 border-y border-[#D4A853]/15 py-8 md:mb-24">
+            <div className="mb-14 border-y border-[#D4A853]/15 py-6 md:mb-20 md:py-8">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <p className="font-[var(--font-fraunces)] text-3xl italic text-[#D4A853] md:text-4xl">
@@ -308,7 +308,7 @@ export default async function LaCartePage({ params }: Props) {
                 (f) => f.category === category,
               );
               return (
-                <div key={category} className="mb-16 md:mb-20">
+                <div key={category} className="mb-12 md:mb-16">
                   <div className="mb-10 flex items-baseline gap-4">
                     <h3 className="text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
                       {g(
@@ -348,7 +348,7 @@ export default async function LaCartePage({ params }: Props) {
                 </div>
               );
             })}
-            <div className="mx-auto mt-16 max-w-2xl border-t border-[#D4A853]/15 pt-12 text-center">
+            <div className="mx-auto mt-10 max-w-2xl border-t border-[#D4A853]/15 pt-10 text-center md:mt-12 md:pt-12">
               <p
                 className="mb-3 font-[var(--font-fraunces)] text-[17px] italic leading-[1.8] text-[#F5EFE3]/75"
                 style={{ fontFeatureSettings: '"opsz" 72' }}
@@ -364,7 +364,7 @@ export default async function LaCartePage({ params }: Props) {
       </div>
 
       <div className="px-6 md:px-10">
-        <div className="mx-auto w-full max-w-7xl py-20 md:py-24">
+        <div className="mx-auto w-full max-w-7xl py-14 md:py-16 lg:py-20">
           <h2 className="text-center font-[var(--font-fraunces)] text-2xl text-[#f5efe3] [font-style:italic]">
             {t("pricingTitle")}
           </h2>
