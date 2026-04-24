@@ -16,8 +16,6 @@ export type BeerMessageKey =
   | "paljas"
   | "herbergBrune";
 
-export type GlassType = "goblet" | "tulip" | "chalice" | "kwak" | "flute";
-
 export interface Beer {
   id: string;
   name: string;

@@ -11,7 +11,12 @@ type Props = { params: Promise<{ locale: string }> };
 type BieresTranslate = (key: BieresKey) => string;
 
 type BieresKey =
+  | "pageTitle"
+  | "pageDescription"
+  | "ogTitle"
+  | "ogDescription"
   | "heroEyebrow"
+  | "heroImgAlt"
   | "eyebrow"
   | "introTitle"
   | "introBody"
