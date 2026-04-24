@@ -188,23 +188,70 @@
   },
   "bieres": {
     "pageTitle": "Bières belges — Frietkot Bourg-Argental",
-    "pageDescription": "Chimay Bleue, Chimay Rouge, Herberg Brune, Paljas Blonde, Duvel. Notre sélection de bières belges, pour accompagner frites et plats du jour.",
+    "pageDescription": "Découvrez notre sélection de 10 bières belges d'exception : Chimay Bleue, Westmalle Tripel, Duvel, Orval, Delirium Tremens, Kwak et plus. Trappistes et abbaye, à Bourg-Argental.",
     "ogTitle": "Bières belges — Frietkot",
-    "ogDescription": "Sélection de bières trappistes et d'abbaye belges à Bourg-Argental.",
-    "eyebrow": "À la cave · Frietkot Bourg-Argental",
-    "heroImgAlt": "Sélection de bières belges chez Frietkot à Bourg-Argental — Chimay Bleue, Chimay Rouge, Herberg Brune, Paljas Blonde, Duvel et sélection saisonnière",
-    "sectionEyebrow": "BIÈRES BELGES",
-    "sectionTitle": "Une bière belge ne se choisit pas au hasard.",
-    "sectionDesc": "Chez nous, la bière n'est pas un décor. C'est un plat à part entière.",
-    "intro": "Trappiste pour accompagner une carbonade, blonde légère pour la frite croustillante, brune d'abbaye pour la fin de soirée — chaque bouteille a sa place sur la table.",
-    "pairing": "Accord conseillé : {dish}"
-  },
-  "bieresItems": {
-    "chimayBleue": { "name": "Chimay Bleue", "type": "Trappiste", "abv": "9%", "brewery": "Abbaye de Scourmont, Belgique", "note": "Riche, profonde, notes de fruits noirs et caramel.", "pairing": "Carbonade flamande" },
-    "chimayRouge": { "name": "Chimay Rouge", "type": "Trappiste", "abv": "7%", "brewery": "Abbaye de Scourmont, Belgique", "note": "Plus ronde, légèrement épicée, très équilibrée.", "pairing": "Boulets sauce liégeoise" },
-    "herberg": { "name": "Herberg Brune", "type": "Brune d'abbaye", "abv": "[à confirmer]", "brewery": "Sélection maison", "note": "Maltée, chaleureuse, finale légèrement torréfiée.", "pairing": "Travers de porc" },
-    "paljas": { "name": "Paljas Blonde", "type": "Blonde belge", "abv": "[à confirmer]", "brewery": "Brasserie belge", "note": "Florale, vive et désaltérante.", "pairing": "Frites & sauces relevées" },
-    "duvel": { "name": "Duvel", "type": "Blonde forte", "abv": "8.5%", "brewery": "Duvel Moortgat", "note": "Fine amertume, belle mousse, finale sèche.", "pairing": "Vol-au-vent" }
+    "ogDescription": "Dix bières belges d'exception : trappistes, blondes fortes, abbaye et spéciales. À Bourg-Argental.",
+    "heroEyebrow": "À la cave · Frietkot Bourg-Argental",
+    "eyebrow": "CARTE DES BIÈRES · 10 BELGES D'EXCEPTION",
+    "heroImgAlt": "Sélection de bières belges chez Frietkot à Bourg-Argental — trappistes, abbaye et spéciales, sans bouteilles photographiées, ambiance premium",
+    "introTitle": "Dix bières belges, choisies avec soin.",
+    "introBody": "Une friterie belge sans bière belge, c'est une histoire à moitié racontée. Nous avons composé une sélection courte mais juste — trappistes, blondes fortes, brunes d'abbaye, spéciales régionales. Chacune choisie pour accompagner un plat, une saison, un moment.",
+    "categoryTrappiste": "TRAPPISTES · BRASSÉES DANS UN MONASTÈRE",
+    "categoryBlondeForte": "BLONDES FORTES · CARACTÈRE MARQUÉ",
+    "categoryAbbaye": "ABBAYE & RÉGIONALES",
+    "categorySpecial": "SPÉCIALES · À NE PAS MANQUER",
+    "pairingLabel": "À marier avec",
+    "note": "Sélection saisonnière : la carte des bières évolue selon les arrivages. Demandez au comptoir — Pascal vous orientera.",
+    "chimayBleue": {
+      "tagline": "La reine des trappistes belges.",
+      "description": "Brune profonde, notes de fruits secs, pain d'épices et touche de chocolat. Refermente en bouteille. Gagne en complexité avec l'âge — certaines se boivent à dix ans.",
+      "pairing": "une carbonade flamande, un fromage bleu, du chocolat noir"
+    },
+    "chimayRouge": {
+      "tagline": "La classique, pour s'initier.",
+      "description": "Dubbel ambrée, notes fruitées et malteuses, finale légèrement épicée. Moins puissante que la Bleue, plus accessible.",
+      "pairing": "un plat du jour, une planche de charcuterie, un vol-au-vent"
+    },
+    "westmalleTripel": {
+      "tagline": "La référence mondiale du tripel.",
+      "description": "Dorée, houblonnée, vive. Arômes de banane, de clou de girofle et d'agrumes. Considérée par beaucoup comme la meilleure tripel au monde.",
+      "pairing": "une carbonade, du poulet rôti, des frites belges bien sûr"
+    },
+    "orval": {
+      "tagline": "L'originale. L'unique. La brettée.",
+      "description": "Pâle, sèche, fortement houblonnée avec une touche de Brettanomyces qui évolue dans la bouteille. Aucune autre bière ne lui ressemble. Une seule bière à Orval — mais quelle bière.",
+      "pairing": "un fromage d'Orval, une salade de chèvre chaud, en apéro"
+    },
+    "duvel": {
+      "tagline": "Le diable en bouteille.",
+      "description": "Blonde forte dorée, mousse dense, finale sèche et houblonnée. Ne pas se fier à la couleur : 8,5 % bien caché. À servir très frais dans le verre tulipe.",
+      "pairing": "des moules, un plat relevé, un apéro entre amis"
+    },
+    "leffeBlonde": {
+      "tagline": "L'abbaye la plus connue de France.",
+      "description": "Blonde dorée, notes de vanille et d'agrumes, finale douce. Une bière d'abbaye équilibrée, facile d'accès, parfaite pour commencer une soirée.",
+      "pairing": "des frites sauce samouraï, un vol-au-vent, un gratin"
+    },
+    "delirium": {
+      "tagline": "L'éléphant rose dans la pièce.",
+      "description": "Blonde forte au caractère complexe : alcool, épices, finale longue et sèche. Iconique bouteille en grès. Le café Delirium à Bruxelles en a fait une légende.",
+      "pairing": "des boulets liégeois, un fromage affiné, une frite grasse"
+    },
+    "kwak": {
+      "tagline": "Servie dans son verre de cocher.",
+      "description": "Ambrée forte, notes caramélisées, finale maltée. Origine XVIIIe : conçue pour être bue à cheval, d'où le verre à fond rond posé sur un support en bois.",
+      "pairing": "une carbonade flamande, du gibier, un fromage affiné"
+    },
+    "paljas": {
+      "tagline": "La blonde vive du nord.",
+      "description": "Blonde dorée, légèrement fruitée, désaltérante. Une bière accessible qui accompagne à merveille les plats gras et les moments entre amis.",
+      "pairing": "un cornet de frites sauce andalouse, une journée d'été"
+    },
+    "herbergBrune": {
+      "tagline": "Brune d'abbaye, généreuse.",
+      "description": "Brune ambrée, notes de caramel et de fruits noirs. Ronde en bouche, finale légèrement sucrée. Parfaite pour les longues soirées.",
+      "pairing": "une carbonade, une tarte au sucre, un fromage d'abbaye"
+    }
   },
   "contact": {
     "pageTitle": "Contact — Frietkot Bourg-Argental",

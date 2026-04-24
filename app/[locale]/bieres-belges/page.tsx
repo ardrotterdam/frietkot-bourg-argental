@@ -1,19 +1,29 @@
+import { BeerGlass } from "@/app/components/beer-glass";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import Image from "next/image";
-import SectionHeading from "../../components/section-heading";
+import { beers, type Beer, type BeerMessageKey } from "./beers-data";
 
 const BASE_URL = "https://frietkot-bourg-argental.vercel.app";
 
 type Props = { params: Promise<{ locale: string }> };
 
-const BEER_KEYS = [
-  "chimayBleue",
-  "chimayRouge",
-  "herberg",
-  "paljas",
-  "duvel",
-] as const;
+type BieresTranslate = (key: BieresKey) => string;
+
+type BieresKey =
+  | "heroEyebrow"
+  | "eyebrow"
+  | "introTitle"
+  | "introBody"
+  | "categoryTrappiste"
+  | "categoryBlondeForte"
+  | "categoryAbbaye"
+  | "categorySpecial"
+  | "pairingLabel"
+  | "note"
+  | `${BeerMessageKey}.tagline`
+  | `${BeerMessageKey}.description`
+  | `${BeerMessageKey}.pairing`;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -41,18 +51,88 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function BeerSection({
+  list,
+  title,
+  t,
+}: {
+  list: Beer[];
+  title: string;
+  t: BieresTranslate;
+}) {
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-16">
+      <h3 className="mb-10 text-center text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
+        {title}
+      </h3>
+      <div className="grid gap-12 md:grid-cols-2 lg:gap-16">
+        {list.map((beer) => {
+          const prefix = beer.msg;
+          return (
+            <article
+              key={beer.id}
+              className="group flex items-start gap-5 md:gap-6"
+            >
+              <div className="flex w-20 flex-shrink-0 flex-col items-center gap-2 md:w-24">
+                <div
+                  className="h-1 w-20 rounded-full max-md:w-16"
+                  style={{ backgroundColor: beer.hexColor, opacity: 0.9 }}
+                />
+                <div className="w-full max-w-[5.5rem] transition-transform duration-500 group-hover:scale-105">
+                  <BeerGlass
+                    idPrefix={beer.id}
+                    type={beer.glassType}
+                    color={beer.hexColor}
+                    className="h-auto w-full"
+                  />
+                </div>
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="mb-2 flex flex-wrap items-baseline justify-between gap-3">
+                  <h4 className="font-[var(--font-fraunces)] text-2xl italic text-[#F5EFE3] md:text-3xl">
+                    {beer.name}
+                  </h4>
+                  <span className="whitespace-nowrap text-[11px] uppercase tracking-[0.15em] text-[#D4A853]">
+                    {beer.abv}% ABV
+                  </span>
+                </div>
+                <p className="mb-3 text-[11px] uppercase tracking-[0.15em] text-[#F5EFE3]/50">
+                  {beer.brewery} · {beer.region}
+                </p>
+                <p className="mb-3 font-[var(--font-fraunces)] text-[15px] italic text-[#D4A853]/90">
+                  {t(`${prefix}.tagline`)}
+                </p>
+                <p className="mb-4 text-[15px] leading-[1.7] text-[#F5EFE3]/75">
+                  {t(`${prefix}.description`)}
+                </p>
+                <p className="border-l border-[#D4A853]/30 pl-3 text-[13px] italic text-[#F5EFE3]/50">
+                  {t("pairingLabel")}: {t(`${prefix}.pairing`)}
+                </p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 export default async function BieresBelgesPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("bieres");
-  const tItem = await getTranslations("bieresItems");
+  const t = (await getTranslations("bieres")) as unknown as BieresTranslate;
+
+  const trappistes = beers.filter((b) => b.category === "trappiste");
+  const blondeForte = beers.filter((b) => b.category === "blonde-forte");
+  const abbaye = beers.filter((b) => b.category === "abbaye");
+  const special = beers.filter((b) => b.category === "special");
 
   return (
-    <main className="min-h-screen bg-[#050505] pb-20 pt-8 text-white md:pt-10">
-      <section className="bg-[#0A0A0A] px-6 pb-12 pt-4 md:px-8 md:pb-16">
+    <main className="min-h-screen bg-[#050505] pb-20 text-[#F5EFE3]">
+      <section className="bg-[#0A0A0A] px-6 pb-10 pt-4 md:px-8 md:pb-12">
         <div className="mx-auto max-w-6xl">
           <p className="mb-6 text-center text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
-            {t("eyebrow")}
+            {t("heroEyebrow")}
           </p>
           <div className="overflow-hidden rounded-sm shadow-2xl">
             <Image
@@ -68,38 +148,43 @@ export default async function BieresBelgesPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-6 py-10 md:px-10 md:py-12">
-        <SectionHeading
-          eyebrow={t("sectionEyebrow")}
-          title={t("sectionTitle")}
-          description={t("sectionDesc")}
-        />
-        <p className="mt-6 max-w-4xl text-[#c8c1b5]">{t("intro")}</p>
+      <section className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
+        <p className="mb-6 text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
+          {t("eyebrow")}
+        </p>
+        <h2
+          className="mb-8 font-[var(--font-fraunces)] text-4xl italic leading-[1.05] md:text-5xl lg:text-6xl"
+        >
+          {t("introTitle")}
+        </h2>
+        <p className="mx-auto max-w-xl text-[17px] leading-[1.7] text-[#F5EFE3]/80">
+          {t("introBody")}
+        </p>
       </section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-6 px-6 md:grid-cols-2 md:px-10">
-        {BEER_KEYS.map((id) => (
-          <article key={id} className="premium-card rounded-3xl p-7">
-            <p className="section-eyebrow">
-              {tItem(`${id}.type` as "chimayBleue.type")}
-            </p>
-            <h2 className="mt-2 font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">
-              {tItem(`${id}.name` as "chimayBleue.name")}
-            </h2>
-            <p className="mt-4 text-sm uppercase tracking-[0.14em] text-[#c8c1b5]">
-              {tItem(`${id}.brewery` as "chimayBleue.brewery")} ·{" "}
-              {tItem(`${id}.abv` as "chimayBleue.abv")}
-            </p>
-            <p className="mt-4 text-[#c8c1b5]">
-              {tItem(`${id}.note` as "chimayBleue.note")}
-            </p>
-            <p className="mt-3 text-[#D4A853]">
-              {t("pairing", {
-                dish: tItem(`${id}.pairing` as "chimayBleue.pairing"),
-              })}
-            </p>
-          </article>
-        ))}
+      <BeerSection
+        list={trappistes}
+        title={t("categoryTrappiste")}
+        t={t}
+      />
+      <BeerSection
+        list={blondeForte}
+        title={t("categoryBlondeForte")}
+        t={t}
+      />
+      <BeerSection
+        list={abbaye}
+        title={t("categoryAbbaye")}
+        t={t}
+      />
+      <BeerSection
+        list={special}
+        title={t("categorySpecial")}
+        t={t}
+      />
+
+      <section className="mx-auto max-w-2xl px-6 py-16 text-center">
+        <p className="text-sm italic text-[#F5EFE3]/60">{t("note")}</p>
       </section>
     </main>
   );

@@ -188,23 +188,70 @@
   },
   "bieres": {
     "pageTitle": "Belgian beers — Frietkot Bourg-Argental",
-    "pageDescription": "Chimay Blue, Chimay Red, Herberg Brune, Paljas Blonde, Duvel. Our Belgian beer selection to pair with fries and daily specials.",
+    "pageDescription": "Discover our selection of 10 exceptional Belgian beers: Chimay Blue, Westmalle Tripel, Duvel, Orval, Delirium Tremens, Kwak and more. Trappist and abbey, in Bourg-Argental.",
     "ogTitle": "Belgian beers — Frietkot",
-    "ogDescription": "Selection of Trappist and abbey Belgian beers in Bourg-Argental.",
-    "eyebrow": "The cellar · Frietkot Bourg-Argental",
-    "heroImgAlt": "Belgian beer selection at Frietkot in Bourg-Argental — Chimay Blue, Chimay Red, Herberg Brune, Paljas Blonde, Duvel and seasonal picks",
-    "sectionEyebrow": "BELGIAN BEERS",
-    "sectionTitle": "A Belgian beer isn’t chosen at random.",
-    "sectionDesc": "Here, beer isn’t decoration. It’s a course of its own.",
-    "intro": "Trappist to go with a carbonnade, light blonde for crisp fries, abbey brune to close the night — every bottle has its place on the table.",
-    "pairing": "Suggested pairing: {dish}"
-  },
-  "bieresItems": {
-    "chimayBleue": { "name": "Chimay Bleue", "type": "Trappist", "abv": "9%", "brewery": "Abbaye de Scourmont, Belgium", "note": "Rich, deep, dark fruit and caramel notes.", "pairing": "Carbonnade flamande" },
-    "chimayRouge": { "name": "Chimay Rouge", "type": "Trappist", "abv": "7%", "brewery": "Abbaye de Scourmont, Belgium", "note": "Rounder, lightly spicy, well balanced.", "pairing": "Meatballs Liège-style" },
-    "herberg": { "name": "Herberg Brune", "type": "Abbey brune", "abv": "[TBC]", "brewery": "House selection", "note": "Malty, warm, light roast on the finish.", "pairing": "Pork ribs" },
-    "paljas": { "name": "Paljas Blonde", "type": "Belgian blonde", "abv": "[TBC]", "brewery": "Belgian brewery", "note": "Floral, bright and refreshing.", "pairing": "Fries & punchy sauces" },
-    "duvel": { "name": "Duvel", "type": "Strong blonde", "abv": "8.5%", "brewery": "Duvel Moortgat", "note": "Fine bitterness, fine foam, dry finish.", "pairing": "Vol-au-vent" }
+    "ogDescription": "Ten exceptional Belgian beers: Trappist, strong blondes, abbey and special brews. In Bourg-Argental.",
+    "heroEyebrow": "The cellar · Frietkot Bourg-Argental",
+    "eyebrow": "BEER MENU · 10 BELGIAN EXCEPTIONS",
+    "heroImgAlt": "Belgian beer selection at Frietkot in Bourg-Argental — Trappist, abbey and special beers, no photographed bottles, premium editorial look",
+    "introTitle": "Ten Belgian beers, chosen with care.",
+    "introBody": "A Belgian friterie without Belgian beer is a story half told. We have curated a short but honest selection — Trappist, strong blondes, abbey browns, regional specials. Each chosen to pair with a dish, a season, a moment.",
+    "categoryTrappiste": "TRAPPIST · BREWED IN A MONASTERY",
+    "categoryBlondeForte": "STRONG BLONDES · BOLD CHARACTER",
+    "categoryAbbaye": "ABBEY & REGIONAL",
+    "categorySpecial": "SPECIALS · NOT TO MISS",
+    "pairingLabel": "Pairs with",
+    "note": "Seasonal selection: the beer menu evolves with our deliveries. Ask at the counter — Pascal will guide you.",
+    "chimayBleue": {
+      "tagline": "The queen of Belgian Trappists.",
+      "description": "Deep brown ale, notes of dried fruit, gingerbread and dark chocolate. Refermented in the bottle. Gains complexity with age — some are drunk after ten years.",
+      "pairing": "a carbonade flamande, blue cheese, dark chocolate"
+    },
+    "chimayRouge": {
+      "tagline": "The classic, for beginners.",
+      "description": "Amber dubbel, fruity and malty notes, slightly spiced finish. Less powerful than the Bleue, more approachable.",
+      "pairing": "the daily special, a charcuterie board, vol-au-vent"
+    },
+    "westmalleTripel": {
+      "tagline": "The world reference for tripel.",
+      "description": "Golden, hopped, lively. Aromas of banana, clove and citrus. Considered by many to be the best tripel in the world.",
+      "pairing": "a carbonade, roast chicken, Belgian fries of course"
+    },
+    "orval": {
+      "tagline": "The original. The unique. The brett-dry.",
+      "description": "Pale, dry, heavily hopped with a touch of Brettanomyces that evolves in the bottle. No other beer resembles it. One single beer at Orval — but what a beer.",
+      "pairing": "Orval cheese, warm goat cheese salad, as an aperitif"
+    },
+    "duvel": {
+      "tagline": "The devil in the bottle.",
+      "description": "Strong golden blonde, dense foam, dry and hoppy finish. Don't trust the colour: 8.5% well hidden. Serve very cold in the tulip glass.",
+      "pairing": "mussels, a spicy dish, an aperitif with friends"
+    },
+    "leffeBlonde": {
+      "tagline": "The best-known abbey in France.",
+      "description": "Golden blonde, notes of vanilla and citrus, soft finish. A balanced abbey beer, approachable, perfect to begin an evening.",
+      "pairing": "fries with samurai sauce, vol-au-vent, a gratin"
+    },
+    "delirium": {
+      "tagline": "The pink elephant in the room.",
+      "description": "Strong blonde with complex character: alcohol, spices, a long dry finish. Iconic stoneware bottle. The Delirium café in Brussels made it a legend.",
+      "pairing": "Liège-style meatballs, aged cheese, rich fries"
+    },
+    "kwak": {
+      "tagline": "Served in its coachman's glass.",
+      "description": "Strong amber, caramelised notes, malty finish. 18th-century origin: designed to be drunk on horseback, hence the round-bottom glass in its wooden stand.",
+      "pairing": "a carbonade flamande, game, aged cheese"
+    },
+    "paljas": {
+      "tagline": "The lively blonde from the north.",
+      "description": "Golden blonde, slightly fruity, refreshing. An accessible beer that pairs wonderfully with rich dishes and moments among friends.",
+      "pairing": "a cone of fries with andalouse sauce, a summer day"
+    },
+    "herbergBrune": {
+      "tagline": "Abbey brown, generous.",
+      "description": "Amber brown, notes of caramel and dark fruit. Rounded on the palate, slightly sweet finish. Perfect for long evenings.",
+      "pairing": "a carbonade, sugar tart, abbey cheese"
+    }
   },
   "contact": {
     "pageTitle": "Contact — Frietkot Bourg-Argental",
