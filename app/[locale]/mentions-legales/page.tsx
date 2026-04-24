@@ -35,8 +35,8 @@ export default async function MentionsLegalesPage({ params }: Props) {
   const t = await getTranslations("mentions");
 
   return (
-    <main className="min-h-screen bg-[#050505] px-6 pb-20 pt-14 text-white md:px-10">
-      <section className="mx-auto w-full max-w-5xl py-16">
+    <main className="bg-[#050505] px-6 pb-12 text-white md:px-10 md:pb-20">
+      <section className="mx-auto w-full max-w-5xl pt-20 pb-8 md:pt-28 md:pb-16">
         <SectionHeading
           eyebrow={t("eyebrow")}
           title={t("title")}
