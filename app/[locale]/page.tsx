@@ -66,7 +66,7 @@ export default async function HomePage({ params }: Props) {
                 priority={false}
               />
             </div>
-            <div className="flex flex-col justify-center px-6 py-10 md:px-12 md:py-20 lg:px-20">
+            <div className="flex flex-col justify-center px-6 py-4 md:px-12 md:py-20 lg:px-20">
               <p className="section-eyebrow">{t("pascalEyebrow")}</p>
               <h2
                 className="mt-4 max-w-lg font-[var(--font-fraunces)] text-[length:clamp(2rem,4vw,3.25rem)] font-normal leading-[1.1] text-[#D4A853] [font-style:italic]"
@@ -88,7 +88,7 @@ export default async function HomePage({ params }: Props) {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#0A0A0A] py-10 md:py-20">
+        <section className="relative overflow-hidden bg-[#0A0A0A] py-6 md:py-20">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.03]"
             style={{
@@ -196,7 +196,7 @@ export default async function HomePage({ params }: Props) {
         <div className="bg-[#050505]">
           <section
             data-night-section
-            className="relative border-t border-[#D4A853]/15 px-6 py-10 md:px-10 md:py-20"
+            className="relative border-t border-[#D4A853]/15 px-6 py-6 md:px-10 md:py-20"
           >
             <div className="mx-auto w-full max-w-7xl">
               <p className="section-eyebrow">{t("belgiumEyebrow")}</p>
@@ -255,7 +255,7 @@ export default async function HomePage({ params }: Props) {
             </div>
           </section>
 
-          <section data-night-section className="px-6 py-8 md:px-10 md:py-16">
+          <section data-night-section className="px-6 py-6 md:px-10 md:py-16">
             <div className="mx-auto w-full max-w-7xl">
               <SectionHeading
                 eyebrow={t("carrouselEyebrow")}
@@ -286,7 +286,7 @@ export default async function HomePage({ params }: Props) {
             </div>
           </section>
 
-          <section data-night-section className="px-6 py-10 md:px-10 md:py-20">
+          <section data-night-section className="px-6 py-6 md:px-10 md:py-20">
             <div className="mx-auto grid w-full max-w-7xl gap-6 md:gap-12 lg:grid-cols-[1fr_1.1fr]">
               <article className="premium-card rounded-3xl p-8 md:p-12">
                 <SectionHeading
@@ -319,7 +319,7 @@ export default async function HomePage({ params }: Props) {
 
           <section
             data-night-section
-            className="px-6 py-10 md:px-10 md:py-20"
+            className="px-6 py-6 md:px-10 md:py-20"
             data-cursor-room
           >
             <div className="mx-auto grid w-full max-w-7xl gap-6 md:gap-12 lg:grid-cols-[1.05fr_0.95fr]">

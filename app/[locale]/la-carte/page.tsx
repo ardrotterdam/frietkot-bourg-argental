@@ -52,7 +52,7 @@ function EditorialBlock({
   price: string;
 }) {
   return (
-    <div className="flex max-w-lg flex-col justify-center px-6 py-4 md:px-12 md:py-12 lg:px-20">
+    <div className="flex max-w-lg flex-col justify-center px-6 py-0 md:px-12 md:py-12 lg:px-20">
       <p className="section-eyebrow">{eyebrow}</p>
       <h2
         className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
@@ -128,7 +128,7 @@ export default async function LaCartePage({ params }: Props) {
 
       <div className="px-0">
         <section
-          className="border-t border-[#D4A853]/10 py-6 md:py-20"
+          className="border-t border-[#D4A853]/10 pt-4 pb-6 md:py-20"
           aria-label="Carbonade"
         >
           <div className="grid grid-cols-1 items-stretch gap-6 md:gap-12 lg:grid-cols-2">
@@ -201,7 +201,7 @@ export default async function LaCartePage({ params }: Props) {
               alt={t("saucesImgAlt")}
               sizes="(max-width: 1023px) 100vw, 55vw"
             />
-            <div className="flex max-w-lg flex-col justify-center px-6 py-4 md:px-12 md:py-12 lg:px-20">
+            <div className="flex max-w-lg flex-col justify-center px-6 py-0 md:px-12 md:py-12 lg:px-20">
               <p className="section-eyebrow">{t("saucesEyebrow")}</p>
               <h2
                 className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
@@ -226,7 +226,7 @@ export default async function LaCartePage({ params }: Props) {
               alt={t("dessertsImgAlt")}
               sizes="(max-width: 1023px) 100vw, 50vw"
             />
-            <div className="flex max-w-lg flex-col justify-center px-6 py-4 md:px-12 md:py-12 lg:px-20">
+            <div className="flex max-w-lg flex-col justify-center px-6 py-0 md:px-12 md:py-12 lg:px-20">
               <p className="section-eyebrow">{t("dessertsEyebrow")}</p>
               <h2
                 className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
@@ -243,7 +243,7 @@ export default async function LaCartePage({ params }: Props) {
 
         <section
           id="glaces"
-          className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-10 md:py-20"
+          className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-6 md:py-20"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.04]"
@@ -364,7 +364,7 @@ export default async function LaCartePage({ params }: Props) {
       </div>
 
       <div className="px-6 md:px-10">
-        <div className="mx-auto w-full max-w-7xl py-10 md:py-20">
+        <div className="mx-auto w-full max-w-7xl py-6 md:py-20">
           <h2 className="text-center font-[var(--font-fraunces)] text-2xl text-[#f5efe3] [font-style:italic]">
             {t("pricingTitle")}
           </h2>
