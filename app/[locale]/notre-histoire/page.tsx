@@ -68,7 +68,7 @@ export default async function NotreHistoirePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-5xl space-y-6 px-6 py-10 text-lg text-[#c8c1b5] md:px-10 md:py-20">
+      <section className="mx-auto w-full max-w-5xl space-y-6 px-6 pt-4 pb-10 text-lg text-[#c8c1b5] md:px-10 md:py-20">
         <p>{t("p1")}</p>
         <p>{t("p2")}</p>
         <p>{t("p3")}</p>
