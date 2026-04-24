@@ -1,3 +1,4 @@
+import { IceCreamScoop } from "@/app/components/ice-cream-scoop";
 import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
@@ -41,6 +42,7 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  const tg = await getTranslations("glaces");
 
   return (
     <>
@@ -82,6 +84,111 @@ export default async function HomePage({ params }: Props) {
               >
                 {t("pascalCta")}
               </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden bg-[#0A0A0A] py-24 md:py-36">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.03]"
+            style={{
+              background:
+                "radial-gradient(circle at 30% 50%, #D4A853 0%, transparent 60%)",
+            }}
+            aria-hidden
+          />
+          <div className="relative mx-auto max-w-6xl px-6">
+            <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
+              <div>
+                <p className="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
+                  {tg("teaserEyebrow")}
+                </p>
+                <h2
+                  className="mb-8 font-[var(--font-fraunces)] text-5xl italic leading-[0.95] text-[#F5EFE3] md:text-6xl lg:text-7xl"
+                  style={{ fontFeatureSettings: '"opsz" 72' }}
+                >
+                  {tg("teaserTitle1")}
+                  <br />
+                  <span className="text-[#D4A853]">{tg("teaserTitle2")}</span>
+                </h2>
+                <p className="mb-6 max-w-lg text-[17px] leading-[1.75] text-[#F5EFE3]/85">
+                  {tg("teaserBody1")}
+                </p>
+                <p className="mb-10 max-w-lg border-l border-[#D4A853]/30 pl-5 text-[15px] italic leading-[1.75] text-[#F5EFE3]/70">
+                  {tg("teaserQuote")}
+                </p>
+                <div className="flex flex-col items-start gap-4 sm:flex-row">
+                  <Link
+                    href="/la-carte#glaces"
+                    className="inline-flex items-center gap-3 border border-[#D4A853] px-8 py-4 text-[13px] uppercase tracking-[0.18em] text-[#D4A853] transition-colors duration-300 hover:bg-[#D4A853] hover:text-[#0A0A0A]"
+                    data-cursor="cta"
+                  >
+                    {tg("teaserCta")}
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      viewBox="0 0 24 24"
+                      aria-hidden
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                      />
+                    </svg>
+                  </Link>
+                  <p className="pt-4 text-[11px] uppercase tracking-[0.18em] text-[#F5EFE3]/50 sm:pt-4">
+                    {tg("teaserStat")}
+                  </p>
+                </div>
+              </div>
+              <div className="relative">
+                <div
+                  className="absolute inset-0 rounded-sm border border-[#D4A853]/20"
+                  style={{ transform: "translate(20px, 20px)" }}
+                  aria-hidden
+                />
+                <div className="relative rounded-sm border border-[#D4A853]/15 bg-gradient-to-br from-[#141414] to-[#0A0A0A] p-10 md:p-12">
+                  <p className="mb-2 text-center text-[10px] uppercase tracking-[0.22em] text-[#D4A853]/80">
+                    {tg("teaserGridLabel")}
+                  </p>
+                  <p
+                    className="mb-10 text-center font-[var(--font-fraunces)] text-2xl italic text-[#F5EFE3]"
+                    style={{ fontFeatureSettings: '"opsz" 72' }}
+                  >
+                    {tg("teaserGridTitle")}
+                  </p>
+                  <div className="grid grid-cols-3 gap-6">
+                    {[
+                      { color: "#F5E6C8", name: tg("flavors.vanille") },
+                      { color: "#4A2818", name: tg("flavors.chocolat") },
+                      { color: "#93A957", name: tg("flavors.pistache") },
+                      { color: "#B8865C", name: tg("flavors.speculoos") },
+                      { color: "#D4A853", name: tg("flavors.caramelSale") },
+                      { color: "#F4D03F", name: tg("flavors.citron") },
+                    ].map((scoop, i) => (
+                      <div
+                        key={i}
+                        className="group flex flex-col items-center gap-3"
+                      >
+                        <IceCreamScoop
+                          color={scoop.color}
+                          size={56}
+                          className="transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <span className="text-center text-[10px] uppercase tracking-[0.15em] text-[#F5EFE3]/70">
+                          {scoop.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="mt-8 border-t border-[#D4A853]/10 pt-6 text-center text-[11px] uppercase tracking-[0.18em] text-[#F5EFE3]/50">
+                    {tg("teaserMore")}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

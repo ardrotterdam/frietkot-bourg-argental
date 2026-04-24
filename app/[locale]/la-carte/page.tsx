@@ -1,8 +1,14 @@
+import { IceCreamScoop } from "@/app/components/ice-cream-scoop";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import CtaButton from "../../components/cta-button";
+import {
+  categoryOrder,
+  iceCreamFlavors,
+} from "./ice-cream-data";
+import type { IceCreamCategory } from "./ice-cream-data";
 
 const BASE_URL = "https://frietkot-bourg-argental.vercel.app";
 
@@ -87,6 +93,7 @@ export default async function LaCartePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("laCarte");
+  const g = await getTranslations("glaces");
   const p = t("prixPlaceholder");
 
   return (
@@ -229,6 +236,127 @@ export default async function LaCartePage({ params }: Props) {
               </h2>
               <p className="mt-5 text-base leading-[1.75] text-[#c8c1b5]">
                 {t("dessertsBody")}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="glaces"
+          className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-24 md:py-32"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.04]"
+            style={{
+              background:
+                "radial-gradient(ellipse at 70% 30%, #D4A853 0%, transparent 50%)",
+            }}
+            aria-hidden
+          />
+          <div className="relative mx-auto max-w-6xl px-6">
+            <div className="mb-20 max-w-3xl md:mb-24">
+              <p className="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
+                {g("sectionEyebrow")}
+              </p>
+              <h2
+                className="mb-8 font-[var(--font-fraunces)] text-4xl italic leading-[1.05] text-[#F5EFE3] md:text-5xl lg:text-6xl"
+                style={{ fontFeatureSettings: '"opsz" 72' }}
+              >
+                {g("sectionTitle")}
+              </h2>
+              <div className="mb-8 flex items-center gap-4">
+                <div className="h-px w-20 bg-[#D4A853]/40" />
+                <span className="text-sm text-[#D4A853]/60">✦</span>
+              </div>
+              <p className="mb-4 text-[17px] leading-[1.8] text-[#F5EFE3]/85">
+                {g("sectionBody1")}
+              </p>
+              <p className="text-[16px] leading-[1.8] text-[#F5EFE3]/70 italic">
+                {g("sectionBody2")}
+              </p>
+            </div>
+            <div className="mb-20 border-y border-[#D4A853]/15 py-8 md:mb-24">
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="font-[var(--font-fraunces)] text-3xl italic text-[#D4A853] md:text-4xl">
+                    12+
+                  </p>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.18em] text-[#F5EFE3]/60">
+                    {g("statFlavors")}
+                  </p>
+                </div>
+                <div className="border-x border-[#D4A853]/10">
+                  <p className="font-[var(--font-fraunces)] text-3xl italic text-[#D4A853] md:text-4xl">
+                    100%
+                  </p>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.18em] text-[#F5EFE3]/60">
+                    {g("statMaison")}
+                  </p>
+                </div>
+                <div>
+                  <p className="font-[var(--font-fraunces)] text-3xl italic text-[#D4A853] md:text-4xl">
+                    0
+                  </p>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.18em] text-[#F5EFE3]/60">
+                    {g("statArtificial")}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {categoryOrder.map((category: IceCreamCategory) => {
+              const flavorsInCategory = iceCreamFlavors.filter(
+                (f) => f.category === category,
+              );
+              return (
+                <div key={category} className="mb-16 md:mb-20">
+                  <div className="mb-10 flex items-baseline gap-4">
+                    <h3 className="text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
+                      {g(
+                        {
+                          classique: "categories.classique",
+                          signature: "categories.signature",
+                          gourmand: "categories.gourmand",
+                          sorbet: "categories.sorbet",
+                        }[category],
+                      )}
+                    </h3>
+                    <div className="h-px flex-1 bg-[#D4A853]/15" />
+                    <span className="text-[11px] uppercase tracking-[0.15em] text-[#F5EFE3]/40">
+                      {flavorsInCategory.length}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-3 md:gap-12">
+                    {flavorsInCategory.map((flavor) => (
+                      <div
+                        key={flavor.id}
+                        className="group flex flex-col items-center gap-4 rounded-sm p-4 transition-all duration-500 hover:bg-[#141414]"
+                      >
+                        <IceCreamScoop
+                          color={flavor.color}
+                          size={80}
+                          className="transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                        />
+                        <span
+                          className="text-center font-[var(--font-fraunces)] text-xl italic text-[#F5EFE3] md:text-2xl"
+                          style={{ fontFeatureSettings: '"opsz" 72' }}
+                        >
+                          {(g as (k: string) => string)(flavor.nameKey)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+            <div className="mx-auto mt-16 max-w-2xl border-t border-[#D4A853]/15 pt-12 text-center">
+              <p
+                className="mb-3 font-[var(--font-fraunces)] text-[17px] italic leading-[1.8] text-[#F5EFE3]/75"
+                style={{ fontFeatureSettings: '"opsz" 72' }}
+              >
+                {g("closingNote")}
+              </p>
+              <p className="text-[11px] uppercase tracking-[0.18em] text-[#D4A853]/80">
+                {g("closingCta")}
               </p>
             </div>
           </div>

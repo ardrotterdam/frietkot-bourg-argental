@@ -22,6 +22,47 @@
     "twitterDescription": "Authentic Belgian fries, daily homemade specials, Trappist beers and an inn. Since 1990, in the heart of the Loire.",
     "schemaProprietaire": "Owner"
   },
+  "glaces": {
+    "teaserEyebrow": "THE ICE CREAM · MADE FRESH EACH MORNING",
+    "teaserTitle1": "Ask him",
+    "teaserTitle2": "about the ice cream.",
+    "teaserBody1": "What few customers realise when they walk into Frietkot: Pascal is also an ice cream maker. A serious passion, cultivated for years — and a selection that would put many ice cream parlours to shame.",
+    "teaserQuote": "Real vanilla bean, pistachio with actual pistachios, salted caramel that sticks to the spoon. Nothing frozen, nothing industrial. All made here, in honest quantities, with the same care a Belgian friterie brings — which is to say, a lot.",
+    "teaserCta": "See all 12 flavours",
+    "teaserStat": "12+ FLAVOURS · ROTATING WITH THE SEASONS",
+    "teaserGridLabel": "PREVIEW",
+    "teaserGridTitle": "A few favourites",
+    "teaserMore": "+ 6 MORE FLAVOURS TO DISCOVER",
+    "sectionEyebrow": "THE ICE CREAM · ANOTHER OF PASCAL'S SPECIALITIES",
+    "sectionTitle": "Twelve flavours, one method: homemade.",
+    "sectionBody1": "The fries gave us our name. But ask the regulars, and they'll also tell you about the ice cream. Pascal prepares it each morning — whole milk, fresh seasonal fruit, real ingredients. No powder, no synthetic flavouring, no shortcuts.",
+    "sectionBody2": "We serve it in a cone, in a tub, or in a coupe with a Liège waffle. Some people come just for this.",
+    "statFlavors": "Flavours available",
+    "statMaison": "Homemade",
+    "statArtificial": "Artificial flavourings",
+    "categories": {
+      "classique": "THE CLASSICS",
+      "signature": "PASCAL'S SIGNATURES",
+      "gourmand": "THE INDULGENT",
+      "sorbet": "SORBETS · FRESH FRUIT"
+    },
+    "flavors": {
+      "vanille": "Vanilla",
+      "chocolat": "Chocolate",
+      "fraise": "Strawberry",
+      "pistache": "Pistachio",
+      "speculoos": "Speculoos",
+      "caramelSale": "Salted Caramel",
+      "stracciatella": "Stracciatella",
+      "noisette": "Hazelnut",
+      "cafe": "Coffee",
+      "citron": "Lemon",
+      "framboise": "Raspberry",
+      "mangue": "Mango"
+    },
+    "closingNote": "The ice cream menu evolves with the seasons. In summer, Pascal adds seasonal fruit flavours. In winter, he brings out richer speculoos and caramels.",
+    "closingCta": "ASK PASCAL WHAT HE HAS TODAY"
+  },
   "home": {
     "metaTitle": "Home — Frietkot Bourg-Argental",
     "metaDescription": "Premium Belgian fry shop in Bourg-Argental: house fries, Belgian beers and guest rooms.",

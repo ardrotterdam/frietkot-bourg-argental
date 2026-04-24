@@ -22,6 +22,47 @@
     "twitterDescription": "Frites belges authentiques, plats du jour faits maison, bières trappistes et auberge. Depuis 1990, au cœur de la Loire.",
     "schemaProprietaire": "Propriétaire"
   },
+  "glaces": {
+    "teaserEyebrow": "LES GLACES · FAIT MAISON CHAQUE MATIN",
+    "teaserTitle1": "Demandez-lui",
+    "teaserTitle2": "sa glace.",
+    "teaserBody1": "Ce que peu de clients savent en entrant chez Frietkot : Pascal est aussi glacier. Une passion sérieuse, cultivée depuis des années — et un assortiment qui ferait rougir plus d'un salon de glaces.",
+    "teaserQuote": "Vanille à la gousse, pistache avec des vraies pistaches, caramel beurre salé qui colle à la cuillère. Rien de surgelé, rien d'industriel. Tout est fait ici, en quantités honnêtes, avec le soin qu'on met dans une friterie belge — c'est-à-dire beaucoup.",
+    "teaserCta": "Voir les 12 parfums",
+    "teaserStat": "12+ PARFUMS · CHANGEMENTS SELON LA SAISON",
+    "teaserGridLabel": "APERÇU",
+    "teaserGridTitle": "Quelques favoris",
+    "teaserMore": "+ 6 AUTRES PARFUMS À DÉCOUVRIR",
+    "sectionEyebrow": "LES GLACES · UNE AUTRE SPÉCIALITÉ DE PASCAL",
+    "sectionTitle": "Douze parfums, une seule méthode : fait maison.",
+    "sectionBody1": "Les frites nous ont donné notre nom. Mais si vous demandez aux habitués, ils vous parleront aussi de la glace. Pascal la prépare chaque matin — lait entier, fruits frais de saison, vrais ingrédients. Pas de poudre, pas d'arôme de synthèse, pas de raccourci.",
+    "sectionBody2": "On en sert dans un cornet, dans un pot, en coupe avec une gaufre de Liège. Certains viennent juste pour ça.",
+    "statFlavors": "Parfums au choix",
+    "statMaison": "Fait maison",
+    "statArtificial": "Arômes artificiels",
+    "categories": {
+      "classique": "LES CLASSIQUES",
+      "signature": "LES SIGNATURES DE PASCAL",
+      "gourmand": "LES GOURMANDES",
+      "sorbet": "LES SORBETS · FRUITS FRAIS"
+    },
+    "flavors": {
+      "vanille": "Vanille",
+      "chocolat": "Chocolat",
+      "fraise": "Fraise",
+      "pistache": "Pistache",
+      "speculoos": "Spéculoos",
+      "caramelSale": "Caramel beurre salé",
+      "stracciatella": "Stracciatella",
+      "noisette": "Noisette",
+      "cafe": "Café",
+      "citron": "Citron",
+      "framboise": "Framboise",
+      "mangue": "Mangue"
+    },
+    "closingNote": "La carte des glaces évolue avec les saisons. En été, Pascal ajoute des parfums de fruits de saison. En hiver, il sort des spéculoos et des caramels plus riches.",
+    "closingCta": "DEMANDEZ À PASCAL CE QU'IL A AUJOURD'HUI"
+  },
   "home": {
     "metaTitle": "Accueil · Frietkot Bourg-Argental",
     "metaDescription": "Friterie belge premium à Bourg-Argental : frites maison, bières belges et chambres d'hôtes.",
