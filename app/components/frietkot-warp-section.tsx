@@ -45,7 +45,7 @@ export default function FrietkotWarpSection() {
   return (
     <div
       ref={wrap}
-      className="relative flex min-h-0 items-center justify-center py-10 md:py-14"
+      className="relative flex min-h-0 items-center justify-center py-6 md:py-14"
     >
       <h2
         ref={textRef}

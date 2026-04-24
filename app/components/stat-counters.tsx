@@ -48,7 +48,7 @@ function StatItem({ s }: { s: Stat }) {
   }, [s.end, s.format]);
 
   return (
-    <li ref={ref} className="min-h-[4.5rem]">
+    <li ref={ref}>
       <p className="font-[var(--font-fraunces)] text-4xl text-[#D4A853]">
         <span ref={span} className="tabular-nums">
           {formatVal(0, s.format)}
@@ -69,7 +69,7 @@ export default function StatCounters() {
     { key: "c", end: 100, label: t("homemade"), format: "percent" },
   ];
   return (
-    <ul className="space-y-6">
+    <ul className="space-y-4 md:space-y-6">
       {stats.map((s) => (
         <StatItem key={s.key} s={s} />
       ))}

@@ -216,11 +216,11 @@ export default function HeroCraft() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-0 bg-[#0A0A0A] text-[#F5EFE3] lg:min-h-screen"
+      className="relative bg-[#0A0A0A] pt-20 pb-8 text-[#F5EFE3] md:pt-28 md:pb-16 lg:min-h-screen lg:py-0"
       aria-label={t("sectionAria")}
     >
       <div className="grid min-h-0 grid-cols-1 grid-rows-[auto_auto] gap-0 lg:min-h-screen lg:grid-cols-2 lg:grid-rows-1">
-        <div className="order-2 flex min-h-0 flex-col justify-center px-[clamp(3rem,6vw,6rem)] py-10 max-lg:pb-12 lg:order-1 lg:min-h-screen lg:py-0">
+        <div className="order-2 flex min-h-0 flex-col justify-center px-6 pt-6 pb-0 md:px-12 lg:order-1 lg:min-h-screen lg:px-[clamp(3rem,6vw,6rem)] lg:py-0">
           <p
             ref={eyebrowRef}
             className="font-[family-name:var(--font-inter)] text-[11px] font-medium uppercase leading-normal tracking-[0.18em] text-[#D4A853] opacity-0"
@@ -281,7 +281,7 @@ export default function HeroCraft() {
           </div>
           <div
             ref={scrollHintRef}
-            className="mt-14 flex flex-col items-start gap-2 text-left text-[10px] uppercase tracking-[0.3em] text-[#D4A853]/80 max-lg:items-center max-lg:self-center opacity-0"
+            className="mt-6 flex flex-col items-start gap-2 text-left text-[10px] uppercase tracking-[0.3em] text-[#D4A853]/80 opacity-0 max-lg:items-center max-lg:self-center md:mt-14"
             aria-hidden
           >
             <span>{t("scroll")}</span>
@@ -298,13 +298,13 @@ export default function HeroCraft() {
         </div>
 
         <div
-          className="relative order-1 h-[70vh] min-h-0 overflow-hidden border-l-0 border-[rgba(212,168,83,0.15)] max-lg:max-h-[70vh] lg:order-2 lg:min-h-screen lg:border-l"
+          className="relative order-1 h-[240px] overflow-hidden border-l-0 border-[rgba(212,168,83,0.15)] md:h-[420px] lg:order-2 lg:h-auto lg:min-h-screen lg:border-l"
         >
           <div
             className="absolute inset-0 z-[1] pointer-events-none bg-[linear-gradient(to_top,rgba(10,10,10,0.98),rgba(10,10,10,0.3)_60%,transparent)] lg:opacity-0"
             aria-hidden
           />
-          <div className="relative h-full w-full min-h-[70vh] lg:min-h-0">
+          <div className="relative h-full w-full">
             <video
               className="h-full w-full object-cover object-center"
               muted
