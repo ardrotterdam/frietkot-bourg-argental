@@ -76,7 +76,7 @@ export function RoomImageFrame({
           alt={alt}
           width={800}
           height={1000}
-          className="max-h-[200px] w-full object-cover md:max-h-none"
+          className="h-auto w-full object-contain"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div
