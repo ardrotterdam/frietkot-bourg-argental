@@ -52,7 +52,7 @@ function EditorialBlock({
   price: string;
 }) {
   return (
-    <div className="flex max-w-lg flex-col justify-center px-6 py-12 md:px-12 lg:px-20">
+    <div className="flex max-w-lg flex-col justify-center px-6 py-4 md:px-12 md:py-12 lg:px-20">
       <p className="section-eyebrow">{eyebrow}</p>
       <h2
         className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
@@ -76,7 +76,7 @@ function SplitPosterImage({
   sizes: string;
 }) {
   return (
-    <div className="flex min-h-[200px] items-center justify-center bg-[#0A0A0A] px-4 py-6 sm:min-h-[min(36vh,400px)] md:px-6 md:py-8 lg:min-h-[400px] lg:py-10">
+    <div className="hidden items-center justify-center bg-[#0A0A0A] px-4 py-6 md:flex md:min-h-[260px] md:px-6 md:py-8 lg:min-h-[400px] lg:py-10">
       <Image
         src={src}
         alt={alt}
@@ -97,8 +97,8 @@ export default async function LaCartePage({ params }: Props) {
   const p = t("prixPlaceholder");
 
   return (
-    <main className="min-h-screen bg-[#050505] pb-20 text-white">
-      <section className="bg-[#0A0A0A] pb-12 pt-20 md:pb-20 md:pt-28">
+    <main className="bg-[#050505] pb-12 text-white md:pb-20">
+      <section className="bg-[#0A0A0A] pt-20 pb-8 md:pt-28 md:pb-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-8 text-center md:mb-12">
             <p className="text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
@@ -118,7 +118,7 @@ export default async function LaCartePage({ params }: Props) {
             />
           </div>
 
-          <div className="mx-auto mt-10 max-w-xl text-center md:mt-14">
+          <div className="mx-auto mt-6 max-w-xl text-center md:mt-14">
             <p className="text-base leading-relaxed text-[#F5EFE3]/70 md:text-lg">
               {t("intro")}
             </p>
@@ -128,10 +128,10 @@ export default async function LaCartePage({ params }: Props) {
 
       <div className="px-0">
         <section
-          className="border-t border-[#D4A853]/10 py-16 md:py-20 lg:py-24"
+          className="border-t border-[#D4A853]/10 py-6 md:py-20"
           aria-label="Carbonade"
         >
-          <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-stretch gap-6 md:gap-12 lg:grid-cols-2">
             <SplitPosterImage
               src="/images/promotional/frietkot-carbonade-flamande-biere-brune-bourg-argental.webp"
               alt={t("carbonadeImgAlt")}
@@ -148,10 +148,10 @@ export default async function LaCartePage({ params }: Props) {
         </section>
 
         <section
-          className="border-t border-[#D4A853]/10 py-16 md:py-20 lg:py-24"
+          className="border-t border-[#D4A853]/10 py-6 md:py-20"
           aria-label="Vol-au-vent"
         >
-          <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-stretch gap-6 md:gap-12 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
               <EditorialBlock
                 eyebrow={t("volEyebrow")}
@@ -172,10 +172,10 @@ export default async function LaCartePage({ params }: Props) {
         </section>
 
         <section
-          className="border-t border-[#D4A853]/10 py-16 md:py-20 lg:py-24"
+          className="border-t border-[#D4A853]/10 py-6 md:py-20"
           aria-label="Boulets"
         >
-          <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-stretch gap-6 md:gap-12 lg:grid-cols-2">
             <SplitPosterImage
               src="/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp"
               alt={t("bouletsImgAlt")}
@@ -192,16 +192,16 @@ export default async function LaCartePage({ params }: Props) {
         </section>
 
         <section
-          className="border-t border-[#D4A853]/10 py-16 md:py-20 lg:py-24"
+          className="border-t border-[#D4A853]/10 py-6 md:py-20"
           aria-label="Sauces"
         >
-          <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-stretch gap-6 md:gap-12 lg:grid-cols-2">
             <SplitPosterImage
               src="/images/promotional/frietkot-sauces-maison-bourg-argental.webp"
               alt={t("saucesImgAlt")}
               sizes="(max-width: 1023px) 100vw, 55vw"
             />
-            <div className="flex max-w-lg flex-col justify-center px-6 py-10 md:px-12 lg:px-20">
+            <div className="flex max-w-lg flex-col justify-center px-6 py-4 md:px-12 md:py-12 lg:px-20">
               <p className="section-eyebrow">{t("saucesEyebrow")}</p>
               <h2
                 className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
@@ -217,16 +217,16 @@ export default async function LaCartePage({ params }: Props) {
         </section>
 
         <section
-          className="border-t border-[#D4A853]/10 py-16 md:py-20 lg:py-24"
+          className="border-t border-[#D4A853]/10 py-6 md:py-20"
           aria-label="Desserts"
         >
-          <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-stretch gap-6 md:gap-12 lg:grid-cols-2">
             <SplitPosterImage
               src="/images/promotional/frietkot-gaufres-bruxelles-bourg-argental.webp"
               alt={t("dessertsImgAlt")}
               sizes="(max-width: 1023px) 100vw, 50vw"
             />
-            <div className="flex max-w-lg flex-col justify-center px-6 py-12 md:px-12 lg:px-20">
+            <div className="flex max-w-lg flex-col justify-center px-6 py-4 md:px-12 md:py-12 lg:px-20">
               <p className="section-eyebrow">{t("dessertsEyebrow")}</p>
               <h2
                 className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
@@ -243,7 +243,7 @@ export default async function LaCartePage({ params }: Props) {
 
         <section
           id="glaces"
-          className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-16 md:py-20 lg:py-24"
+          className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-10 md:py-20"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.04]"
@@ -254,7 +254,7 @@ export default async function LaCartePage({ params }: Props) {
             aria-hidden
           />
           <div className="relative mx-auto max-w-6xl px-6">
-            <div className="mb-14 max-w-3xl md:mb-16 lg:mb-20">
+            <div className="mb-8 max-w-3xl md:mb-16">
               <p className="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
                 {g("sectionEyebrow")}
               </p>
@@ -275,7 +275,7 @@ export default async function LaCartePage({ params }: Props) {
                 {g("sectionBody2")}
               </p>
             </div>
-            <div className="mb-14 border-y border-[#D4A853]/15 py-6 md:mb-20 md:py-8">
+            <div className="mb-8 border-y border-[#D4A853]/15 py-6 md:mb-20 md:py-8">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <p className="font-[var(--font-fraunces)] text-3xl italic text-[#D4A853] md:text-4xl">
@@ -308,8 +308,8 @@ export default async function LaCartePage({ params }: Props) {
                 (f) => f.category === category,
               );
               return (
-                <div key={category} className="mb-12 md:mb-16">
-                  <div className="mb-10 flex items-baseline gap-4">
+                <div key={category} className="mb-8 md:mb-16">
+                  <div className="mb-6 flex items-baseline gap-4 md:mb-10">
                     <h3 className="text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
                       {g(
                         {
@@ -325,7 +325,7 @@ export default async function LaCartePage({ params }: Props) {
                       {flavorsInCategory.length}
                     </span>
                   </div>
-                  <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-3 md:gap-12">
+                  <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-3 md:gap-12">
                     {flavorsInCategory.map((flavor) => (
                       <div
                         key={flavor.id}
@@ -348,7 +348,7 @@ export default async function LaCartePage({ params }: Props) {
                 </div>
               );
             })}
-            <div className="mx-auto mt-10 max-w-2xl border-t border-[#D4A853]/15 pt-10 text-center md:mt-12 md:pt-12">
+            <div className="mx-auto mt-8 max-w-2xl border-t border-[#D4A853]/15 pt-8 text-center md:mt-12 md:pt-12">
               <p
                 className="mb-3 font-[var(--font-fraunces)] text-[17px] italic leading-[1.8] text-[#F5EFE3]/75"
                 style={{ fontFeatureSettings: '"opsz" 72' }}
@@ -364,7 +364,7 @@ export default async function LaCartePage({ params }: Props) {
       </div>
 
       <div className="px-6 md:px-10">
-        <div className="mx-auto w-full max-w-7xl py-14 md:py-16 lg:py-20">
+        <div className="mx-auto w-full max-w-7xl py-10 md:py-20">
           <h2 className="text-center font-[var(--font-fraunces)] text-2xl text-[#f5efe3] [font-style:italic]">
             {t("pricingTitle")}
           </h2>
@@ -481,7 +481,7 @@ export default async function LaCartePage({ params }: Props) {
           </article>
         </div>
 
-        <section className="mx-auto mt-14 w-full max-w-7xl rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-black/40 p-10 text-center shadow-[0_28px_75px_rgba(0,0,0,0.5)] backdrop-blur-xl">
+        <section className="mx-auto mt-8 w-full max-w-7xl rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-black/40 p-8 text-center shadow-[0_28px_75px_rgba(0,0,0,0.5)] backdrop-blur-xl md:mt-14 md:p-10">
           <p className="text-[#c8c1b5]">{t("callout")}</p>
           <div className="mt-6">
             <CtaButton href="tel:+33784428106">{t("callCta")}</CtaButton>
