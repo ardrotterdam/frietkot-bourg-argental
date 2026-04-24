@@ -76,13 +76,13 @@ function SplitPosterImage({
   sizes: string;
 }) {
   return (
-    <div className="hidden items-center justify-center bg-[#0A0A0A] px-4 py-6 md:flex md:min-h-[260px] md:px-6 md:py-8 lg:min-h-[400px] lg:py-10">
+    <div className="flex aspect-[4/3] max-h-[280px] items-center justify-center overflow-hidden bg-[#0A0A0A] md:aspect-auto md:max-h-none md:min-h-[260px] md:px-6 md:py-8 lg:min-h-[400px] lg:py-10">
       <Image
         src={src}
         alt={alt}
         width={2000}
         height={1500}
-        className="h-auto w-full object-contain"
+        className="h-full w-full object-contain"
         sizes={sizes}
       />
     </div>
@@ -106,13 +106,13 @@ export default async function LaCartePage({ params }: Props) {
             </p>
           </div>
 
-          <div className="relative mx-auto w-full overflow-hidden rounded-sm shadow-2xl">
+          <div className="relative mx-auto aspect-[4/3] max-h-[280px] w-full overflow-hidden rounded-sm shadow-2xl md:aspect-auto md:max-h-none">
             <Image
               src="/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp"
               alt={t("heroImgAlt")}
               width={2000}
               height={1500}
-              className="h-auto w-full object-contain"
+              className="h-full w-full object-contain"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1152px"
               priority
             />

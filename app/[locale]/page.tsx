@@ -55,13 +55,13 @@ export default async function HomePage({ params }: Props) {
           aria-label={t("pascalSectionAria")}
         >
           <div className="grid min-h-0 grid-cols-1 items-stretch gap-6 md:gap-12 lg:grid-cols-2">
-            <div className="hidden items-center justify-center p-6 md:flex md:p-10">
+            <div className="flex max-h-[240px] items-center justify-center overflow-hidden p-0 md:max-h-none md:p-10">
               <Image
                 src="/images/promotional/frietkot-pascal-proprietaire-bourg-argental.webp"
                 alt={t("pascalImgAlt")}
                 width={1200}
                 height={1500}
-                className="h-auto w-full max-w-xl object-contain"
+                className="h-full w-full max-w-xl object-contain md:h-auto"
                 sizes="(max-width: 1023px) 100vw, 50vw"
                 priority={false}
               />
@@ -144,7 +144,7 @@ export default async function HomePage({ params }: Props) {
                   </p>
                 </div>
               </div>
-              <div className="relative hidden md:block">
+              <div className="relative max-h-[260px] overflow-hidden md:block md:max-h-none">
                 <div
                   className="absolute inset-0 rounded-sm border border-[#D4A853]/20"
                   style={{ transform: "translate(20px, 20px)" }}
@@ -241,12 +241,12 @@ export default async function HomePage({ params }: Props) {
                 <StatCounters key={locale} />
               </aside>
             </div>
-            <div className="mx-auto mt-6 hidden w-full max-w-7xl gap-6 md:grid">
-              <div className="relative md:min-h-[300px]">
+            <div className="mx-auto mt-6 grid w-full max-w-7xl gap-6">
+              <div className="relative aspect-[4/3] max-h-[280px] overflow-hidden md:aspect-auto md:max-h-none md:min-h-[300px]">
                 <RevealImage
                   src="/images/promotional/frietkot-sauces-maison-bourg-argental.webp"
                   alt={t("saucesImgAlt")}
-                  className="relative w-full overflow-hidden rounded-3xl bg-[#0A0A0A] md:min-h-[300px]"
+                  className="relative h-full w-full overflow-hidden rounded-3xl bg-[#0A0A0A] md:min-h-[300px]"
                   imageClassName="object-contain object-center"
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
@@ -302,7 +302,7 @@ export default async function HomePage({ params }: Props) {
                   </CtaButton>
                 </div>
               </article>
-              <div className="relative hidden md:block md:min-h-[340px]">
+              <div className="relative aspect-[4/3] max-h-[280px] overflow-hidden md:block md:aspect-auto md:max-h-none md:min-h-[340px]">
                 <div data-cursor-beer>
                   <RevealImage
                     src="/images/promotional/frietkot-bieres-belges-chimay-duvel-paljas-bourg-argental.webp"
@@ -334,7 +334,7 @@ export default async function HomePage({ params }: Props) {
                   <CtaButton href="/auberge">{t("innCta")}</CtaButton>
                 </div>
               </article>
-              <div className="relative hidden md:block md:min-h-[340px]" data-cursor-room>
+              <div className="relative aspect-[4/3] max-h-[280px] overflow-hidden md:block md:aspect-auto md:max-h-none md:min-h-[340px]" data-cursor-room>
                 <RevealImage
                   src="/images/rooms/chambre-duvel-auberge-frietkot.webp"
                   alt={t("innImgAlt")}
