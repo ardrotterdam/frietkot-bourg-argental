@@ -53,22 +53,27 @@ const beers = [
 
 export default function BieresBelgesPage() {
   return (
-    <main className="min-h-screen bg-[#050505] px-6 pb-20 pt-14 text-white md:px-10">
-      <div className="mx-auto w-full max-w-7xl">
-        <div className="w-full">
-          <Image
-            src="/images/promotional/frietkot-bieres-belges-chimay-duvel-paljas-bourg-argental.webp"
-            alt="Sélection de bières belges chez Frietkot à Bourg-Argental — Chimay Bleue, Chimay Rouge, Herberg Brune, Paljas Blonde, Duvel et sélection saisonnière"
-            width={2000}
-            height={1400}
-            className="h-auto w-full object-contain"
-            sizes="100vw"
-            priority
-          />
+    <main className="min-h-screen bg-[#050505] pb-20 pt-8 text-white md:pt-10">
+      <section className="bg-[#0A0A0A] px-6 pb-12 pt-4 md:px-8 md:pb-16">
+        <div className="mx-auto max-w-6xl">
+          <p className="mb-6 text-center text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
+            À la cave · Frietkot Bourg-Argental
+          </p>
+          <div className="overflow-hidden rounded-sm shadow-2xl">
+            <Image
+              src="/images/promotional/frietkot-bieres-belges-chimay-duvel-paljas-bourg-argental.webp"
+              alt="Sélection de bières belges chez Frietkot à Bourg-Argental — Chimay Bleue, Chimay Rouge, Herberg Brune, Paljas Blonde, Duvel et sélection saisonnière"
+              width={2000}
+              height={1400}
+              className="h-auto w-full object-contain"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1152px"
+              priority
+            />
+          </div>
         </div>
-      </div>
+      </section>
 
-      <section className="mx-auto w-full max-w-7xl py-12 md:py-16">
+      <section className="mx-auto w-full max-w-7xl px-6 py-10 md:px-10 md:py-12">
         <SectionHeading
           eyebrow="BIÈRES BELGES"
           title="Une bière belge ne se choisit pas au hasard."
@@ -81,7 +86,7 @@ export default function BieresBelgesPage() {
         </p>
       </section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-6 md:grid-cols-2">
+      <section className="mx-auto grid w-full max-w-7xl gap-6 px-6 md:grid-cols-2 md:px-10">
         {beers.map((beer) => (
           <article key={beer.name} className="premium-card rounded-3xl p-7">
             <p className="section-eyebrow">{beer.type}</p>

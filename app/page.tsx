@@ -26,14 +26,14 @@ export default function HomePage() {
           className="bg-[#0A0A0A] text-[#F5EFE3]"
           aria-label="Pascal vous accueille"
         >
-          <div className="grid min-h-0 grid-cols-1 lg:min-h-[min(100vh,900px)] lg:grid-cols-2">
-            <div className="relative min-h-[min(70vh,560px)] w-full lg:min-h-0">
+          <div className="grid min-h-0 grid-cols-1 items-stretch lg:min-h-[min(100vh,900px)] lg:grid-cols-2">
+            <div className="flex min-h-[min(50vh,520px)] items-center justify-center p-6 md:p-10 lg:min-h-0">
               <Image
                 src="/images/promotional/frietkot-pascal-proprietaire-bourg-argental.webp"
                 alt="Pascal, propriétaire de Frietkot à Bourg-Argental, vous accueille dans sa friterie belge avec le sourire"
                 width={1200}
                 height={1500}
-                className="h-full w-full object-cover"
+                className="h-auto w-full max-w-xl object-contain"
                 sizes="(max-width: 1023px) 100vw, 50vw"
                 priority={false}
               />
@@ -44,12 +44,12 @@ export default function HomePage() {
                 className="mt-4 max-w-lg font-[var(--font-fraunces)] text-[length:clamp(2rem,4vw,3.25rem)] font-normal leading-[1.1] text-[#D4A853] [font-style:italic]"
                 style={{ fontFeatureSettings: '"opsz" 72' }}
               >
-                Rencontrez Pascal.
+                Une exigence simple, depuis 1990.
               </h2>
               <p className="mt-6 max-w-[460px] text-[17px] leading-[1.7] text-[#F5EFE3]">
                 Trente-cinq ans de métier, une seule philosophie : des frites
                 belges authentiques, une hospitalité simple, un accueil avec le
-                sourire. Pascal vous attend au 7 place d&apos;Armeville.
+                sourire. Rendez-vous au 7 place d&apos;Armeville, au comptoir.
               </p>
               <Link
                 href="/notre-histoire"
@@ -125,8 +125,8 @@ export default function HomePage() {
                 <RevealImage
                   src="/images/promotional/frietkot-sauces-maison-bourg-argental.webp"
                   alt="Sauces artisanales et friterie belge chez Frietkot à Bourg-Argental — mises en scène généreuse des accompagnements faits chaque matin"
-                  className="relative min-h-[320px] w-full overflow-hidden rounded-3xl"
-                  imageClassName="object-cover"
+                  className="relative min-h-[320px] w-full overflow-hidden rounded-3xl bg-[#0A0A0A]"
+                  imageClassName="object-contain object-center"
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
                 />

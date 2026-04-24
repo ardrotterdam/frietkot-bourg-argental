@@ -42,8 +42,15 @@ function CardGrid() {
     <div className="grid gap-6 md:grid-cols-2">
       {DISHES.map((d) => (
         <article key={d.title} className="premium-card overflow-hidden rounded-3xl p-0">
-          <div className="relative aspect-[4/5] w-full">
-            <Image src={d.src} alt={d.alt} fill className="object-cover" sizes="(min-width: 1024px) 40vw, 90vw" />
+          <div className="flex aspect-[4/5] w-full items-center justify-center bg-[#0A0A0A] p-3">
+            <Image
+              src={d.src}
+              alt={d.alt}
+              width={2000}
+              height={1500}
+              className="h-full w-full object-contain"
+              sizes="(min-width: 1024px) 40vw, 90vw"
+            />
           </div>
           <div className="p-6">
             <h2 className="font-[var(--font-fraunces)] text-2xl text-[#f5efe3]">{d.title}</h2>
@@ -147,8 +154,15 @@ function Horizontal() {
               }
             >
               <div className="premium-card h-full overflow-hidden rounded-3xl p-0">
-                <div className="relative aspect-[4/5] w-full">
-                  <Image src={d.src} alt={d.alt} fill className="object-cover" sizes="400px" />
+                <div className="flex aspect-[4/5] w-full items-center justify-center bg-[#0A0A0A] p-3">
+                  <Image
+                    src={d.src}
+                    alt={d.alt}
+                    width={2000}
+                    height={1500}
+                    className="h-full w-full object-contain"
+                    sizes="400px"
+                  />
                 </div>
                 <div className="p-6">
                   <h2 className="font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">{d.title}</h2>

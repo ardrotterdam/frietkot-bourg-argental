@@ -9,14 +9,14 @@ export const metadata: Metadata = {
     "Découvrez la carte Frietkot : frites belges, plats du jour, salades, desserts et bières belges.",
 };
 
-function EditorialText({
+function EditorialBlock({
   eyebrow,
-  title,
+  headline,
   children,
   price,
 }: {
   eyebrow: string;
-  title: string;
+  headline: string;
   children: ReactNode;
   price: string;
 }) {
@@ -27,7 +27,7 @@ function EditorialText({
         className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
         style={{ fontFeatureSettings: '"opsz" 72' }}
       >
-        {title}
+        {headline}
       </h2>
       <div className="mt-5 text-base leading-[1.75] text-[#c8c1b5]">{children}</div>
       <p className="mt-6 text-lg text-[#D4A853]">{price}</p>
@@ -35,40 +35,59 @@ function EditorialText({
   );
 }
 
+/** Promotional assets are full posters: always show full frame, no crop. */
+function SplitPosterImage({
+  src,
+  alt,
+  sizes,
+}: {
+  src: string;
+  alt: string;
+  sizes: string;
+}) {
+  return (
+    <div className="flex min-h-[min(50vh,480px)] items-center justify-center bg-[#0A0A0A] px-4 py-8 md:px-6 lg:min-h-[420px] lg:py-10">
+      <Image
+        src={src}
+        alt={alt}
+        width={2000}
+        height={1500}
+        className="h-auto w-full object-contain"
+        sizes={sizes}
+      />
+    </div>
+  );
+}
+
 export default function LaCartePage() {
   return (
-    <main className="min-h-screen bg-[#050505] pb-20 pt-0 text-white">
-      <section
-        className="relative h-[60vh] min-h-[22rem] w-full md:h-[75vh] md:min-h-0"
-        aria-label="Plats du jour"
-      >
-        <div className="relative h-full w-full">
-          <Image
-            src="/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp"
-            alt="Plats du jour chez Frietkot à Bourg-Argental — carbonade flamande à la bière brune, vol-au-vent maison aux champignons, et boulets sauce liégeoise, tous faits maison chaque jour"
-            fill
-            className="object-cover object-center"
-            sizes="100vw"
-            priority
-          />
-          <div
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(10,10,10,0.85),rgba(10,10,10,0.3)_50%,transparent)]"
-            aria-hidden
-          />
-          <div className="absolute inset-x-0 bottom-0 z-[1] flex flex-col items-center justify-end px-6 pb-10 pt-20 md:pb-14">
-            <div className="w-full max-w-[600px] text-center">
-              <p className="section-eyebrow !text-[#D4A853]">LA CARTE</p>
-              <h1
-                className="mt-3 font-[var(--font-fraunces)] text-4xl font-normal leading-tight text-white [font-style:italic] md:text-5xl"
-                style={{ fontFeatureSettings: '"opsz" 72' }}
-              >
-                Les plats du jour.
-              </h1>
-              <p className="mt-4 text-base leading-[1.7] text-[#F5EFE3]/90 md:text-lg">
-                Trois classiques belges, préparés chaque matin selon ce que le marché
-                propose.
-              </p>
-            </div>
+    <main className="min-h-screen bg-[#050505] pb-20 text-white">
+      {/* Hero — Plats du jour poster */}
+      <section className="bg-[#0A0A0A] pt-24 pb-16 md:pt-32 md:pb-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-8 text-center md:mb-12">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
+              La carte · Frietkot Bourg-Argental
+            </p>
+          </div>
+
+          <div className="relative mx-auto w-full overflow-hidden rounded-sm shadow-2xl">
+            <Image
+              src="/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp"
+              alt="Plats du jour chez Frietkot à Bourg-Argental — carbonade flamande à la bière brune, vol-au-vent maison aux champignons, et boulets sauce liégeoise, tous faits maison chaque jour"
+              width={2000}
+              height={1500}
+              className="h-auto w-full object-contain"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1152px"
+              priority
+            />
+          </div>
+
+          <div className="mx-auto mt-10 max-w-xl text-center md:mt-14">
+            <p className="text-base leading-relaxed text-[#F5EFE3]/70 md:text-lg">
+              Trois classiques belges, préparés chaque matin selon ce que le marché
+              propose. Toujours accompagnés de frites fraîches, coupées sur place.
+            </p>
           </div>
         </div>
       </section>
@@ -76,27 +95,23 @@ export default function LaCartePage() {
       <div className="px-0">
         <section
           className="border-t border-[#D4A853]/10 py-24 md:py-32"
-          aria-label="Carbonade flamande"
+          aria-label="Carbonade"
         >
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
-            <div className="relative min-h-[280px] w-full aspect-[4/3] max-lg:max-h-[70vh] lg:min-h-[360px]">
-              <Image
-                src="/images/promotional/frietkot-carbonade-flamande-biere-brune-bourg-argental.webp"
-                alt="Carbonade flamande à la bière brune, mijotée lentement, servie chez Frietkot à Bourg-Argental avec frites belges croustillantes"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1023px) 100vw, 50vw"
-              />
-            </div>
-            <EditorialText
+            <SplitPosterImage
+              src="/images/promotional/frietkot-carbonade-flamande-biere-brune-bourg-argental.webp"
+              alt="Carbonade flamande à la bière brune, mijotée lentement, servie chez Frietkot à Bourg-Argental avec frites belges croustillantes"
+              sizes="(max-width: 1023px) 100vw, 50vw"
+            />
+            <EditorialBlock
               eyebrow="PLAT DU JOUR · SPÉCIALITÉ BELGE"
-              title="Carbonade flamande."
+              headline="Un bœuf mijoté quatre heures."
               price="[prix]"
             >
-              Bœuf mijoté à la bière brune belge avec oignons confits, pain
-              d&apos;épices et touche de moutarde. Recette traditionnelle, cuisson
-              lente de quatre heures, servie avec des frites maison.
-            </EditorialText>
+              Mijotage à la bière brune belge, oignons confits, pain d&apos;épices,
+              moutarde en filigrane. Cuisson lente, assiette généreuse, frites
+              maison en accompagnement.
+            </EditorialBlock>
           </div>
         </section>
 
@@ -106,22 +121,20 @@ export default function LaCartePage() {
         >
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
-              <EditorialText
+              <EditorialBlock
                 eyebrow="PLAT DU JOUR · FAIT MAISON"
-                title="Vol-au-vent maison."
+                headline="Sauce crème, champignons, volaille tendre."
                 price="[prix]"
               >
-                Pâte feuilletée dorée, sauce crémeuse aux champignons frais et poulet
-                fermier tendre. Un classique belge préparé avec patience, servi
-                chaud avec des frites belges.
-              </EditorialText>
+                Pâte feuilletée dorée, crème serrée, champignons de saison et poulet
+                fermier. Un classique servi chaud — les frites belges complètent
+                l&apos;assiette.
+              </EditorialBlock>
             </div>
-            <div className="relative order-1 min-h-[280px] w-full aspect-[4/3] max-lg:max-h-[70vh] lg:order-2 lg:min-h-[360px]">
-              <Image
+            <div className="order-1 lg:order-2">
+              <SplitPosterImage
                 src="/images/promotional/frietkot-vol-au-vent-bourg-argental.webp"
                 alt="Vol-au-vent maison servi chez Frietkot à Bourg-Argental — pâte feuilletée, sauce crème et champignons, présentation généreuse"
-                fill
-                className="object-cover"
                 sizes="(max-width: 1023px) 100vw, 50vw"
               />
             </div>
@@ -133,28 +146,24 @@ export default function LaCartePage() {
           aria-label="Boulets sauce liégeoise"
         >
           {/*
-            TODO: visuel dédié boulets en attente — pour l’instant réemploi de la vue
-            plats du jour (boulets visibles en bas à droite sur le visuel de marque).
+            TODO: visuel dédié boulets — pour l’instant réemploi du poster plats du jour
+            (même règle : poster entier, pas de rognage).
           */}
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
-            <div className="relative min-h-[280px] w-full aspect-[4/3] max-lg:max-h-[70vh] lg:min-h-[360px]">
-              <Image
-                src="/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp"
-                alt="Assiette de boulets sauce liégeoise parmi les plats du jour chez Frietkot à Bourg-Argental — accompagnement de frites belges"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1023px) 100vw, 50vw"
-              />
-            </div>
-            <EditorialText
+            <SplitPosterImage
+              src="/images/promotional/frietkot-plats-du-jour-carbonade-vol-au-vent-boulets-bourg-argental.webp"
+              alt="Assiette de boulets sauce liégeoise parmi les plats du jour chez Frietkot à Bourg-Argental — accompagnement de frites belges"
+              sizes="(max-width: 1023px) 100vw, 50vw"
+            />
+            <EditorialBlock
               eyebrow="PLAT DU JOUR · RECETTE LIÉGEOISE"
-              title="Boulets sauce liégeoise."
+              headline="Généreux, sucré-salé, du nord au cornet."
               price="[prix]"
             >
-              Boulettes de bœuf maison dans une sauce liégeoise traditionnelle aux
-              oignons et sirop de Liège. Un plat généreux, parfait avec un cornet
-              de frites et une bière trappiste.
-            </EditorialText>
+              Boulettes de bœuf façonnées sur place, sauce aux oignons longuement
+              fondue, rappel de sirop de Liège. Un plat de brasserie à partager
+              avec frites trappiste à portée.
+            </EditorialBlock>
           </div>
         </section>
 
@@ -162,28 +171,24 @@ export default function LaCartePage() {
           className="border-t border-[#D4A853]/10 py-24 md:py-32"
           aria-label="Sauces"
         >
-          <div className="grid grid-cols-1 items-center gap-0 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="relative min-h-[300px] w-full aspect-[4/3] sm:min-h-[380px]">
-              <Image
-                src="/images/promotional/frietkot-sauces-maison-bourg-argental.webp"
-                alt="Bar à sauces maison chez Frietkot à Bourg-Argental — bols colorés, textures crémeuses, présentation soignée sur le comptoir"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1023px) 100vw, 60vw"
-              />
-            </div>
+          <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
+            <SplitPosterImage
+              src="/images/promotional/frietkot-sauces-maison-bourg-argental.webp"
+              alt="Bar à sauces maison chez Frietkot à Bourg-Argental — bols colorés, textures crémeuses, présentation soignée sur le comptoir"
+              sizes="(max-width: 1023px) 100vw, 55vw"
+            />
             <div className="flex max-w-lg flex-col justify-center px-6 py-10 md:px-12 lg:px-20">
               <p className="section-eyebrow">LES SAUCES</p>
               <h2
                 className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
                 style={{ fontFeatureSettings: '"opsz" 72' }}
               >
-                Toutes faites maison.
+                Préparées le matin, servies à l&apos;instant.
               </h2>
               <p className="mt-5 max-w-lg text-base leading-[1.75] text-[#c8c1b5]">
-                Andalouse, samouraï, tartare, mayonnaise maison, moutarde, ail —
-                préparées chaque matin avec des ingrédients de qualité. Le choix
-                est vaste, la base est une : la vraie.
+                Textures, équilibre, petites chaleurs — le détail compte quand on
+                trempe. Pas de raccourci : tout est prêt pour accompagner le cornet
+                du jour.
               </p>
             </div>
           </div>
@@ -194,26 +199,22 @@ export default function LaCartePage() {
           aria-label="Desserts"
         >
           <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2">
-            <div className="relative min-h-[280px] w-full aspect-[4/3] max-lg:max-h-[70vh] lg:min-h-[360px]">
-              <Image
-                src="/images/promotional/frietkot-gaufres-bruxelles-bourg-argental.webp"
-                alt="Gaufres de Bruxelles caramélisées et douceurs belges proposées chez Frietkot à Bourg-Argental — sucre perlé, texture gourmande"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1023px) 100vw, 50vw"
-              />
-            </div>
+            <SplitPosterImage
+              src="/images/promotional/frietkot-gaufres-bruxelles-bourg-argental.webp"
+              alt="Gaufres de Bruxelles caramélisées et douceurs belges proposées chez Frietkot à Bourg-Argental — sucre perlé, texture gourmande"
+              sizes="(max-width: 1023px) 100vw, 50vw"
+            />
             <div className="flex max-w-lg flex-col justify-center px-6 py-12 md:px-12 lg:px-20">
               <p className="section-eyebrow">LES DESSERTS</p>
               <h2
                 className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
                 style={{ fontFeatureSettings: '"opsz" 72' }}
               >
-                Gaufres, glaces et douceurs.
+                Après l&apos;assiette salée, le geste sucré.
               </h2>
               <p className="mt-5 text-base leading-[1.75] text-[#c8c1b5]">
-                Gaufres de Bruxelles caramélisées au sucre perlé, glaces
-                artisanales, crèmes brûlées. La touche sucrée belge pour terminer.
+                Caramel, froid artisanal, crèmes caramélisées — on termine le repas
+                comme on l&apos;a commencé : simplement, sans chichis.
               </p>
             </div>
           </div>

@@ -28,12 +28,13 @@ export default function NotreHistoirePage() {
               recette, à Bourg-Argental.
             </p>
           </div>
-          <div className="relative order-1 h-[min(70vh,640px)] min-h-0 w-full border-[#D4A853]/10 lg:order-2 lg:h-auto lg:min-h-screen lg:border-l">
+          <div className="order-1 flex min-h-[min(50vh,520px)] items-center justify-center border-[#D4A853]/10 bg-[#0A0A0A] p-6 lg:order-2 lg:min-h-screen lg:border-l lg:p-10">
             <Image
               src="/images/promotional/frietkot-pascal-proprietaire-bourg-argental.webp"
               alt="Pascal, propriétaire de Frietkot à Bourg-Argental, vous accueille dans sa friterie belge avec le sourire"
-              fill
-              className="object-cover"
+              width={1200}
+              height={1500}
+              className="h-auto w-full max-w-xl object-contain lg:max-w-2xl"
               sizes="(max-width: 1023px) 100vw, 50vw"
               priority
             />
