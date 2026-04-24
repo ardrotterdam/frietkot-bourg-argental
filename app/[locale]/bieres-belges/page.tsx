@@ -66,11 +66,11 @@ function BeerSection({
   t: BieresTranslate;
 }) {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-12 md:py-14">
-      <h3 className="mb-10 text-center text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
+    <section className="mx-auto max-w-6xl px-6 py-8 md:py-16">
+      <h3 className="mb-6 text-center text-[11px] uppercase tracking-[0.18em] text-[#D4A853] md:mb-10">
         {title}
       </h3>
-      <div className="grid gap-12 md:grid-cols-2 lg:gap-16">
+      <div className="grid gap-8 md:grid-cols-2 lg:gap-16">
         {list.map((beer) => {
           const prefix = beer.msg;
           return (
@@ -133,8 +133,8 @@ export default async function BieresBelgesPage({ params }: Props) {
   const special = beers.filter((b) => b.category === "special");
 
   return (
-    <main className="min-h-screen bg-[#050505] pb-20 text-[#F5EFE3]">
-      <section className="bg-[#0A0A0A] px-6 pb-10 pt-4 md:px-8 md:pb-12">
+    <main className="bg-[#050505] pb-12 text-[#F5EFE3] md:pb-20">
+      <section className="bg-[#0A0A0A] px-6 pt-20 pb-8 md:px-8 md:pt-28 md:pb-16">
         <div className="mx-auto max-w-6xl">
           <p className="mb-6 text-center text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
             {t("heroEyebrow")}
@@ -153,7 +153,7 @@ export default async function BieresBelgesPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-14 text-center md:py-20">
+      <section className="mx-auto max-w-3xl px-6 py-10 text-center md:py-20">
         <p className="mb-6 text-[11px] uppercase tracking-[0.18em] text-[#D4A853]">
           {t("eyebrow")}
         </p>
@@ -188,7 +188,7 @@ export default async function BieresBelgesPage({ params }: Props) {
         t={t}
       />
 
-      <section className="mx-auto max-w-2xl px-6 py-16 text-center">
+      <section className="mx-auto max-w-2xl px-6 py-8 text-center md:py-16">
         <p className="text-sm italic text-[#F5EFE3]/60">{t("note")}</p>
       </section>
     </main>

@@ -41,12 +41,12 @@ export default async function ContactPage({ params }: Props) {
   const t = await getTranslations("contact");
 
   return (
-    <main className="min-h-screen bg-[#050505] px-6 pb-20 pt-14 text-white md:px-10">
-      <section className="mx-auto w-full max-w-6xl py-16">
+    <main className="bg-[#050505] px-6 pb-12 text-white md:px-10 md:pb-20">
+      <section className="mx-auto w-full max-w-6xl pt-20 pb-8 md:pt-28 md:pb-16">
         <SectionHeading eyebrow={t("eyebrow")} title={t("title")} />
       </section>
 
-      <section className="mx-auto grid w-full max-w-6xl gap-8 lg:grid-cols-2">
+      <section className="mx-auto grid w-full max-w-6xl gap-6 md:gap-12 lg:grid-cols-2">
         <article className="premium-card rounded-3xl p-8 md:p-12">
           <h2 className="font-[var(--font-fraunces)] text-3xl text-[#f5efe3]">
             {t("cardTitle")}
