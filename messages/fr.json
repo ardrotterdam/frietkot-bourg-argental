@@ -187,10 +187,6 @@
     "saucesTitle": "Préparées le matin, servies à l'instant.",
     "saucesBody": "Textures, équilibre, petites chaleurs — le détail compte quand on trempe. Pas de raccourci : tout est prêt pour accompagner le cornet du jour.",
     "saucesImgAlt": "Bar à sauces maison chez Frietkot à Bourg-Argental — bols colorés, textures crémeuses, présentation soignée sur le comptoir",
-    "dessertsEyebrow": "LES DESSERTS",
-    "dessertsTitle": "Après l'assiette salée, le geste sucré.",
-    "dessertsBody": "Caramel, froid artisanal, crèmes caramélisées — on termine le repas comme on l'a commencé : simplement, sans chichis.",
-    "dessertsImgAlt": "Gaufres de Bruxelles caramélisées et douceurs belges proposées chez Frietkot à Bourg-Argental — sucre perlé, texture gourmande",
     "pricingTitle": "Carte & tarifs",
     "pricingSubtitle": "Aperçu des prix — les plats du jour et suggestions sont affichés chaque matin au comptoir.",
     "fritesTitle": "Les frites",
@@ -210,6 +206,11 @@
     "euro": "€",
     "callout": "Une question sur un plat ? Appelez-nous directement.",
     "callCta": "Nous appeler",
+    "glacesCta": {
+      "title": "Et nos glaces ?",
+      "text": "Pascal prépare aussi douze parfums maison, des classiques aux sorbets de fruits.",
+      "button": "Découvrir les glaces →"
+    },
     "labelCarbonade": "Carbonade flamande",
     "labelVol": "Vol-au-vent maison",
     "labelBoulets": "Boulets sauce liégeoise",

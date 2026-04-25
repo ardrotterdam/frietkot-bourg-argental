@@ -187,10 +187,6 @@
     "saucesTitle": "Made in the morning, served the moment you dip.",
     "saucesBody": "Texture, balance, gentle heat — the details matter. No shortcuts: everything’s ready to meet your cone of the day.",
     "saucesImgAlt": "Homemade sauce bar at Frietkot in Bourg-Argental — colorful bowls, creamy textures, neat display at the counter",
-    "dessertsEyebrow": "DESSERTS",
-    "dessertsTitle": "After the savory plate, the sweet touch.",
-    "dessertsBody": "Caramel, artisanal chill, brûlées — we end the meal the way we started: simply, no fuss.",
-    "dessertsImgAlt": "Caramelized Brussels waffles and Belgian sweets at Frietkot in Bourg-Argental — pearl sugar, indulgent texture",
     "pricingTitle": "Menu & prices",
     "pricingSubtitle": "Price guide — daily specials and suggestions are on the board each morning.",
     "fritesTitle": "Fries",
@@ -210,6 +206,11 @@
     "euro": "€",
     "callout": "A question about a dish? Call us directly.",
     "callCta": "Call us",
+    "glacesCta": {
+      "title": "And our glaces?",
+      "text": "Pascal also prepares twelve house flavours, from classics to fruit sorbets.",
+      "button": "Discover the glaces →"
+    },
     "labelCarbonade": "Carbonnade flamande",
     "labelVol": "Homemade vol-au-vent",
     "labelBoulets": "Meatballs Liège-style",

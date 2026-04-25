@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
@@ -209,31 +210,6 @@ export default async function LaCartePage({ params }: Props) {
           </div>
         </section>
 
-        <section
-          className="border-t border-[#D4A853]/10 py-6 md:py-20"
-          aria-label="Desserts"
-        >
-          <div className="grid grid-cols-1 items-stretch gap-6 md:gap-12 lg:grid-cols-2">
-            <SplitPosterImage
-              src="/images/promotional/frietkot-gaufres-bruxelles-bourg-argental.webp"
-              alt={t("dessertsImgAlt")}
-              sizes="(max-width: 1023px) 100vw, 50vw"
-            />
-            <div className="flex max-w-lg flex-col justify-center px-6 py-0 md:px-12 md:py-12 lg:px-20">
-              <p className="section-eyebrow">{t("dessertsEyebrow")}</p>
-              <h2
-                className="mt-3 font-[var(--font-fraunces)] text-3xl leading-tight text-[#f5efe3] [font-style:italic] md:text-4xl"
-                style={{ fontFeatureSettings: '"opsz" 72' }}
-              >
-                {t("dessertsTitle")}
-              </h2>
-              <p className="mt-5 text-base leading-[1.75] text-[#c8c1b5]">
-                {t("dessertsBody")}
-              </p>
-            </div>
-          </div>
-        </section>
-
       </div>
 
       <div className="px-6 md:px-10">
@@ -357,6 +333,24 @@ export default async function LaCartePage({ params }: Props) {
           <p className="text-[#c8c1b5]">{t("callout")}</p>
           <div className="mt-6">
             <CtaButton href="tel:+33784428106">{t("callCta")}</CtaButton>
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-7xl py-12 md:py-16">
+          <div className="rounded-3xl border border-[#D4A853]/20 bg-[#0A0A0A]/70 p-7 text-center shadow-[0_24px_70px_rgba(0,0,0,0.35)] md:p-9">
+            <h2 className="font-[var(--font-fraunces)] text-3xl italic leading-tight text-[#f5efe3] md:text-4xl">
+              {t("glacesCta.title")}
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-[1.7] text-[#c8c1b5] md:text-base">
+              {t("glacesCta.text")}
+            </p>
+            <Link
+              href="/glaces"
+              className="mt-6 inline-flex items-center justify-center rounded-full border border-[#D4A853]/80 bg-[#D4A853] px-7 py-3 text-sm font-semibold uppercase tracking-wider text-black transition-colors hover:border-[#F4B942] hover:bg-[#F4B942]"
+              data-cursor="cta"
+            >
+              {t("glacesCta.button")}
+            </Link>
           </div>
         </section>
       </div>
