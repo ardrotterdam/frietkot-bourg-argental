@@ -125,6 +125,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                   "/images/promotional/frietkot-bieres-belges-chimay-duvel-paljas-bourg-argental.webp",
                 ],
                 servesCuisine: "Belgian",
+                foundingDate: "2016",
                 telephone: "+33784428106",
                 address: {
                   "@type": "PostalAddress",
