@@ -1,4 +1,3 @@
-import { IceCreamScoop } from "@/app/components/ice-cream-scoop";
 import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
@@ -84,111 +83,6 @@ export default async function HomePage({ params }: Props) {
               >
                 {t("pascalCta")}
               </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="relative overflow-hidden bg-[#0A0A0A] py-6 md:py-20">
-          <div
-            className="pointer-events-none absolute inset-0 opacity-[0.03]"
-            style={{
-              background:
-                "radial-gradient(circle at 30% 50%, #D4A853 0%, transparent 60%)",
-            }}
-            aria-hidden
-          />
-          <div className="relative mx-auto max-w-6xl px-6">
-            <div className="grid items-center gap-6 md:gap-12 lg:grid-cols-[1.2fr_1fr]">
-              <div>
-                <p className="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#D4A853]">
-                  {tg("teaserEyebrow")}
-                </p>
-                <h2
-                  className="mb-8 font-[var(--font-fraunces)] text-5xl italic leading-[0.95] text-[#F5EFE3] md:text-6xl lg:text-7xl"
-                  style={{ fontFeatureSettings: '"opsz" 72' }}
-                >
-                  {tg("teaserTitle1")}
-                  <br />
-                  <span className="text-[#D4A853]">{tg("teaserTitle2")}</span>
-                </h2>
-                <p className="mb-6 max-w-lg text-[17px] leading-[1.75] text-[#F5EFE3]/85">
-                  {tg("teaserBody1")}
-                </p>
-                <p className="mb-10 max-w-lg border-l border-[#D4A853]/30 pl-5 text-[15px] italic leading-[1.75] text-[#F5EFE3]/70">
-                  {tg("teaserQuote")}
-                </p>
-                <div className="flex flex-col items-start gap-4 sm:flex-row">
-                  <Link
-                    href="/la-carte#glaces"
-                    className="inline-flex items-center gap-3 border border-[#D4A853] px-8 py-4 text-[13px] uppercase tracking-[0.18em] text-[#D4A853] transition-colors duration-300 hover:bg-[#D4A853] hover:text-[#0A0A0A]"
-                    data-cursor="cta"
-                  >
-                    {tg("teaserCta")}
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      aria-hidden
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </Link>
-                  <p className="pt-4 text-[11px] uppercase tracking-[0.18em] text-[#F5EFE3]/50 sm:pt-4">
-                    {tg("teaserStat")}
-                  </p>
-                </div>
-              </div>
-              <div className="relative max-h-[260px] overflow-hidden md:block md:max-h-none">
-                <div
-                  className="absolute inset-0 rounded-sm border border-[#D4A853]/20"
-                  style={{ transform: "translate(20px, 20px)" }}
-                  aria-hidden
-                />
-                <div className="relative rounded-sm border border-[#D4A853]/15 bg-gradient-to-br from-[#141414] to-[#0A0A0A] p-10 md:p-12">
-                  <p className="mb-2 text-center text-[10px] uppercase tracking-[0.22em] text-[#D4A853]/80">
-                    {tg("teaserGridLabel")}
-                  </p>
-                  <p
-                    className="mb-10 text-center font-[var(--font-fraunces)] text-2xl italic text-[#F5EFE3]"
-                    style={{ fontFeatureSettings: '"opsz" 72' }}
-                  >
-                    {tg("teaserGridTitle")}
-                  </p>
-                  <div className="grid grid-cols-3 gap-6">
-                    {[
-                      { color: "#F5E6C8", name: tg("flavors.vanille") },
-                      { color: "#4A2818", name: tg("flavors.chocolat") },
-                      { color: "#93A957", name: tg("flavors.pistache") },
-                      { color: "#B8865C", name: tg("flavors.speculoos") },
-                      { color: "#D4A853", name: tg("flavors.caramelSale") },
-                      { color: "#F4D03F", name: tg("flavors.citron") },
-                    ].map((scoop, i) => (
-                      <div
-                        key={i}
-                        className="group flex flex-col items-center gap-3"
-                      >
-                        <IceCreamScoop
-                          color={scoop.color}
-                          size={56}
-                          className="transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <span className="text-center text-[10px] uppercase tracking-[0.15em] text-[#F5EFE3]/70">
-                          {scoop.name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="mt-8 border-t border-[#D4A853]/10 pt-6 text-center text-[11px] uppercase tracking-[0.18em] text-[#F5EFE3]/50">
-                    {tg("teaserMore")}
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -379,6 +273,24 @@ export default async function HomePage({ params }: Props) {
               <div className="mt-8 rounded-2xl border border-dashed border-white/20 bg-black/40 p-6 text-sm text-[#c8c1b5]">
                 {t("reviewsWidget")}
               </div>
+            </div>
+          </section>
+
+          <section
+            data-night-section
+            className="border-t border-[#D4A853]/10 px-6 py-12 md:px-10 md:py-20"
+          >
+            <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.07] to-black/30 p-8 shadow-[0_28px_75px_rgba(0,0,0,0.35)] md:flex-row md:items-center md:p-10">
+              <div className="max-w-2xl">
+                <p className="section-eyebrow">{tg("teaserCompactEyebrow")}</p>
+                <h2 className="mt-4 font-[var(--font-fraunces)] text-4xl italic leading-[1.05] text-[#F5EFE3] md:text-5xl">
+                  {tg("teaserCompactTitle")}
+                </h2>
+                <p className="mt-4 max-w-xl text-[16px] leading-[1.7] text-[#c8c1b5] md:text-[17px]">
+                  {tg("teaserCompactBody")}
+                </p>
+              </div>
+              <CtaButton href="/glaces">{tg("teaserCompactCta")}</CtaButton>
             </div>
           </section>
         </div>

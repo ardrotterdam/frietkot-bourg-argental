@@ -4,6 +4,7 @@
     "laCarte": "La carte",
     "auberge": "L'auberge",
     "bieresBelges": "Bières belges",
+    "glaces": "Glaces",
     "contact": "Contact"
   },
   "layout": {
@@ -23,20 +24,18 @@
     "schemaProprietaire": "Propriétaire"
   },
   "glaces": {
-    "teaserEyebrow": "LES GLACES · FAIT MAISON CHAQUE MATIN",
-    "teaserTitle1": "Demandez-lui",
-    "teaserTitle2": "sa glace.",
-    "teaserBody1": "Ce que peu de clients savent en entrant chez Frietkot : Pascal est aussi glacier. Une passion sérieuse, cultivée depuis des années — et un assortiment qui ferait rougir plus d'un salon de glaces.",
-    "teaserQuote": "Vanille à la gousse, pistache avec des vraies pistaches, caramel beurre salé qui colle à la cuillère. Rien de surgelé, rien d'industriel. Tout est fait ici, en quantités honnêtes, avec le soin qu'on met dans une friterie belge — c'est-à-dire beaucoup.",
-    "teaserCta": "Voir les 12 parfums",
-    "teaserStat": "12+ PARFUMS · CHANGEMENTS SELON LA SAISON",
-    "teaserGridLabel": "APERÇU",
-    "teaserGridTitle": "Quelques favoris",
-    "teaserMore": "+ 6 AUTRES PARFUMS À DÉCOUVRIR",
-    "sectionEyebrow": "LES GLACES · UNE AUTRE SPÉCIALITÉ DE PASCAL",
-    "sectionTitle": "Douze parfums, une seule méthode : fait maison.",
-    "sectionBody1": "Les frites nous ont donné notre nom. Mais si vous demandez aux habitués, ils vous parleront aussi de la glace. Pascal la prépare chaque matin — lait entier, fruits frais de saison, vrais ingrédients. Pas de poudre, pas d'arôme de synthèse, pas de raccourci.",
-    "sectionBody2": "On en sert dans un cornet, dans un pot, en coupe avec une gaufre de Liège. Certains viennent juste pour ça.",
+    "pageTitle": "Glaces Pascal — Frietkot",
+    "pageDescription": "Douze parfums de glaces maison par Pascal : classiques, signatures, gourmandes et sorbets frais chez Frietkot.",
+    "ogTitle": "Glaces Pascal — Frietkot",
+    "ogDescription": "Glaces maison préparées par Pascal : douze parfums, quatre familles, vrais ingrédients.",
+    "heroEyebrow": "LES GLACES · FAIT MAISON CHAQUE MATIN",
+    "heroTitle": "Glaces Pascal",
+    "heroTagline": "Douze parfums, quatre familles, une méthode simple : du lait entier, des fruits de saison, de vrais ingrédients.",
+    "intro": "Pascal ne fait pas les choses à moitié. Après les frites, il y a la glace : préparée ici, en quantités honnêtes, avec ce goût franc qu'on reconnaît dès la première cuillère.",
+    "teaserCompactEyebrow": "ET AUSSI, LES GLACES",
+    "teaserCompactTitle": "Pascal garde quelques parfums au frais.",
+    "teaserCompactBody": "Douze glaces maison, des classiques aux sorbets de fruits. Une autre raison de passer au comptoir.",
+    "teaserCompactCta": "Découvrir les glaces",
     "statFlavors": "Parfums au choix",
     "statMaison": "Fait maison",
     "statArtificial": "Arômes artificiels",
@@ -45,6 +44,12 @@
       "signature": "LES SIGNATURES DE PASCAL",
       "gourmand": "LES GOURMANDES",
       "sorbet": "LES SORBETS · FRUITS FRAIS"
+    },
+    "categoryContexts": {
+      "classique": "La base, sans détour : les parfums que l'on commande les yeux fermés, travaillés proprement pour laisser parler le goût.",
+      "signature": "Les créations maison de Pascal, plus marquées, avec ce petit supplément de caractère qui fait revenir les habitués.",
+      "gourmand": "Des parfums plus ronds, plus enveloppants, pensés pour terminer le repas ou accompagner une gaufre de Liège.",
+      "sorbet": "Des fruits frais, de la fraîcheur nette, et juste ce qu'il faut de douceur pour garder l'été dans le cornet."
     },
     "flavors": {
       "vanille": "Vanille",
@@ -59,6 +64,20 @@
       "citron": "Citron",
       "framboise": "Framboise",
       "mangue": "Mangue"
+    },
+    "flavorDescriptions": {
+      "vanille": "Une vanille douce et ronde, pensée pour les cornets simples et les fins de repas sans chichis.",
+      "chocolat": "Un chocolat franc, sombre juste ce qu'il faut, avec une texture dense qui tient bien à la cuillère.",
+      "fraise": "La fraise côté classique : fruitée, fraîche, familière, toujours prête pour une gaufre chaude.",
+      "pistache": "Une pistache de caractère, verte sans tricher, avec le goût net du fruit sec.",
+      "speculoos": "Le parfum belge par excellence : biscuit, épices douces, et une longueur bien gourmande.",
+      "caramelSale": "Caramel beurre salé, riche et précis, celui qui accroche un peu à la cuillère.",
+      "stracciatella": "Crème fraîche et éclats de chocolat, simple en apparence, généreuse à chaque bouchée.",
+      "noisette": "Une noisette ronde, grillée, parfaite quand on veut quelque chose de plus profond.",
+      "cafe": "Un café net, pas trop sucré, pour ceux qui aiment finir sur une note adulte.",
+      "citron": "Vif et propre, un sorbet citron qui réveille le palais sans l'alourdir.",
+      "framboise": "Framboise fraîche, acidulée, avec ce relief de fruit rouge qui donne envie d'y revenir.",
+      "mangue": "Mangue solaire, souple et parfumée, le sorbet qui met tout le monde d'accord."
     },
     "closingNote": "La carte des glaces évolue avec les saisons. En été, Pascal ajoute des parfums de fruits de saison. En hiver, il sort des spéculoos et des caramels plus riches.",
     "closingCta": "DEMANDEZ À PASCAL CE QU'IL A AUJOURD'HUI"
@@ -186,7 +205,6 @@
     "biereListTitle": "Les bières belges",
     "dessertGaufre": "Gaufre de Liège",
     "dessertCreme": "Crème brûlée",
-    "dessertGlace": "Glaces artisanales",
     "biereSaison": "Duvel (+ sélection saisonnière)",
     "prixPlaceholder": "[prix]",
     "euro": "€",

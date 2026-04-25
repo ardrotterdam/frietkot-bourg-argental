@@ -7,6 +7,7 @@ const PAGES = [
   "/la-carte",
   "/auberge",
   "/bieres-belges",
+  "/glaces",
   "/contact",
   "/notre-histoire",
   "/mentions-legales",

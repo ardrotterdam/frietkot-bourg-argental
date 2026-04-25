@@ -4,6 +4,7 @@
     "laCarte": "Menu",
     "auberge": "The inn",
     "bieresBelges": "Belgian beers",
+    "glaces": "Glaces",
     "contact": "Contact"
   },
   "layout": {
@@ -23,20 +24,18 @@
     "schemaProprietaire": "Owner"
   },
   "glaces": {
-    "teaserEyebrow": "THE ICE CREAM · MADE FRESH EACH MORNING",
-    "teaserTitle1": "Ask him",
-    "teaserTitle2": "about the ice cream.",
-    "teaserBody1": "What few customers realise when they walk into Frietkot: Pascal is also an ice cream maker. A serious passion, cultivated for years — and a selection that would put many ice cream parlours to shame.",
-    "teaserQuote": "Real vanilla bean, pistachio with actual pistachios, salted caramel that sticks to the spoon. Nothing frozen, nothing industrial. All made here, in honest quantities, with the same care a Belgian friterie brings — which is to say, a lot.",
-    "teaserCta": "See all 12 flavours",
-    "teaserStat": "12+ FLAVOURS · ROTATING WITH THE SEASONS",
-    "teaserGridLabel": "PREVIEW",
-    "teaserGridTitle": "A few favourites",
-    "teaserMore": "+ 6 MORE FLAVOURS TO DISCOVER",
-    "sectionEyebrow": "THE ICE CREAM · ANOTHER OF PASCAL'S SPECIALITIES",
-    "sectionTitle": "Twelve flavours, one method: homemade.",
-    "sectionBody1": "The fries gave us our name. But ask the regulars, and they'll also tell you about the ice cream. Pascal prepares it each morning — whole milk, fresh seasonal fruit, real ingredients. No powder, no synthetic flavouring, no shortcuts.",
-    "sectionBody2": "We serve it in a cone, in a tub, or in a coupe with a Liège waffle. Some people come just for this.",
+    "pageTitle": "Glaces Pascal — Frietkot",
+    "pageDescription": "Twelve house-made glaces by Pascal: classics, signatures, indulgent flavours and fresh sorbets at Frietkot.",
+    "ogTitle": "Glaces Pascal — Frietkot",
+    "ogDescription": "House-made glaces by Pascal: twelve flavours, four families, real ingredients.",
+    "heroEyebrow": "THE GLACES · MADE FRESH EACH MORNING",
+    "heroTitle": "Glaces Pascal",
+    "heroTagline": "Twelve flavours, four families, one simple method: whole milk, seasonal fruit and real ingredients.",
+    "intro": "Pascal does not do things by halves. After the fries, there is the ice cream: made here, in honest quantities, with the clear flavour you recognise from the first spoonful.",
+    "teaserCompactEyebrow": "AND ALSO, THE GLACES",
+    "teaserCompactTitle": "Pascal keeps a few flavours cold.",
+    "teaserCompactBody": "Twelve house-made glaces, from classics to fruit sorbets. Another reason to stop at the counter.",
+    "teaserCompactCta": "Discover the glaces",
     "statFlavors": "Flavours available",
     "statMaison": "Homemade",
     "statArtificial": "Artificial flavourings",
@@ -45,6 +44,12 @@
       "signature": "PASCAL'S SIGNATURES",
       "gourmand": "THE INDULGENT",
       "sorbet": "SORBETS · FRESH FRUIT"
+    },
+    "categoryContexts": {
+      "classique": "The foundation, straight and clean: the flavours people order with their eyes closed, made to let the taste speak.",
+      "signature": "Pascal's house creations, a little more distinctive, with the extra character regulars come back for.",
+      "gourmand": "Rounder, richer flavours, made to finish the meal or sit beside a warm Liège waffle.",
+      "sorbet": "Fresh fruit, bright freshness and just enough sweetness to keep summer in the cone."
     },
     "flavors": {
       "vanille": "Vanilla",
@@ -59,6 +64,20 @@
       "citron": "Lemon",
       "framboise": "Raspberry",
       "mangue": "Mango"
+    },
+    "flavorDescriptions": {
+      "vanille": "Soft, rounded vanilla, made for simple cones and no-fuss endings.",
+      "chocolat": "A direct chocolate, dark enough, with a dense texture that holds on the spoon.",
+      "fraise": "Strawberry as a classic: fruity, fresh, familiar and ready for a warm waffle.",
+      "pistache": "Pistachio with character, green without cheating, with the clear taste of the nut.",
+      "speculoos": "The Belgian flavour: biscuit, gentle spice and a properly indulgent finish.",
+      "caramelSale": "Salted butter caramel, rich and precise, the one that clings a little to the spoon.",
+      "stracciatella": "Fresh cream and chocolate shards, simple at first glance, generous every bite.",
+      "noisette": "Rounded, toasted hazelnut, perfect when you want something deeper.",
+      "cafe": "Clean coffee, not too sweet, for those who like a more grown-up finish.",
+      "citron": "Bright and clean, a lemon sorbet that wakes the palate without weighing it down.",
+      "framboise": "Fresh raspberry, gently tart, with the lift of red fruit that makes you come back.",
+      "mangue": "Sunny mango, supple and fragrant, the sorbet everyone can agree on."
     },
     "closingNote": "The ice cream menu evolves with the seasons. In summer, Pascal adds seasonal fruit flavours. In winter, he brings out richer speculoos and caramels.",
     "closingCta": "ASK PASCAL WHAT HE HAS TODAY"
@@ -186,7 +205,6 @@
     "biereListTitle": "Belgian beers",
     "dessertGaufre": "Liège waffle",
     "dessertCreme": "Crème brûlée",
-    "dessertGlace": "Artisan ice cream",
     "biereSaison": "Duvel (+ seasonal selection)",
     "prixPlaceholder": "[price]",
     "euro": "€",

@@ -6,12 +6,20 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useRef } from "react";
 
-const HREFS = ["/", "/la-carte", "/auberge", "/bieres-belges", "/contact"] as const;
+const HREFS = [
+  "/",
+  "/la-carte",
+  "/auberge",
+  "/bieres-belges",
+  "/glaces",
+  "/contact",
+] as const;
 const NAV_KEY = [
   "accueil",
   "laCarte",
   "auberge",
   "bieresBelges",
+  "glaces",
   "contact",
 ] as const;
 
